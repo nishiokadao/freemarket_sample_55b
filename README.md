@@ -119,10 +119,9 @@ belongs_to :brand
 
 | Column        | Type     | Options  |
 | ------------- | -------- | -------- |
-| ladies        | string   |          |
-| mens          | string   |          |
-| interior      | string   |          |
-| shipping_place| string   |          | 
+| name          | string   |          |
+| parent_id     | integer  |          |
+
 
 ### Association
 has_many :products, through:category_products
