@@ -193,6 +193,7 @@ has_many :products
 belongs_to :product
 
 
+
 * Database initialization
 
 * How to run the test suite
