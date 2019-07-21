@@ -21,7 +21,7 @@ Things you may want to cover:
 | avator       | string   |                 |
 | prefecture   | string   | null: false     |
 | address      | string   | null: false     |
-| birth-date   | string   | null: false     |
+| birth_date   | string   | null: false     |
 | credit_id    | integer  | null: false     |
 | introduction | text     |                 |
 
@@ -35,12 +35,12 @@ Things you may want to cover:
 
 ## ratesテーブル
 
-| Column     | Type     | Options     |
-| ---------- | -------- | ----------- |
-| rank       | integer  | null: false |
-| comment    | text     |             |
-| user_id    | integer  | null: false |
-| product_id | integer  | null: false |
+| Column     | Type     | Options                        |
+| ---------- | -------- | ------------------------------ |
+| rank       | integer  | null: false                    |
+| comment    | text     |                                |
+| user_id    | integer  | null: false, foreign_key: true |
+| product_id | integer  | null: false, foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -62,10 +62,10 @@ belongs_to :user
 
 ## user-products(likeテーブル)
 
-| Column     | Type     | Options     |
-| ---------- | -------- | ----------- |
-| product_id | string   | null: false |
-| user_id    | string   | null: false |
+| Column     | Type     | Options                         |
+| ---------- | -------- | ------------------------------- |
+| product_id | string   | null: false , foreign_key: true |
+| user_id    | string   | null: false , foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -74,11 +74,11 @@ belongs_to :product
 
 ## item-commentsテーブル
 
-| Column     | Type     | Options     |
-| ---------- | -------- | ----------- |
-| comment    | Text     |             |
-| user_id    | integer  | null: false |
-| product_id | integer  | null: false |
+| Column     | Type     | Options                        |
+| ---------- | -------- | ------------------------------ |
+| comment    | Text     |                                |
+| user_id    | integer  | null: false, foreign_key: true |
+| product_id | integer  | null: false, foreign_key: true |
 
 ### Association
 belongs_to :user
@@ -131,8 +131,8 @@ has_many :products, through:category_products
 ## categorie_productsテーブル
 | Column        | Type     | Options  |
 | ------------- | -------- | -------- |
-| category_id   | integer  |null:false|
-| products_id   | integer  |null:false|
+| category_id   | integer  |null:false, foreign_key :true|
+| product_id    | integer  |null:false, foreign_key :true|
 
 ### Association
 belongs_to :category
@@ -175,19 +175,19 @@ has_many :products
 
 ## imagesテーブル　
 
-| Column     | Type    | Options     |
-| ---------- | ------- | ----------- |
-|     1      | string  | null: false |
-|     2      | string  |             |
-|     3      | string  |             |
-|     4      | string  |             |
-|     5      | string  |             |
-|     6      | string  |             |
-|     7      | string  |             |
-|     8      | string  |             |
-|     9      | string  |             |
-|     10     | string  |             |
-| product_id | integer | null: false |
+| Column     | Type    | Options                        |
+| ---------- | ------- | ------------------------------ |
+|     1      | string  | null: false                    |
+|     2      | string  |                                |
+|     3      | string  |                                |
+|     4      | string  |                                |
+|     5      | string  |                                |
+|     6      | string  |                                |
+|     7      | string  |                                |
+|     8      | string  |                                |
+|     9      | string  |                                |
+|     10     | string  |                                |
+| product_id | integer | null: false, foreign_key: true |
 
 ### Association
 belongs_to :product
