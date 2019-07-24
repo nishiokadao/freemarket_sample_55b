@@ -1,6 +1,7 @@
 .pickup-container{
+  background-color: #F5F5F5;
   padding: 40px 0;
-  height: 100vh;
+  height: 100%;
   width: 100%;
   .pickup-head{
     font-size: 28px;
@@ -10,6 +11,7 @@
   .items-box-container{
     width: 940px;
     margin: 0 auto;
+    height: 442px;
     .text-center{
       text-align: center;
       font-size: 22px;
@@ -92,10 +94,6 @@
     }
 }
 
-.wrapper{
-  background-color: #F5F5F5;
-  height: 100vh;
-}
 
 a{
   text-decoration: none;
