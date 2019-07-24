@@ -62,4 +62,3 @@
 
 server '3.113.177.213', user: 'ec2-user', roles: %w{app db web}
 
-config.require_maskter_key = true
