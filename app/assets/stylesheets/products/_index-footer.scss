@@ -1,0 +1,323 @@
+// Place all the styles related to the markets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+// .footer--head {
+//   color:;
+//   font-size: ;
+//   font-weight: 
+//  }
+ 
+//  . {
+//   overflow: hidden;
+//   position: relative;
+//   display: none;
+//   width: 750px;
+//   height: 260px;
+//   margin: 0 auto;
+//   color: #fff;
+// }
+.global-footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+}
+.footer-cell:first-child {
+  padding: 0 20px 0 0;
+  width: 20%;
+}
+.banner__pc {
+  background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?72295318);
+  background-position: center;
+  background-size: cover;
+}
+.banner__pc__inner__icon img {
+  vertical-align: middle;
+  float: left;
+}
+
+
+.footer--head {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 100;
+ }
+ 
+ 
+ 
+ li {
+  display: list-item;
+  list-style: disc;
+ }
+ 
+ .footer-link  {
+  display: inline-block;
+  float: left;
+ 
+ }
+ 
+ .inner-footer-cell {
+  float: left;
+  padding-left: 10px;
+  vertical-align: top;
+  width: 50%;
+  :first-of-type{
+    padding: 0 10px 0 0;
+  }
+ }
+ 
+ .footer__top--head-head h2 {
+  font-size: 22px;
+  line-height: 1.4;
+ }
+ 
+ .footer__bottom{
+  margin: 30px auto 20px;
+  width: 1020px;
+  .small{
+    font-size: 12px;
+    }
+ }
+ 
+ .footer__bottom--copyright{
+  width: 745px;
+  display: inline-block;
+  margin: 8px 0 0;
+  text-align: center;
+  vertical-align: sub;
+ }
+ 
+ .footer__bottom--icon{
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+  }
+ 
+ 
+ .footer-sell-btn {
+  position: fixed;
+  z-index: 1000;
+  border-radius: 50%;
+  background: #ea352d;
+  color: #fff;
+  text-align: center;
+  a{
+    bottom: 32px;
+    right: 32px;
+    width: 160px;
+    height: 160px;
+    font-size: 22px;
+  }
+  .div{
+    margin: 32px 0 0;
+  }
+  .icon-camera {
+    margin: 8px 0 0;
+    font-size: 54px;
+  }
+ }
+ 
+ 
+ 
+ ul li {
+  display: list-item;
+  text-align: -webkit-match-parent;
+  list-style: none;
+ }
+ 
+ 
+ .footer-bottom img {
+  vertical-align: middle;
+ }
+ 
+ .footer__top--head--head{
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+ }
+ 
+ .footer-head {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 100;
+}
+
+ .footer__top--head--inner{
+  float: left;
+  padding-left: 10px;
+  vertical-align: top;
+  width: 50%;
+ }
+ .footer__top--head--inner:first-of-type{
+  padding: 0 10px 0 0;
+  }
+ 
+ .footer__top--head.width{
+  margin-top: 18px;
+  padding: 0 40px 0 0;
+  width: 42%;
+ }
+
+ .footer__top--head {
+  width: 23%;
+  padding: 0 40px 0 0;
+  vertical-align: top;
+  display: block;
+  float: left;
+  margin-top: 18px;
+  a{
+    display: block;
+    opacity: .7;
+    color: #fff;
+    font-size: 12px;
+    line-height: 1.5em;
+    text-decoration: none;
+  }
+  .full-width{
+    margin-top: 18px;
+    padding: 0 40px 0 0;
+    width: 42%;
+  }
+  li{
+    margin: 16px 0 0;
+  }
+ }
+ 
+ 
+ .footer {
+  padding: 0 20px 10px 20px;
+  background: #212121;
+  color: #fff;
+  nav{
+    width: 1020px;
+    margin: 0 auto;
+  }
+ }
+ 
+ * {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+ }
+ .footer__top--head:first-child{
+  padding: 0 20px 0 0;
+  width: 20%;
+ }
+ 
+ .footer-nav-lang {
+  width: auto;
+ }
+ .far.fa-file-alt:before {
+  content: “\f099”;
+ }
+ 
+ .footer__bottom--icon {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+ }
+ 
+ i[class*=footer-link] {
+  display: inline-block;
+  font-family: ‘icon-font’;
+  speak: none;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ }
+ .footer-link i {
+  background: transparent;
+  margin: 16px 18px 0 0;
+  font-size:26px;
+ }
+ 
+ .footer-sell-btn i {
+  margin: 8px 0 0;
+  font-size: 54px;
+ }
+ .footer-link a {
+  color:#fff;
+  background: transparent;
+  font-size:26px;
+  width:auto;
+  opacity: 1;
+ }
+ .fab.fa-twitter{
+  background: transparent;
+  margin: 16px 18px 0 0;
+  font-size:26px;
+  color:#fff;
+ }
+ 
+ .fab.fa-facebook-square{
+  background: transparent;
+  margin: 16px 18px 0 0;
+  font-size:28px;
+  color:#fff;
+  content: '\e013';
+ }
+ 
+ 
+ .footer__bottom--icon {
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+ }
+ 
+ .footer--logo{
+  display: inline-block;
+  margin-right: 10px;
+  width: auto;
+ }
+
+ .footer-sell-btn{
+  bottom: 32px;
+  right: 32px;
+  width: 160px;
+  height: 160px;
+  font-size: 22px;
+  margin: 32px 0 0;
+}
+
+
+.fas.fa-camera{
+  text-decoration: inherit;
+  vertical-align: inherit;
+  content: '\e00a';
+  margin: 8px 0 0;
+  font-size: 54px;
+  border-style: solid;
+  border-width: 0; 
+  font-family: 'icon-font';
+  
+}
+
+.footer_top--head--head{
+  display: block;
+  opacity: .7;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+
+
+ .footer_top--head--head a {
+
+ 
+  display: block;
+  opacity: .7;
+  color: #fff;
+  font-size: 12px;
+  line-height: 1.5em;
+  text-decoration: none;
+}
+
+
+.facebook-square a{
+  content: '\e013';
+}
