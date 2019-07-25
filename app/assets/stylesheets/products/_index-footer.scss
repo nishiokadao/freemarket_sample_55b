@@ -29,7 +29,15 @@
   background: url(https://www.mercari.com/jp/assets/img/common/jp/top/download_bg_pc.jpg?72295318);
   background-position: center;
   background-size: cover;
+  height: 260px;
+  
 }
+.banner__pc__figure{
+  img{
+    height: 260px;
+  }
+}
+
 .banner__pc__inner__icon img {
   vertical-align: middle;
   float: left;
@@ -280,7 +288,9 @@
   width: 160px;
   height: 160px;
   font-size: 22px;
-  margin: 32px 0 0;
+  div{
+    margin-top: 32px;
+  }
 }
 
 
@@ -288,7 +298,6 @@
   text-decoration: inherit;
   vertical-align: inherit;
   content: '\e00a';
-  margin: 8px 0 0;
   font-size: 54px;
   border-style: solid;
   border-width: 0; 
