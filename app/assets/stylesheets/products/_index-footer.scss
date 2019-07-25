@@ -16,6 +16,12 @@
 //   margin: 0 auto;
 //   color: #fff;
 // }
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
 .global-footer {
   padding: 0 20px 10px 20px;
   background: #212121;
@@ -30,12 +36,25 @@
   background-position: center;
   background-size: cover;
   height: 260px;
-  
-}
-.banner__pc__figure{
-  img{
-    height: 260px;
+  position: relative;
+  .banner__pc__inner{
+    width: 400px;
+    position: absolute;
+    top: 100px;
+    left: 400px;
   }
+}
+
+img.banner_image{
+    height: 260px;
+    position: absolute;
+
+    right: 350px;
+}
+
+
+.banner__pc__inner__icon figure {
+  float: left;
 }
 
 .banner__pc__inner__icon img {
@@ -43,6 +62,9 @@
   float: left;
 }
 
+.banner__pc__inner__icon__sub li {
+  float: left;
+}
 
 .footer--head {
   color: #fff;
