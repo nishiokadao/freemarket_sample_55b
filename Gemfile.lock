@@ -101,8 +101,6 @@ GEM
     excon (0.65.0)
     execjs (2.7.0)
     ffi (1.11.1)
-    font-awesome-rails (4.7.0.5)
-      railties (>= 3.2, < 6.1)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
       fog-json (~> 1.1)
@@ -119,6 +117,8 @@ GEM
     fog-xml (0.1.3)
       fog-core
       nokogiri (>= 1.5.11, < 2.0.0)
+    font-awesome-rails (4.7.0.5)
+      railties (>= 3.2, < 6.1)
     formatador (0.2.5)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
@@ -289,15 +289,15 @@ DEPENDENCIES
   carrierwave
   chromedriver-helper
   coffee-rails (~> 4.2)
-  font-awesome-rails
   fog-aws
+  font-awesome-rails
   haml-rails
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
-  pry-rails
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
+  pry-rails
   puma (~> 3.11)
   rails (~> 5.2.2, >= 5.2.2.1)
   sass-rails (~> 5.0)
