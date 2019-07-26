@@ -6,6 +6,9 @@
   box-sizing: inherit;
   font-size: inherit;
   line-height: inherit;
+  :focus {
+    outline: none;
+  }
 }
 
 .index-container {
