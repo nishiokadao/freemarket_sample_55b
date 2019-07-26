@@ -1,0 +1,19 @@
+.new-container {
+  padding: 0 0 220px;
+}
+
+.new-header {
+  height: 120px;
+  text-align: center;
+  background-color: aqua;
+  %h1 {
+    margin: 40px 0 0;
+    display: inline-block;
+  }
+  %a {
+    width: 185px;
+    height: 49px;
+    line-height: 49px;
+  }
+  }
+}
