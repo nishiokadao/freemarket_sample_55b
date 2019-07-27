@@ -6,120 +6,42 @@
     %h3.text-center
       %a{href: "#"} レディース新着アイテム
     .items-box-content
+      - @product.each do |product|
       %section.items-box
         %a{href: "#"}
           %figure.items-box-photo
             %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
           .items-box-body
             %h3.items-box-name
-              test
+              = (producrt.name)
             .items-box-num
               .items-box-price
-                ¥2000
+               = (product.price)
               .like
                 %i.far.fa-heart
-                1
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥1000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥5000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥3000
-              .like
-                %i.far.fa-heart
-                １
-    .view-all
-      %a{href: "#"}
+                = (product.status)
+      
         すべての商品を見る
 
   %section.items-box-container
     %h3.text-center
       %a{href: "#"} メンズ新着アイテム
     .items-box-content
+      - @product.each do |product|
       %section.items-box
         %a{href: "#"}
           %figure.items-box-photo
             %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
           .items-box-body
             %h3.items-box-name
-              test
+              = (product.name)
             .items-box-num
               .items-box-price
-                ¥2000
+                = (product.price) 
               .like
                 %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥600
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥800
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥1000
-              .like
-                %i.far.fa-heart
-                １
-    .view-all
-      %a{href: "#"}
+                = (product.status)
+      
         すべての商品を見る
 
 %section.pickup-container
@@ -129,60 +51,21 @@
     %h3.text-center
       %a{href: "#"} シャネル新着アイテム
     .items-box-content
+      - @product.each do |product|
       %section.items-box
         %a{href: "#"}
           %figure.items-box-photo
             %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
           .items-box-body
             %h3.items-box-name
-              test
+              = (product.name)
             .items-box-num
               .items-box-price
-                ¥1000
+                = (product.price)
               .like
                 %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥4000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥5000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥8000
-              .like
-                %i.far.fa-heart
-                １
-    .view-all
-      %a{href: "#"}
+                = (product.status)
+
         すべての商品を見る
 
   %section.items-box-container
@@ -195,52 +78,12 @@
             %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
           .items-box-body
             %h3.items-box-name
-              test
+              = (product.name)
             .items-box-num
               .items-box-price
-                ¥1000
+                = (produt.price)
               .like
                 %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥25000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥8000
-              .like
-                %i.far.fa-heart
-                １
-      %section.items-box
-        %a{href: "#"}
-          %figure.items-box-photo
-            %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
-          .items-box-body
-            %h3.items-box-name
-              test
-            .items-box-num
-              .items-box-price
-                ¥2000
-              .like
-                %i.far.fa-heart
-                １
-    .view-all
-      %a{href: "#"}
+                = (product.status)
+      
         すべての商品を見る
