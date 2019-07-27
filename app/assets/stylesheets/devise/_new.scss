@@ -1,0 +1,74 @@
+.login-container{
+  padding: 0 0 220px;
+  .login-header{
+    height: 128px;
+    text-align: center;
+    & h1{
+      margin: 40px 0 0;
+      display: inline-block;
+      & a{
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        & img{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+  }
+  .login-main{
+    display: block;
+    & .login-panel{
+      max-width: none;
+      width: 456px;
+      margin: 0 auto;
+      background-color: #ffffff;
+      & .create-account{
+        padding-top: 40px;
+        padding-right: 64px;
+        padding-bottom:40px;
+        padding-left: 64px;
+        text-align: center;
+        & p{
+          font-size: 14px;
+        }
+        & a{
+          display: block;
+          margin: 8px 0 0;
+          border: 1px solid #0099e8;
+          background: #0099e8;
+          color: #fff;
+          line-height: 40px;
+          text-decoration: none;
+          }
+      }
+      .sns-login{
+        padding: 32px, 64px;
+        border-top: 1px solid #eee;
+        #facebook{
+          background: #385185;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+
+.btn-sns{
+  position: absolute;
+    top: 50%;
+    left: 16px;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+}
+
+.btn-sns i{
+  position: absolute;
+  top: 50%;
+  left: 16px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
