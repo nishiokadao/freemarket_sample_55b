@@ -1,12 +1,38 @@
+@mixin main-font{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
 *{
   box-sizing: inherit;
   margin: 0;
   padding: 0;
+  @include main-font;
+}
+
+.input-def{
+  height: 28px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: #fff;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+.btn-def{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  -webkit-transition: all ease-out .3s;
+  transition: all ease-out .3s;
+  text-align: center;
 }
 
 .login-container{
   padding: 0 0 220px;
-  .login-header{
+  &__header{
     height: 128px;
     text-align: center;
     & h1{
@@ -25,14 +51,14 @@
       }
     }
   }
-  .login-main{
+  &__main{
     display: block;
-    & .login-panel{
+    &--login-panel{
       max-width: none;
       width: 456px;
       margin: 0 auto;
       background-color: #ffffff;
-      & .create-account{
+      &--create-account{
         padding-top: 40px;
         padding-right: 64px;
         padding-bottom:40px;
@@ -40,8 +66,12 @@
         text-align: center;
         & p{
           font-size: 14px;
+          height: 14px;
+          line-height: 14px;
+          color: rgb(51, 51, 51);
         }
         & a{
+          font-size: 14px;
           display: block;
           margin: 8px 0 0;
           border: 1px solid #0099e8;
@@ -51,7 +81,7 @@
           text-decoration: none;
           }
       }
-      .sns-login{
+      &--sns-login{
         padding-top: 32px;
         padding-right: 64px;
         padding-bottom:32px;
@@ -94,6 +124,82 @@
             margin: 0;
           }
         }
+        #google{
+          margin: 16px 0 0;
+          background: #fff url(https://www.mercari.com/jp/assets/img/common/common/google.svg)no-repeat 3px top;
+          border: #979797 solid 1px;
+          color: #333;
+        }
+      }
+    }
+    .login-container__main--login-panel--form{
+      padding: 24px 64px 32px;
+      &--input-email{
+        margin: 0;
+        .input-box__text{
+          margin: 0;
+          width: 100%;
+        }
+      }
+      &--input-pass{
+        margin: 24px 0 0;
+        .input-box__text{
+          margin: 0;
+          width: 100%;
+        }
+      }
+      &--input-box{
+        margin: 24px 0 0;
+        .recaptcha{
+          width: 304px;
+          height: 78px;
+          iframe{
+            vertical-align: middle;
+            height: 78px;
+          }  
+        }
+      }
+      .login-submit{
+        margin: 24px 0 0;
+        background: #ea352d;
+        border: 1px solid #ea352d;
+        color: #fff;
+      }
+      a{
+        color: #0099e8;
+        text-decoration: none;
+        display: block;
+        margin: 40px 0 0;
+      }
+    }
+  }
+  &__footer{
+    width: 456px;
+    height: 220px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    ul{
+      li{
+        display: inline-block;
+        font-size: 12px;
+        padding: 0;
+      }
+      a{
+        display: block;
+        color: #333;
+      }
+    }
+    .footer-logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      display: block;
+    }
+    p{
+      margin: 8px 0 0;
+      small{
+        font-size: 13px;
       }
     }
   }

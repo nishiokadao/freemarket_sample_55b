@@ -1,31 +1,32 @@
 .login-container
-  .login-header
+  .login-container__header
     %h1
       %a{href:"https://www.mercari.com/jp/"}
         %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"}
-  .login-main
-    .login-panel
-      .create-account
+  .login-container__main
+    .login-container__main--login-panel
+      .login-container__main--login-panel--create-account
         %p アカウントをお持ちでない方はこちら
         %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} 新規会員登録
-      .sns-login
-        %button#facebook.btn-default.btn-sns
+      .login-container__main--login-panel--sns-login
+        %button#facebook.btn-def.btn-sns
           %i.fab.fa-facebook-square
           Facebookでログイン
         %button#google.btn-default.btn-sns
           Googleでログイン
       =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-        .login-form
-          .form-group
-            =f.email_field :email, placeholder: "メールアドレス", class: "input-box"
-          .form-group
-            =f.password_field :password, placeholder: "パスワード", class: "input-box"
-          .form-group
+        .login-container__main--login-panel--form
+          .login-container__main--login-panel--form--input-email
+            =f.email_field :email, placeholder: "メールアドレス", class: "input-box__text input-def"
+          .login-container__main--login-panel--form--input-pass
+            =f.password_field :password, placeholder: "パスワード", class: "input-box__text input-def"
+          .login-container__main--login-panel--form--input-box
             .recaptcha{"data-sitekey": "6Ldrya8UAAAAAPT_OeZNFRcDngNJFCYuHZNKlVTE"}
-          %button.login-submit.btn-default ログイン
-          = f.submit class: "submit-btn"
+              %iframe{src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1563777128698&size=normal&cb=fp11vndmy16a"}
+          %button.login-submit.btn-def ログイン
+          %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           %a{href: "https://www.mercari.com/jp/password/reset/start/"}パスワードをお忘れの方
-  .login-footer
+  .login-container__footer
     %nav
       %ul.clearfix
         %li
@@ -34,7 +35,7 @@
           %a{href: "https://www.mercari.com/jp/tos/"}メルカリ利用規約
         %li
           %a{href: "https://www.mercari.com/jp/tokutei/"}特定商取引に関する表記
-    %a.single-footer{href: "https://www.mercari.com/jp/"}
+    %a.footer-logo{href: "https://www.mercari.com/jp/"}
       %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", :width => "80"}/
     %p
       %small © 2019 Mercari
