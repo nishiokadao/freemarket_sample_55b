@@ -10,6 +10,8 @@
 }
 
 .input-def{
+  margin: 0;
+  width: 294px;
   height: 28px;
   padding: 10px 16px 8px;
   border-radius: 4px;
@@ -21,14 +23,16 @@
 
 .btn-def{
   display: block;
-  width: 100%;
+  width: 326px;
   line-height: 48px;
   font-size: 14px;
-  border: 1px solid transparent;
-  -webkit-transition: all ease-out .3s;
-  transition: all ease-out .3s;
   text-align: center;
 }
+
+.btn-sns{
+  position: relative;
+}
+
 
 .login-container{
   padding: 0 0 220px;
@@ -38,6 +42,7 @@
     & h1{
       margin: 40px 0 0;
       display: inline-block;
+      height: 49px;
       & a{
         width: 185px;
         height: 49px;
@@ -87,41 +92,22 @@
         padding-bottom:32px;
         padding-left: 64px;
         border-top: 1px solid #eee;
-        .btn-sns{
-          position: relative;
-          top: 50%;
-          left: 16px;
-        //   -webkit-transform: translate(0, -50%);
-        //   transform: translate(0, -50%);
-        }
-        .btn-default{
-          display: block;
-          width: 100%;
-          line-height: 48px;
-          font-size: 14px;
-          // border: 1px solid transparent;
-          // -webkit-transition: all ease-out .3s;
-          // transition: all ease-out .3s;
-          // cursor: pointer;
-          text-align: center;
-          & i{
-            // position: absolute;
-            // top: 50%;
-            // left: 16px;
-            // -webkit-transform: translate(0, -50%);
-            // transform: translate(0, -50%);
-          }
-        }
         #facebook{
           background: #385185;
           color: #fff;
           margin: 0;
+          font-family: inherit;
+          font-size: 14px;
           .fab.fa-facebook-square{
-            font-size:  27px;
+            display: inline-block;
+            font-size: 30px;
             position: absolute;
-            top: 30%;
+            top: 20%;
             left: 16px;
             margin: 0;
+            -webkit-font-smoothing: antialiased;
+          }
+          p{
           }
         }
         #google{
@@ -137,25 +123,22 @@
       &--input-email{
         margin: 0;
         .input-box__text{
-          margin: 0;
-          width: 100%;
         }
       }
       &--input-pass{
         margin: 24px 0 0;
         .input-box__text{
-          margin: 0;
-          width: 100%;
         }
       }
       &--input-box{
         margin: 24px 0 0;
         .recaptcha{
-          width: 304px;
-          height: 78px;
+          width: 300px;
           iframe{
             vertical-align: middle;
-            height: 78px;
+            height: 77px;
+            border-width: 0;
+            border: 0.5px solid #d3d3d3;
           }  
         }
       }

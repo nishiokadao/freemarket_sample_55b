@@ -10,10 +10,10 @@
         %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} 新規会員登録
       .login-container__main--login-panel--sns-login
         %button#facebook.btn-def.btn-sns
-          %i.fab.fa-facebook-square
-          Facebookでログイン
-        %button#google.btn-default.btn-sns
-          Googleでログイン
+          %i.fab.fa-facebook-square 
+          %p Facebookでログイン
+        %button#google.btn-def.btn-sns  
+          %p Googleでログイン
       =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
         .login-container__main--login-panel--form
           .login-container__main--login-panel--form--input-email
