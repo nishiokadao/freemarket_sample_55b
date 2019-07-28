@@ -4,13 +4,13 @@
     ピックアップカテゴリー
   %section.items-box-container
     %h3.text-center
-      %a{href: "#"} レディース新着アイテム
+      = link_to"レディース新着アイテム",root_path
     .items-box-content
       - @products.each do |product|
         %section.items-box
-          %a{href: "#"}
+          = link_to root_path do
             %figure.items-box-photo
-              %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
+              =image_tag('dog.jpg',class:"img")
             .items-box-body
               %h3.items-box-name
                 = product.name
@@ -21,18 +21,17 @@
                   %i.far.fa-heart
                   = product.status
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      = link_to"すべての商品を見る",root_path
 
   %section.items-box-container
     %h3.text-center
-      %a{href: "#"} メンズ新着アイテム
+      = link_to"メンズ新着アイテム",root_path
     .items-box-content
       - @products.each do |product|
         %section.items-box
-          %a{href: "#"}
+          = link_to root_path do
             %figure.items-box-photo
-              %img{src: "https://pics.prcm.jp/4373c6a161538/76745479/jpeg/76745479_218x291.jpeg", class:"img"}
+              =image_tag('dog.jpg',class:"img")
             .items-box-body
               %h3.items-box-name
                 = product.name
@@ -43,21 +42,20 @@
                   %i.far.fa-heart
                   = product.status
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      = link_to"すべての商品を見る",root_path
 
 %section.pickup-container
   %h2.pickup-head
     ピックアップブランド
   %section.items-box-container
     %h3.text-center
-      %a{href: "#"} シャネル新着アイテム
+      = link_to"シャネル新着アイテム",root_path
     .items-box-content
       - @products.each do |product|
         %section.items-box
-          %a{href: "#"}
+          = link_to root_path do
             %figure.items-box-photo
-              %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
+              =image_tag('dog2.jpg',class:"img")
             .items-box-body
               %h3.items-box-name
                 = product.name
@@ -68,18 +66,17 @@
                   %i.far.fa-heart
                   = product.status
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      = link_to"すべての商品を見る",root_path
 
   %section.items-box-container
     %h3.text-center
-      %a{href: "#"} アディダス新着アイテム
+      = link_to"アディダス新着アイテム",root_path
     .items-box-content
       - @products.each do |product|
         %section.items-box
-          %a{href: "#"}
+          = link_to root_path do
             %figure.items-box-photo
-              %img{src: "https://image1.shopserve.jp/pecohug.co.jp/pic-labo/mamechiyo500x500.jpg", class:"img"}
+              =image_tag('dog2.jpg',class:"img")
             .items-box-body
               %h3.items-box-name
                 = product.name
@@ -90,5 +87,4 @@
                   %i.far.fa-heart
                   = product.status
     .view-all
-      %a{href: "#"}
-        すべての商品を見る
+      = link_to"すべての商品を見る",root_path
