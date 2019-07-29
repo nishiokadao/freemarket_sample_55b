@@ -1,42 +1,22 @@
-@mixin main-font{
-  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
-}
-
-body{
-  background-color: #f5f5f5;
-}
+@import "style";
 
 *{
+  -webkit-box-sizing: border-box;
   box-sizing: inherit;
   margin: 0;
   padding: 0;
   @include main-font;
 }
 
-.input-def{
-  margin: 0;
-  width: 294px;
-  height: 28px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
+html{
+  height: 100%;
 }
 
-.btn-def{
-  display: block;
-  width: 326px;
-  line-height: 48px;
-  font-size: 14px;
-  text-align: center;
+body{
+  background-color: $gray;
 }
 
-.btn-sns{
-  position: relative;
-}
-
+// ＊＊＊＊＊＊＊＊＊＊ ↓ ログイン ↓ ＊＊＊＊＊＊＊＊＊＊
 
 .container{
   padding: 0 0 220px;
@@ -85,7 +65,7 @@ body{
           margin: 8px 0 0;
           border: 1px solid #0099e8;
           background: #0099e8;
-          color: #fff;
+          color: $lit-gray;
           line-height: 40px;
           text-decoration: none;
           }
@@ -97,28 +77,10 @@ body{
         padding-left: 64px;
         border-top: 1px solid #eee;
         #facebook{
-          background: #385185;
-          color: #fff;
-          margin: 0;
-          font-family: inherit;
-          font-size: 14px;
-          .fab.fa-facebook-square{
-            display: inline-block;
-            font-size: 30px;
-            position: absolute;
-            top: 20%;
-            left: 16px;
-            margin: 0;
-            -webkit-font-smoothing: antialiased;
-          }
-          p{
-          }
+          @include facebook;
         }
         #google{
-          margin: 16px 0 0;
-          background: #fff url(https://www.mercari.com/jp/assets/img/common/common/google.svg)no-repeat 3px top;
-          border: #979797 solid 1px;
-          color: #333;
+          @include google;
         }
       }
     }
@@ -150,7 +112,7 @@ body{
         margin: 24px 0 0;
         background: #ea352d;
         border: 1px solid #ea352d;
-        color: #fff;
+        color: $lit-gray;
       }
       a{
         color: #0099e8;
@@ -187,6 +149,61 @@ body{
       margin: 8px 0 0;
       small{
         font-size: 13px;
+      }
+    }
+  }
+}
+
+// ＊＊＊＊＊＊＊＊＊＊ ↓ 新規登録分岐画面 ↓ ＊＊＊＊＊＊＊＊＊＊
+
+.container__main--section{
+  width: 700px;
+  margin: auto;
+  background-color: $lit-gray;
+  &--title{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 32px;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .select-form{
+    padding: 40px 40px 64px;
+    border-top: 1px solid $gray;
+    &__content{
+      max-width: 343px;
+      margin: 0 auto;
+      padding: 0;
+      .mail-btn{
+        @include btn-def;
+        height: 48px;
+        background-color: #ea352d;
+        color: $lit-gray;
+        position: relative;
+        .far.fa-envelope{
+          position: absolute;
+          top: 30%;
+          left: 16px;
+          font-size: 20px;
+          color: $lit-gray
+        }
+        p{
+          color: $lit-gray
+        }
+      }
+      #facebook{
+        @include btn-def;
+        @include facebook;
+        position: relative;
+
+        .fab.fa-facebook-square {
+          @include facebk-icon;
+        }
+      }
+      #google{
+        @include google;
+        @include btn-def;
+        border: #979797 solid 1px;
       }
     }
   }

@@ -1,22 +1,22 @@
-.login-container
-  .login-container__header
+.container
+  .container__header
     %h1
       %a{href:"https://www.mercari.com/jp/"}
         %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"}
-  .login-container__main
-    .login-container__main--section
-      %h2.section-title 新規会員登録
+  .container__main
+    .container__main--section
+      %h2.container__main--section--title 新規会員登録
       .select-form
-        .section-form__content
+        .select-form__content
           %a.btn-def.mail-btn{href: "https://www.mercari.com/jp/signup/registration/?after_save_callback=https://www.mercari.com/jp/"}
-          %i.far.fa-envelope
-          %p メールアドレスで登録
+            %i.far.fa-envelope
+            %p メールアドレスで登録する
           %button#facebook.btn-def.btn-sns
-          %i.fab.fa-facebook-square 
-          %p Facebookで登録
-        %button#google.btn-def.btn-sns  
-          %p Googleで登録
-  .login-container__footer
+            %i.fab.fa-facebook-square 
+            Facebookで登録する
+          %button#google.btn-def.btn-sns  
+            Googleで登録する
+  .container__footer
     %nav
       %ul.clearfix
         %li
