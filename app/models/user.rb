@@ -12,6 +12,9 @@ class User < ApplicationRecord
       user.name = auth.info.name
       user.email = auth.info.email
       user.password = Devise.friendly_token[0, 20]
+      user.prefecture = "おおさか"
+      user.address = "aaaa"
+      user.birth_date = "1111"
     end
   end
 end
