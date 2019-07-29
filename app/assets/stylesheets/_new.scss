@@ -1,6 +1,6 @@
 .new-content {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
-  padding: 0 0 220px;
+  // padding: 0 0 220px;
   background-color: #f5f5f5;
   color: #333;
 }
@@ -320,6 +320,37 @@
           opacity: 0.7;
         }
       }
+    }
+  }
+}
+// フッター部分
+.new-content__footer{
+  width: 456px;
+  height: 120px;
+  margin: 0 auto;
+  padding: 40px 0;
+  text-align: center;
+  ul{
+    li{
+      display: inline-block;
+      font-size: 12px;
+      padding: 0;
+    }
+    a{
+      display: block;
+      color: #333;
+    }
+  }
+  .footer-logo{
+    width: 80px;
+    height: 65px;
+    margin: 40px auto 0;
+    display: block;
+  }
+  p{
+    margin: 8px 0 0;
+    small{
+      font-size: 13px;
     }
   }
 }
