@@ -26,8 +26,4 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
-# /config/credentials.yml.enc
-
-# dotenv
-# TODO Comment out this rule if environment variables can be committed
-/.env
+.env
