@@ -2,7 +2,7 @@
   %header.new-content__header
     %h1
       = link_to "https://www.mercari.com/jp/" do
-        %img{src:"https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"}
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
   .new-content__main
     %section.new-content__main--sellbox
       %h2.sellbox-head
@@ -43,7 +43,7 @@
                 必須
             = f.text_area:text, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
         .sellbox-form__post.clearfix
-          %h3.sellbox-form__post--head
+          %h3.sellbox-form__post-head
             商品の詳細
           .sellbox-form__post--box
             .sellbox-form__post--group
@@ -65,9 +65,8 @@
                 %select
                   %option{value: ""} ---
         .sellbox-form__post.clearfix
-          %h3.sellbox-form__post--head
+          %h3.sellbox-form__post-head
             配送について
-            -# = link_to "" do
           .sellbox-form__post--box
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
@@ -97,9 +96,8 @@
                 %select
                   %option{value: ""} ---
         .sellbox-form__post.clearfix
-          %h3.sellbox-form__post--head
+          %h3.sellbox-form__post-head
             販売価格(300~9,999,999)
-            -# = link_to "" do
           .sellbox-form__post--box
             %ul.sellbox-form__post--box--price
               .price-group
@@ -159,12 +157,12 @@
           = link_to "https://www.mercari.com/jp/privacy/" do
             プライバシーポリシー
         %li
-          = link_to "https://www.mercari.com/jp/tos/" do 
+          = link_to "https://www.mercari.com/jp/tos/" do
             メルカリ利用規約
         %li
-          =link_to "https://www.mercari.com/jp/tokutei/" do 
+          =link_to "https://www.mercari.com/jp/tokutei/" do
             特定商取引に関する表記
-      %a.footer-logo{href: "https://www.mercari.com/jp/"}
-        %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", :width => "80"}/
+      = link_to "https://www.mercari.com/jp/", class:"footer-logo" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808",alt: "mercari", height: "65", width: "80"
       %p
         %small © 2019 Mercari
