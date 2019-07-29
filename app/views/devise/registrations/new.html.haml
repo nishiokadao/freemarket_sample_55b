@@ -1,0 +1,35 @@
+.container
+  .container__header
+    %h1
+      %a{href:"https://www.mercari.com/jp/"}
+        %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"}
+  .container__main
+    .container__main--section
+      %h2.container__main--section--title 新規会員登録
+      .select-form
+        .select-form__content
+          %a.btn-def.mail-btn{href: "https://www.mercari.com/jp/signup/registration/?after_save_callback=https://www.mercari.com/jp/"}
+            %i.far.fa-envelope
+            %p メールアドレスで登録する
+          %button#facebook.btn-def.btn-sns
+            %i.fab.fa-facebook-square
+            Facebookで登録する
+            %a{href: "https://www.facebook.com/"}
+          %button#google.btn-def.btn-sns  
+            Googleで登録する
+            %a
+            {href: "https://www.google.com/?hl=ja"}
+  .container__footer
+    %nav
+      %ul.clearfix
+        %li
+          %a{href: "https://www.mercari.com/jp/privacy/"}プライバシーポリシー
+        %li
+          %a{href: "https://www.mercari.com/jp/tos/"}メルカリ利用規約
+        %li
+          %a{href: "https://www.mercari.com/jp/tokutei/"}特定商取引に関する表記
+    %a.footer-logo{href: "https://www.mercari.com/jp/"}
+      %img{alt: "mercari", height: "65", src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", :width => "80"}/
+    %p
+      %small © 2019 Mercari
+
