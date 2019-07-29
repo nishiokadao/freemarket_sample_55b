@@ -1,0 +1,17 @@
+@mixin require($color: #fff, $size: 12px, $margin:0 0 0 8px, $padding:2px 4px, $border-radius:2px, $vertical-align:top) {
+  color: $color;
+  font-size: $size;
+  margin: $margin;
+  padding: $padding;
+  border-radius:$border-radius;
+  vertical-align: $vertical-align;
+}
+
+
+// background-color: #ea352d;
+//             margin: 0 0 0 8px;
+//             padding: 2px 4px;
+//             border-radius: 2px;
+//             color: #fff;
+//             font-size: 12px;
+//             vertical-align: top;

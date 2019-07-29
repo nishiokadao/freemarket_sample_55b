@@ -1,3 +1,5 @@
+@import "new-mixin";
+
 .new-content {
   font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
   // padding: 0 0 220px;
@@ -43,12 +45,7 @@
           font-weight: bold;
           &--require {
             background-color: #ea352d;
-            margin: 0 0 0 8px;
-            padding: 2px 4px;
-            border-radius: 2px;
-            color: #fff;
-            font-size: 12px;
-            vertical-align: top;
+            @include require();
           }
         }
         p {
@@ -109,12 +106,7 @@
             display: inline-block;
             &--require {
               background-color: #ea352d;
-              margin: 0 0 0 8px;
-              padding: 2px 4px;
-              border-radius: 2px;
-              color: #fff;
-              font-size: 12px;
-              vertical-align: top;
+              @include require();
             }
           }
             &--name {
@@ -211,12 +203,7 @@
                   display: inline-block;
                   &--require {
                     background-color: #ea352d;
-                    margin:0 0 0 8px;
-                    padding: 2px 4px;
-                    border-radius: 2px;
-                    color: #fff;
-                    font-size: 12px;
-                    vertical-align: top;
+                    @include require();
                   }
                 }
                 .price-group__box--input {
