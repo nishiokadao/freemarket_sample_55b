@@ -206,6 +206,10 @@ GEM
       rack (>= 1.6.2, < 3)
     omniauth-facebook (5.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-google-oauth2 (0.7.0)
+      jwt (>= 2.0)
+      omniauth (>= 1.1.1)
+      omniauth-oauth2 (>= 1.5)
     omniauth-oauth2 (1.6.0)
       oauth2 (~> 1.1)
       omniauth (~> 1.9)
@@ -343,6 +347,7 @@ DEPENDENCIES
   mini_magick
   mysql2 (>= 0.3.18, < 0.6.0)
   omniauth-facebook
+  omniauth-google-oauth2
   omniauth-rails_csrf_protection
   pry-rails
   puma (~> 3.11)
