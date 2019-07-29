@@ -71,16 +71,24 @@ body{
           }
       }
       &--sns-login{
+        height: 116px;
         padding-top: 32px;
         padding-right: 64px;
         padding-bottom:32px;
         padding-left: 64px;
         border-top: 1px solid #eee;
         #facebook{
+          @include btn-def;
           @include facebook;
+          position: relative;
+          .fab.fa-facebook-square {
+            @include facebk-icon;
+          }
         }
         #google{
           @include google;
+          @include btn-def;
+          border: #979797 solid 1px;
         }
       }
     }
@@ -89,11 +97,13 @@ body{
       &--input-email{
         margin: 0;
         .input-box__text{
+          @include input-def;
         }
       }
       &--input-pass{
         margin: 24px 0 0;
         .input-box__text{
+          @include input-def;
         }
       }
       &--input-box{
@@ -113,6 +123,7 @@ body{
         background: #ea352d;
         border: 1px solid #ea352d;
         color: $lit-gray;
+        @include btn-def;
       }
       a{
         color: #0099e8;
@@ -180,6 +191,7 @@ body{
         background-color: #ea352d;
         color: $lit-gray;
         position: relative;
+        border-radius: 4px;
         .far.fa-envelope{
           position: absolute;
           top: 30%;
@@ -195,7 +207,7 @@ body{
         @include btn-def;
         @include facebook;
         position: relative;
-
+        border-radius: 4px;
         .fab.fa-facebook-square {
           @include facebk-icon;
         }
@@ -204,6 +216,7 @@ body{
         @include google;
         @include btn-def;
         border: #979797 solid 1px;
+        border-radius: 4px;
       }
     }
   }
