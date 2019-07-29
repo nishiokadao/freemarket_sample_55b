@@ -1,0 +1,60 @@
+.defalt-container
+  = render 'index-header-list'
+  %nav.category-bar
+    %ul
+      %li
+        メルカリ　＞
+        %span
+          レディース
+  %section.item-box-container
+    .item-box-container__single-sontainer
+      %h1.item-name
+        わんちゃん
+      %p.item-word
+        testさんから出品されました。レディースの商品で、未定から2~3日で発送されます。
+      .item-main-content
+        .item-photo
+          =image_tag('dog.jpg',class:"product-img")
+        %table.item-detail-table
+          %tbody
+            %tr
+              %th
+                出品者
+              %td
+                = link_to"test",root_path
+                .evaluation
+                  .item-user-ratings
+                    %i.far.fa-smile
+                    %span
+                      500
+                  .item-user-ratings
+                    %i.far.fa-meh
+                    %span
+                      100
+                  .item-user-ratings
+                    %i.icon-bad
+                    %span
+                      3
+              %th
+                カテゴリー
+              %td
+                %i.fas.fa-chevron-right
+                = link_to"レディース",root_path
+                
+
+                
+      .item-price-box
+        ¥３５００
+      = link_to'購入画面に進む', root_path ,class:"item-buy-btn"
+      .item-description
+        %p.item-description__inner
+          新品タグ付きです。
+          ご不明点あればコメントしてください。
+      .item-button-container
+        .item-button-left
+        .item-button-right
+  .item-detail-message
+  %ul.nav-item-link-prev-next
+  .item-social-media-box
+  .items-in-user-profile
+= render 'index-footer'

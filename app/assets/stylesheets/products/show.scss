@@ -1,0 +1,78 @@
+.defalt-container{
+  background-color: #F5F5F5;
+  .category-bar{
+    background-color: white;
+    position: relative;
+    border-top: 1px solid #eee;
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+    ul{
+    overflow: visible;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    width: 1020px;
+    min-width: 1068px;
+    font-size: 14px;
+      span{
+        font-weight: bold;
+      }
+    }
+  }
+  .item-box-container{
+    width: 620px;
+    height: 1000px;
+    padding: 24px 40px 40px;
+    margin: 40px 370px;
+    background-color: white;
+    &__single-sontainer{
+      .item-name{
+        font-size: 24px;
+        text-align: center;
+        word-wrap: break-word;
+        line-height: 1.4;
+        font-weight: bold;
+        }
+      .item-word{
+        margin: 8px 0 0;
+        font-size: 14px;
+        color: #888;
+        line-height: 1.5;
+
+      }
+      .item-main-content{
+        margin: 16px 0 0;
+        .item-photo{
+          .product-img{
+            width: 300px;
+            height: 300px;
+          }
+        }
+      }
+      .item-price-box{
+
+      }
+      .item-description{
+        &__inner{
+
+        }
+      }
+      .item-button-container{
+        .item-button-left{
+
+        }
+        .item-button-right{
+
+        }
+      }
+    }
+  }
+  .item-detail-message{
+  }
+  .nav-item-link-prev-next{    
+  }
+  .item-social-media-box{
+  }
+  .items-in-user-profile{
+
+  }
+}
