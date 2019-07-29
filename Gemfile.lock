@@ -50,13 +50,7 @@ GEM
       io-like (~> 0.3.0)
     arel (9.0.0)
     bcrypt (3.1.13)
-    better_errors (2.5.1)
-      coderay (>= 1.0.0)
-      erubi (>= 1.0.0)
-      rack (>= 0.9.0)
     bindex (0.8.1)
-    binding_of_caller (0.8.0)
-      debug_inspector (>= 0.0.1)
     bootsnap (1.4.4)
       msgpack (~> 1.0)
     builder (3.2.3)
@@ -103,7 +97,6 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
     crass (1.0.4)
-    debug_inspector (0.0.3)
     devise (4.6.2)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -114,6 +107,8 @@ GEM
     dotenv-rails (2.7.4)
       dotenv (= 2.7.4)
       railties (>= 3.2, < 6.1)
+    erb2haml (0.1.5)
+      html2haml
     erubi (1.8.0)
     erubis (2.7.0)
     excon (0.65.0)
@@ -325,8 +320,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  better_errors
-  binding_of_caller
   bootsnap (>= 1.1.0)
   byebug
   capistrano
@@ -340,6 +333,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise
   dotenv-rails
+  erb2haml
   fog-aws
   font-awesome-rails
   haml-rails
