@@ -10,9 +10,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #共通の設定
   def callback_from(provider)
     provider = provider.to_s
-    @user = User.find_for_oauth(request.env['omniauth.auth'])
+    @user = User.from_omniauth(request.env['omniauth.auth'])
 
-    if @users.persisted?
+    if @user.persisted?
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
       sign_in_and_redirect @user, event: :authentication
     else
