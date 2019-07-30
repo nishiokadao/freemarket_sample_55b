@@ -9,10 +9,10 @@
         .user-icon__numbers
           .user-icon__numbers--rate-number
             評価
-            %spn 0
+            %span 0
           .user-icon__numbers--products-count
             出品数
-            %spn 0
+            %span 0
     %section.container__main-content--notice-todo
       %ul.tabs-title
         %li.notice
@@ -25,6 +25,7 @@
               やることリスト
       .tab-content
         %ul.tab-notification
+          -# あとで使う
           -# %li
           -#   =link_to 'https://www.mercari.com/jp/' do {class: "tab-links"}
           -#     %figure
@@ -36,6 +37,7 @@
           -#         %span  15時間前
           -#     %i.fas.fa-chevron-right
           %li.no-notification 現在、やることリストはありません
+          -# あとで使う
           -# %li.all-notifications 一覧を見る
         -# %ul.tab-todo
         -#   %li
@@ -62,11 +64,12 @@
             =link_to 'https://www.mercari.com/jp/' do
               過去の取引
       .tab-content
-        -# %ul.tab-trade__now
-        -#   %li.no-tarade 取引中の商品がありません
-        -#   %li.all-trades 一覧を見る
+        -# あとで使う
+          -# %ul.tab-trade__now
+          -#   %li.no-tarade 取引中の商品がありません
+          -#   %li.all-trades 一覧を見る
         %ul.tab-tade__past
-          %li.no-trade 過去に取引した商品がありません
+          %li.no-trade  過去に取引した商品がありません
           -# %li.all-trades 一覧を見る
   .contaier__side-menu
 = render 'shared/footer'
