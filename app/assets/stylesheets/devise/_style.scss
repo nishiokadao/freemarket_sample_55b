@@ -53,6 +53,38 @@ $txt-color-bk: #333;
   color: #333;
 }
 
+@mixin not-found{
+  padding: 160px 0 60px;
+  background: url('https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?24257587');
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+@mixin active-tab{
+  border-top: 2px solid #ea352d;
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@mixin not-active-tab{
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+}
+
 
 
 
