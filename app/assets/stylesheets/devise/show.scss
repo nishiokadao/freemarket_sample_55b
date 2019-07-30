@@ -138,6 +138,7 @@
       background: $lit-gray;
       padding: 0;
       &-head{
+        font-weight: bold;
         padding: 0 16px;
         background: #fafafa;
         font-size: 16px;
@@ -197,8 +198,5 @@
         }
       }
     }
-  }
-  .container__side-menu{
-    height: 100vh;
   }
 }
