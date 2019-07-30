@@ -1,8 +1,68 @@
 = render 'shared/header'
-.container{
-  .container__main-content{
 
-  }
-  .side-menu{
-  }
-}
+.container
+  .container__main-content
+    %section.container__main-content--user-icon
+      =link_to "https://www.mercari.com/jp/"
+        %figure.container__main-content--user-icon-image
+          = image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png', height: '60', width: '60'
+          %h2.container__main-content--user-icon-name あああああああ
+        .container__main-content--user-icon-numbers
+          .rate-number 評価
+            %span 100
+          .prouducts-count 出品数
+            %span 100
+    %section.container__main-content--notice-todo
+      %ul.tabs-title
+        %li
+          %h3
+            =link_to 'https://www.mercari.com/jp/' お知らせ
+            %span.nav-numb.hidden-num 100
+        %li
+          %h3
+            =link_to 'https://www.mercari.com/jp/' やることリスト
+      .tab-content
+        %ul.tab-notification
+          %li
+            =link_to 'https://www.mercari.com/jp/' clss: "tab-links"
+              %figure
+                = img_tag "//static.mercdn.net/images/mercari_profile.png" class: "small-mercari"
+              .tab-body
+                .tab-body__text 事務局から個別メッセージ「Googleログイン通知」
+                %time 
+                  %i.far.fa-clock
+                  %span  15時間前
+              %i.fas.fa-chevron-right
+          %li.no-notification 現在、やることリストはありません
+          %li.all-notifications 一覧を見る
+        %ul.tab-todo
+          %li
+            =link_to 'https://www.mercari.com/jp/' clss: "tab-links"
+              %figure
+                = img_tag "//static.mercdn.net/images/mercari_profile.png" class: "small-mercari"
+              .tab-body
+                .tab-body__text 事務局から個別メッセージ「Googleログイン通知」
+                %time 
+                  %i.far.fa-clock
+                  %span  15時間前
+              %i.fas.fa-chevron-right
+          %li.no-notification 現在、お知らせはありません
+          %li.all-notifications 一覧を見る
+    %section.container__main-content--trade
+      %h2.container__main-content--trade-head 購入した商品
+      %ul.tabs-title
+        %li
+          %h3
+            =link_to 'https://www.mercari.com/jp/' 取引中
+        %li
+          %h3
+            =link_to 'https://www.mercari.com/jp/' 過去の取引
+      .tab-content
+        %ul.tab-trade__now
+          %li.no-tarade 取引中の商品がありません
+          %li.all-trades 一覧を見る
+        %ul.tab-tade__past
+          %li.no-trade 過去に取引した商品がありません
+          %li.all-trades 一覧を見る
+  .side-menu
+
