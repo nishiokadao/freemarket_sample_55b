@@ -1,0 +1,63 @@
+.buy-content
+  %header.buy-content__header
+    %h1
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
+  .buy-content__main
+    %section.buy-content__main--box
+      %h2.buy-content__main--box--head
+        購入内容の確認
+      %section.buy-content__main--box--item
+        .item-inner
+          .item-inner__image
+            = image_tag "https://static.mercdn.net/thumb/photos/m60327513337_1.jpg?1564447955", class:"item-inner__image--photo"
+          %p.item-inner__name
+            Aesop 巾着
+          = form_for "", html:{class: "item-inner__form"} do |f|
+            %p.price
+              ¥700
+              %span.price__fee
+                送料込み
+            %ul.have-point
+              %li.have-point__parent
+                .have-point__parent--toggle
+                  ポイントはありません
+            %ul.price-table
+              %li.price-table__bold
+                .price-table__bold--left
+                  支払い金額
+                .price-table__bold--right
+                  %span.price-table__bold--right--pay
+                    ¥ 700
+            -# = f.hidden_fieldがここにいっぱい入ります！
+            = f.submit "購入する", class:"buy-btn"
+            -# = f.hidden_field
+      %section.buy-content__main--box--user
+        .user-inner
+          %h3
+            配送先
+          %address.user-inner__text
+            〒000000
+            %br
+            大阪府◯市◯区
+            %br
+            オオタ
+          = link_to "#", class:"user-inner__edit" do
+            %span
+              変更する
+            %i.fas.fa-angle-right
+      %section.buy-content__main--box--user
+        .user-inner
+          %h3
+            支払い方法
+          %address.user-inner__text
+            ******************111
+            %br
+            01/25
+          = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2787198863", alt:"master-card", class:"user-inner__card"
+          = link_to "#", class:"user-inner__edit" do
+            %span
+              変更する
+            %i.fas.fa-angle-right
+  .buy-content__footer
+    =render "footer"
