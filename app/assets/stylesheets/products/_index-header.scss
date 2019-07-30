@@ -277,3 +277,25 @@
   }
 }
 
+.index__head-nav{
+  position: relative;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul{
+    overflow: visible;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    li{
+      display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+    .index__head-nav--title{
+      color: #333;
+    }
+    }
+  }
+}

@@ -27,6 +27,15 @@
               = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
             %li
               = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
-
-
-
+%nav.index__head-nav
+  %ul
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          メルカリ
+          %i.fas.fa-chevron-right
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          マイページ
+          %i.fas.fa-chevron-right
