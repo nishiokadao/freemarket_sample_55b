@@ -1,124 +1,58 @@
--# %link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
--# %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
--# %script{:type => "text/javascript"}
+%link{:href => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+%script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
+%script{:type => "text/javascript"}
 
 
--# .index-container
--#   .index-header
--#     .index-header-inner
--#       .index-header-top
--#         %h1
--#           = link_to "https://www.mercari.com/jp/" do
--#             %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372"}
--#         %form.index-header-form
--#           %input.index-input-default{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
--#           %i.index-search-icon.fas.fa-search
--#       .index-header-navigation-box.clearfix
--#         %nav.index-left-content
--#           %ul.header-navigation
--#             %li
--#               %h2
--#                 = link_to "https://www.mercari.com/jp/category/", {class: "header-navigation-list-parent"} do
--#                   %i.fas.fa-bars
--#                   %span カテゴリーから探す
--#             %li
--#               %h2
--#                 = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
--#                   %i.fas.fa-tags
--#                   %span ブランドから探す
--#         .index-right-content
--#           %ul.header-login-navigation
--#             %li
--#               = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
--#             %li
--#               = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
--#             %li
--#               = link_to 'ログアウト', destroy_user_session_path, method: :delete
--#   .index-slider-container
--#     .slider-contents
--#       .slider-content-camp
--#         %img{src: "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}
--#       .slider-content
--#         .slider-content-box
--#           .slider-main-visual
--#             .slider-main-visual-contents
--#               %h2
--#                 スマホでかんたん
--#                 %br
--#                 フリマアプリ
--#               %p 
--#                 メルカリはスマホカメラからすぐに出品できる
--#                 %br
--#                 購入時も安心な独自システムのアプリです
--#               .top-main-visual-btn.clearfix
--#                 = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", {class: "left-left"} do
--#                   %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"}
--#                 = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", {class: "left-left"} do
--#                   %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"}    
--#             %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "index-slider-image"}
-
-%nav.user-navigation
-  %ul
-    %li
-      = link_to "/", itemprop: "url" do
-        %span メルカリ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span マイページ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span 本人情報の登録
-.user-edit-container
-  .user-edit-container__right-content
-    %section.mypage-identification
-      %h2.mypage-identification__mypage-text 本人情報の登録
-      = form_for "/", html:{class: "edit-form-contents", method: :post} do |f|
-        .edit-form-contents__warning-message
-          %p
-            お客さまの本人情報をご登録ください
-            %br
-            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
-          %p.edit-form-contents__warning-message--text-right
-            = link_to "/jp/help_center/article/495/" do
-              本人確認書類のアップロードについて
-              %i.fas.fa-angle-right
-        .edit-form-contents__form-group
-          %label お名前
-          %p 小林泰宣
-        .edit-form-contents__form-group
-          %label お名前カナ
-          %p コバヤシ ヤスノリ
-        .edit-form-contents__form-group
-          %label{for: "birthday"} 生年月日
-          %p 1994/02/14
-        .edit-form-contents__form-group
-          %label{for: "zip-code"} 郵便番号
-          %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '5510001', name: 'zip-code', placeholder: '例）1234567', class: 'edit-form-contents__form-group--input-default'
-        .edit-form-contents__form-group
-          %label{for: "prefecture"} 都道府県
-          %span.edit-form-contents__form-group--form-arbitrary 任意
-          .edit-form-contents__form-group--select-wrap
-            %i.edit-form-contents__form-group--select-wrap--icon-arrow-bottom.fas.fa-angle-down.fa-2x
-            %select.edit-form-contents__form-group--select-wrap--select-default{name: 'prefecture'}
-              %option 大阪府
-        .edit-form-contents__form-group
-          %label{for: "prefecture"} 市町村
-          %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '大阪市大正区', name: 'city', placehorder: '例) 横浜市緑区', class: 'edit-form-contents__form-group--input-default'
-        .edit-form-contents__form-group
-          %label{for: "address1_label"} 番地
-          %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '三軒家西1-25-6', name: 'address1', placeholder: '例) 青山1−1−1', class: 'edit-form-contents__form-group--input-default'
-        .edit-form-contents__form-group  
-          %label{for: "address2_label"} 建物名
-          %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: 'アドバンス大阪ソルテ210', name: 'address2', placeholder: '例) 柳ビル103', class: 'edit-form-contents__form-group--input-default'
-        = f.submit type: 'submit', value: '登録する', class: 'edit-form-contents__btn-default btn-red'
-        .edit-form-contents__form-group-text-right
-          %p
-            = link_to "/jp/help_center/article/423/" do
-              本人情報の登録について
-              %i.fas.fa-angle-right
+.index-container
+  .index-header
+    .index-header-inner
+      .index-header-top
+        %h1
+          = link_to "https://www.mercari.com/jp/" do
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372"}
+        %form.index-header-form
+          %input.index-input-default{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
+          %i.index-search-icon.fas.fa-search
+      .index-header-navigation-box.clearfix
+        %nav.index-left-content
+          %ul.header-navigation
+            %li
+              %h2
+                = link_to "https://www.mercari.com/jp/category/", {class: "header-navigation-list-parent"} do
+                  %i.fas.fa-bars
+                  %span カテゴリーから探す
+            %li
+              %h2
+                = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
+                  %i.fas.fa-tags
+                  %span ブランドから探す
+        .index-right-content
+          %ul.header-login-navigation
+            %li
+              = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
+            %li
+              = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
+            %li
+              = link_to 'ログアウト', destroy_user_session_path, method: :delete
+  .index-slider-container
+    .slider-contents
+      .slider-content-camp
+        %img{src: "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}
+      .slider-content
+        .slider-content-box
+          .slider-main-visual
+            .slider-main-visual-contents
+              %h2
+                スマホでかんたん
+                %br
+                フリマアプリ
+              %p 
+                メルカリはスマホカメラからすぐに出品できる
+                %br
+                購入時も安心な独自システムのアプリです
+              .top-main-visual-btn.clearfix
+                = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", {class: "left-left"} do
+                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"}
+                = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", {class: "left-left"} do
+                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"}    
+            %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "index-slider-image"}
