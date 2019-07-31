@@ -30,20 +30,10 @@ nav {
         font-size: 9px;
         color: #888;
       }
+      li:last-child {
+        font-weight: 600;
+      }
     }
-    li:last-child {
-      font-weight: 600;
-    }
-  }
-  ::after {
-    display: block;
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 24px;
-    height: 100%;
-    background: linear-gradient(to right, rgba(255,255,255,0), #fff);
   }
 }
 
@@ -52,13 +42,14 @@ nav {
   width: 1020px;
   padding: 0 0 40px;
   overflow: scroll;
+  &__left-content {
+    float: left;
+    width: 280px;
+    margin: 0 40px 0 0;
+  }
   &__right-content:first-child {
     margin: 0;
     float: right;
-  }
-  a {
-    color: #0099e8;
-    text-decoration: none;
   }
     .mypage-identification {
       background-color: #fff;
@@ -90,6 +81,10 @@ nav {
           &--text-right {
             text-align: right;
             color: #0099e8;
+            a {
+              color: #0099e8;
+              text-decoration: none;
+            }
           }
         }
         &__form-group {
@@ -160,6 +155,10 @@ nav {
         &__form-group-text-right {
           margin: 40px 0 0;
           text-align: right;
+          a {
+            color: #0099e8;
+            text-decoration: none;
+          }
         }
         label {
           font-weight: 600;
