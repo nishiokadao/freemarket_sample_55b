@@ -1,0 +1,65 @@
+%nav.user-navigation
+  %ul
+    %li
+      = link_to "/", itemprop: "url" do
+        %span メルカリ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span マイページ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span 本人情報の登録
+.user-edit-container
+  .user-edit-container__right-content
+    %section.mypage-identification
+      %h2.mypage-identification__mypage-text 本人情報の登録
+      = form_for "/", html:{class: "edit-form-contents", method: :post} do |f|
+        .edit-form-contents__warning-message
+          %p
+            お客さまの本人情報をご登録ください
+            %br
+            登録されたお名前・生年月日を変更する場合、本人確認書類の提出が必要になります。
+          %p.edit-form-contents__warning-message--text-right
+            = link_to "/jp/help_center/article/495/" do
+              本人確認書類のアップロードについて
+              %i.fas.fa-angle-right
+        .edit-form-contents__form-group
+          %label お名前
+          %p 小林泰宣
+        .edit-form-contents__form-group
+          %label お名前カナ
+          %p コバヤシ ヤスノリ
+        .edit-form-contents__form-group
+          %label{for: "birthday"} 生年月日
+          %p 1994/02/14
+        .edit-form-contents__form-group
+          %label{for: "zip-code"} 郵便番号
+          %span.edit-form-contents__form-group--form-arbitrary 任意
+          = f.text_field :"", value: '5510001', name: 'zip-code', placeholder: '例）1234567', class: 'edit-form-contents__form-group--input-default'
+        .edit-form-contents__form-group
+          %label{for: "prefecture"} 都道府県
+          %span.edit-form-contents__form-group--form-arbitrary 任意
+          .edit-form-contents__form-group--select-wrap
+            %i.edit-form-contents__form-group--select-wrap--icon-arrow-bottom.fas.fa-angle-down.fa-2x
+            %select.edit-form-contents__form-group--select-wrap--select-default{name: 'prefecture'}
+              %option 大阪府
+        .edit-form-contents__form-group
+          %label{for: "prefecture"} 市町村
+          %span.edit-form-contents__form-group--form-arbitrary 任意
+          = f.text_field :"", value: '大阪市大正区', name: 'city', placehorder: '例) 横浜市緑区', class: 'edit-form-contents__form-group--input-default'
+        .edit-form-contents__form-group
+          %label{for: "address1_label"} 番地
+          %span.edit-form-contents__form-group--form-arbitrary 任意
+          = f.text_field :"", value: '三軒家西1-25-6', name: 'address1', placeholder: '例) 青山1−1−1', class: 'edit-form-contents__form-group--input-default'
+        .edit-form-contents__form-group  
+          %label{for: "address2_label"} 建物名
+          %span.edit-form-contents__form-group--form-arbitrary 任意
+          = f.text_field :"", value: 'アドバンス大阪ソルテ210', name: 'address2', placeholder: '例) 柳ビル103', class: 'edit-form-contents__form-group--input-default'
+        = f.submit type: 'submit', value: '登録する', class: 'edit-form-contents__btn-default btn-red'
+        .edit-form-contents__form-group-text-right
+          %p
+            = link_to "/jp/help_center/article/423/" do
+              本人情報の登録について
+              %i.fas.fa-angle-right
