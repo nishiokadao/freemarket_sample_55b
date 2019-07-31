@@ -1,13 +1,14 @@
 .container
   .container__header
     %h1
-      %a{href:"https://www.mercari.com/jp/"}
-        %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"}
+      =link_to "https://www.mercari.com/jp/" do
+        =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"
   .container__main
     .container__main--login-panel
       .container__main--login-panel--create-account
         %p アカウントをお持ちでない方はこちら
-        %a{href: "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F"} 新規会員登録
+        =link_to "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F" do
+          %p.create-account__title 新規会員登録
       .container__main--login-panel--sns-login
         %button#facebook.btn-def.btn-sns
           %i.fab.fa-facebook-square 
@@ -25,17 +26,21 @@
               %iframe{src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1563777128698&size=normal&cb=fp11vndmy16a"}
           %button.submit-btn.btn-def ログイン
           %input{type: "hidden", value: "https://www.mercari.com/jp/"}
-          %a{href: "https://www.mercari.com/jp/password/reset/start/"}パスワードをお忘れの方
+          =link_to "https://www.mercari.com/jp/password/reset/start/" do
+            %p パスワードをお忘れの方
   .container__footer
     %nav
       %ul.clearfix
         %li
-          =linkt_to "https://www.mercari.com/jp/privacy/"プライバシーポリシー do
+          =link_to 'https://www.mercari.com/jp/privacy/' do
+            %p プライバシーポリシー
         %li
-          =linkt_to "https://www.mercari.com/jp/tos/"メルカリ利用規約 do
+          =link_to 'https://www.mercari.com/jp/tos/' do
+            %p メルカリ利用規約
         %li
-          =linkt_to "https://www.mercari.com/jp/tokutei/"特定商取引に関する表記
-    =linkt_to "https://www.mercari.com/jp/" {class: "footer-logo"} do
-      =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808" {alt: "mercari", height: "65", src: , :width => "80"}
+          =link_to 'https://www.mercari.com/jp/tokutei/' do
+            %p 特定商取引に関する表記
+    =link_to "https://www.mercari.com/jp/", {class: "footer-logo"} do
+      =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", {alt: "mercari", height: "65", width: "80"}
     %p
       %small © 2019 Mercari
