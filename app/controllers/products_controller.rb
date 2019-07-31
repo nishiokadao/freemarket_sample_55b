@@ -4,5 +4,14 @@ class ProductsController < ApplicationController
   end
 
   def show
+    
+  end
+  
+  def new
+    
+  end
+
+  def buy
+  
   end
 end

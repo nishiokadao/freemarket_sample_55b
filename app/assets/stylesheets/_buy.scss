@@ -1,0 +1,194 @@
+.buy-content {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+
+  &__header {
+    height: 128px;
+    text-align: center;
+    h1 {
+      margin: 40px 0 0;
+      display: inline-block;
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+    }
+  }
+  &__main {
+    display: block;
+    &--box{
+      width: 700px;
+      margin: 0 auto;
+      background-color: #fff;
+      &--head {
+        padding: 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight: bold;
+      }
+      &--item {
+        margin: 0;
+        text-align: center;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        .item-inner {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 auto;
+          max-width: 320px;
+          &__image {
+            font-size:22px;
+            &--photo {
+              width: 64px;
+              height: 84px;
+            }
+          }
+          &__name {
+            width: calc(100% - 80px);
+            margin: 0 0 0 16px;
+            text-align: left;
+            font-size: 16px;
+            line-height: 1.5;
+            font-weight: 600;
+          }
+          &__form {
+            width: 100%;
+            .price {
+              margin: 8px 0 0;
+              font-size:22px;
+              line-height: 1.5;
+              font-weight: 600;
+              &__fee {
+                margin: 0 0 0 8px;
+                font-size: 14px;
+                font-weight: 400;
+                display: inline-block;
+              }
+            }
+            .have-point {
+              background-color: #ccc;
+              margin: 16px 0 0;
+              list-style: none;
+                &__parent--toggle {
+                  cursor: default;
+                  padding: 11px 16px;
+                  border: 1px solid #ccc;
+                  position: relative;
+                }
+            }
+            .price-table {
+              display: table;
+              border-collapse: collapse;
+              width: 100%;
+              &__bold {
+                border: 0;
+                font-size: 18px;
+                font-weight: 600;
+                &--left {
+                  float: left;
+                  text-align: left;
+                  display: table-cell;
+                  padding: 16px 0;
+                }
+                &--right {
+                  float: right;
+                  text-align: right;
+                  display: table-cell;
+                  padding: 16px 0;
+                  &--pay {
+                    font-size: 25px;
+                  }
+                }
+              }
+            }
+            .buy-btn {
+              margin: 8px 0 0;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              text-align: center;
+              font-weight: 600;
+            }
+          }
+        }
+      }
+      &--user {
+        margin: 40px 0 0;
+        padding: 24px 12.5% 0;
+        border-top: 1px solid #f5f5f5;
+        .user-inner {
+          max-width: 320px;
+          margin: 0 auto;
+          h3 {
+            margin: 0;
+            font-size: 14px;
+            font-weight: bold;
+          }
+          &__text {
+            display: block;
+            margin: 8px 0 0;
+            font-size: 14px;
+            line-height: 1.4;
+            font-style: normal;
+          }
+          &__card {
+            height: 20px;
+            width: 34px;
+            vertical-align: middle;
+          }
+          &__edit {
+            display: block;
+            text-align: right;
+            color: #0099e8;
+            text-decoration: none;
+            span {
+              vertical-align: middle;
+            }
+            .fas.fa-angle-right {
+              vertical-align: middle;
+            }
+          }
+        }
+      }
+      &--user:last-of-type{
+        padding: 24px 12.5% 40px;
+      }
+    }
+  }
+
+  &__footer {
+    width: 456px;
+    height: 120px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    ul{
+      li{
+        display: inline-block;
+        font-size: 12px;
+        padding: 0;
+      } 
+      a{
+        display: block;
+        color: #333;
+      }
+    }
+    .footer-logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      display: block;
+    }
+    p{
+      margin: 8px 0 0;
+      small{
+        font-size: 13px;
+      }
+    }
+  }
+}

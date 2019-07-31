@@ -1,0 +1,168 @@
+.new-content
+  %header.new-content__header
+    %h1
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
+  .new-content__main
+    %section.new-content__main--sellbox
+      %h2.sellbox-head
+        商品の情報を入力
+      = form_for "", html:{class: "sellbox-form"} do |f|
+        .sellbox-form__upload
+          %h3.sellbox-form__upload--head
+            出品画像
+            %span.sellbox-form__upload--head--require
+              必須
+          %p
+            最大10枚までアップロードできます
+          .sellbox-form__upload--drop
+            .sellbox-form__upload--drop--box
+              .sellbox-form__upload--drop--box--image
+                %ul
+            .sellbox-form__upload--drop--post  
+              -# :javascript
+              -#   $("sellbox-form__upload--drop--post").on('click', function(){
+              -#     $('#image').click();
+              -#   });
+              = f.file_field:image, class:"sellbox-form__upload--drop--post--image", id:"image"
+              %pre.sellbox-form__upload--drop--post--text
+                ドラッグアンドドロップ
+                またはクリックしてファイルをダウンロード
+        .sellbox-form__post
+          .sellbox-form__post--group
+            %lavel.sellbox-form__post--group--head
+              商品名
+              %span.sellbox-form__post--group--head--require
+                必須
+            %div
+              = f.text_field:name, placeholder:"商品名(必須40字まで)", class:"sellbox-form__post--group--name"
+          .sellbox-form__post--group-sec
+            %lavel.sellbox-form__post--group--head
+              商品の説明
+              %span.sellbox-form__post--group--head--require
+                必須
+            = f.text_area:text, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+        .sellbox-form__post.clearfix
+          %h3.sellbox-form__post-head
+            商品の詳細
+          .sellbox-form__post--box
+            .sellbox-form__post--group
+              %lavel.sellbox-form__post--group--head
+                カテゴリー
+                %span.sellbox-form__post--group--head--require
+                  必須
+              .select-box
+                %i.fas.fa-angle-down
+                %select.select-default
+                  %option{value: ""} ---
+            .sellbox-form__post--group
+              %lavel.sellbox-form__post--group--head
+                商品の状態
+                %span.sellbox-form__post--group--head--require
+                  必須
+              .select-box
+                %i.fas.fa-angle-down
+                %select
+                  %option{value: ""} ---
+        .sellbox-form__post.clearfix
+          %h3.sellbox-form__post-head
+            配送について
+          .sellbox-form__post--box
+            .sellbox-form__post--group
+              %lavel.sellbox-form__post--group--head
+                配送料の負担
+                %span.sellbox-form__post--group--head--require
+                  必須
+              .select-box
+                %i.fas.fa-angle-down
+                %select.select-default
+                  %option{value: ""} ---
+            .sellbox-form__post--group
+              %lavel.sellbox-form__post--group--head
+                発送元の地域
+                %span.sellbox-form__post--group--head--require
+                  必須
+              .select-box
+                %i.fas.fa-angle-down
+                %select
+                  %option{value: ""} ---
+            .sellbox-form__post--group
+              %lavel.sellbox-form__post--group--head
+                発送までの日数
+                %span.sellbox-form__post--group--head--require
+                  必須
+              .select-box
+                %i.fas.fa-angle-down
+                %select
+                  %option{value: ""} ---
+        .sellbox-form__post.clearfix
+          %h3.sellbox-form__post-head
+            販売価格(300~9,999,999)
+          .sellbox-form__post--box
+            %ul.sellbox-form__post--box--price
+              .price-group
+                .price-group__box
+                  %lavel.price-group__box--head
+                    価格
+                    %span.price-group__box--head--require
+                      必須
+                  .price-group__box--input
+                    .price-group__box--input--yen
+                      &yen;
+                    .price-group__box--input--value
+                      = f.text_field:text, class:"value-def", placeholder:"例) 300"
+              %li.price-group__box.clearfix
+                .price-group__box--left
+                  販売手数料(10%)            
+                .price-group__box--right
+                  &minus;
+              %li.price-group__box--bold
+                .price-group__box--bold--left
+                  販売利益
+                .price-group__box--bold--right
+                  &minus;
+        .sellbox-form__btn
+          %div
+            %p
+              = link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_items/", class:"btn-link" do
+                禁止されているされている出品
+              %span 
+                &#12289;
+              = link_to "https://www.mercari.com/jp/help_center/getting_started/prohibited_conduct/", class:"btn-link" do
+                行為
+              %span
+                を必ずご確認ください。
+            %p
+              %span
+                またブランド品でシリアルナンバー等がある場合はご記載ください。
+              = link_to "https://www.mercari.com/jp/help_center/getting_started/counterfeit_goods/", class:"btn-link" do
+                偽ブランドの販売
+              %span
+                は犯罪であり処罰される可能性があります。
+            %p
+              %span
+                また出品をもちまして
+              = link_to "https://www.mercari.com/jp/seller_terms/", class:"btn-link" do
+                加盟店規約
+              %span
+                に同意したことになります。
+          = f.submit "出品する", class:"btn-red"
+          .btn-gry
+            = link_to "#",class:"btn-gry__link" do
+              もどる
+  .new-content__footer
+    %nav
+      %ul.clearfix
+        %li
+          = link_to "https://www.mercari.com/jp/privacy/" do
+            プライバシーポリシー
+        %li
+          = link_to "https://www.mercari.com/jp/tos/" do
+            メルカリ利用規約
+        %li
+          =link_to "https://www.mercari.com/jp/tokutei/" do
+            特定商取引に関する表記
+      = link_to "https://www.mercari.com/jp/", class:"footer-logo" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808",alt: "mercari", height: "65", width: "80"
+      %p
+        %small © 2019 Mercari
