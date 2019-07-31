@@ -21,3 +21,26 @@
                 = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
                   %i.fas.fa-tags
                   %span ブランドから探す
+        .index-right-content
+          %ul.user-nav
+            %li.user-nav__like
+              =link_to "#", class:"user-nav__like--link" do
+                %i.far.fa-heart
+                %span
+                  いいね!一覧
+            %li.user-nav__bell
+              =link_to "#", class:"user-nav__bell--link" do
+                %i.far.fa-bell
+                %span
+                  お知らせ
+            %li.user-nav__task
+              =link_to "#", class:"user-nav__task--link" do
+                %i.fas.fa-check
+                %span
+                  やることリスト
+            %li.user-nav__mypage
+              =link_to "#", class:"user-nav__mypage--link" do
+                .user-nav__mypage--link--image
+                  = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32", class:"face"
+                %span
+                  マイページ

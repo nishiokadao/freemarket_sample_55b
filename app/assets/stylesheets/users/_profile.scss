@@ -1,0 +1,108 @@
+.index__head-nav{
+  position: relative;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul{
+    overflow: visible;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    li{
+      display: inline-block;
+      font-size: 14px;
+      line-height: 1.2;
+      .index__head-nav--title{
+        color: #333;
+      }
+    }
+  }
+}
+.profile-main.clearfix {
+  margin: 40px auto 0;
+  width: 1020px;
+  display: flex;
+  .pro-content {
+    float: right;
+    width: 700px;
+    &__box {
+      margin: 0;
+      background-color: #fff;
+      &--head {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: bold;
+      }
+      &--form {
+        display: block;
+        .profile-icon {
+          padding: 72px 16px 24px;
+          background: url("https://www.mercari.com/jp/assets/img/mypage/user-bg.jpg?24257587");
+          background-repeat: no-repeat;
+          background-size: cover;
+          text-align: center;
+          font-size: 0;
+          figure {
+            display: inline-block;
+            overflow: hidden;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            vertical-align: middle;
+            &__image {
+              vertical-align: middle;
+            }
+          }
+          &__name {
+            width: 220px;
+            margin: 0 0 0 8px;
+            vertical-align: middle;
+            height: 48px;
+            padding: 10px 16px 8px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            background: #fff;
+            line-height: 1.5;
+            font-size: 16px;
+          }
+        }
+        .profile-box {
+          padding: 40px 16px;
+          &__text {
+            min-height: 216px;
+            display: block;
+            width: 96%;
+            max-width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background: #fff;
+            font-size: 16px;
+            line-height: 1.5;
+            border-radius: 0;
+            outline: 0;
+            -webkit-appearance: none;
+            resize: vertical;
+          }
+          &__btn {
+            margin: 16px 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            transition: all ease-out .3s;
+            cursor: pointer;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
