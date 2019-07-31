@@ -1,3 +1,32 @@
+.index-container
+  .index-header
+    .index-header-inner
+      .index-header-top
+        %h1
+          = link_to "https://www.mercari.com/jp/" do
+            =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372"
+        %form.index-header-form
+          %input.index-input-default{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
+          %i.index-search-icon.fas.fa-search
+      .index-header-navigation-box.clearfix
+        %nav.index-left-content
+          %ul.header-navigation
+            %li
+              %h2
+                = link_to "https://www.mercari.com/jp/category/", {class: "header-navigation-list-parent"} do
+                  %i.fas.fa-bars
+                  %span カテゴリーから探す
+            %li
+              %h2
+                = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
+                  %i.fas.fa-tags
+                  %span ブランドから探す
+        .index-right-content
+          %ul.header-login-navigation
+            %li
+              = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
+            %li
+              = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
 %nav.user-navigation
   %ul
     %li
@@ -37,7 +66,7 @@
         .edit-form-contents__form-group
           %label{for: "zip-code"} 郵便番号
           %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '5510001', name: 'zip-code', placeholder: '例）1234567', class: 'edit-form-contents__form-group--input-default'
+          = f.text_field :name, name: 'zip-code', placeholder: '例）1234567', class: 'edit-form-contents__form-group--input-default'
         .edit-form-contents__form-group
           %label{for: "prefecture"} 都道府県
           %span.edit-form-contents__form-group--form-arbitrary 任意
@@ -48,18 +77,20 @@
         .edit-form-contents__form-group
           %label{for: "prefecture"} 市町村
           %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '大阪市大正区', name: 'city', placehorder: '例) 横浜市緑区', class: 'edit-form-contents__form-group--input-default'
+          = f.text_field :"", value: '', name: 'city', placehorder: '例) 横浜市緑区', class: 'edit-form-contents__form-group--input-default'
         .edit-form-contents__form-group
           %label{for: "address1_label"} 番地
           %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: '三軒家西1-25-6', name: 'address1', placeholder: '例) 青山1−1−1', class: 'edit-form-contents__form-group--input-default'
+          = f.text_field :"", value: '', name: 'address1', placeholder: '例) 青山1−1−1', class: 'edit-form-contents__form-group--input-default'
         .edit-form-contents__form-group  
           %label{for: "address2_label"} 建物名
           %span.edit-form-contents__form-group--form-arbitrary 任意
-          = f.text_field :"", value: 'アドバンス大阪ソルテ210', name: 'address2', placeholder: '例) 柳ビル103', class: 'edit-form-contents__form-group--input-default'
+          = f.text_field :"", value: '', name: 'address2', placeholder: '例) 柳ビル103', class: 'edit-form-contents__form-group--input-default'
         = f.submit type: 'submit', value: '登録する', class: 'edit-form-contents__btn-default btn-red'
         .edit-form-contents__form-group-text-right
           %p
             = link_to "/jp/help_center/article/423/" do
               本人情報の登録について
               %i.fas.fa-angle-right
+  = render 'shared/side-bar'
+= render 'shared/footer'
