@@ -1,0 +1,93 @@
+@import "style";
+
+.reg-container{
+  padding: 0 0 220px;
+  &__header{
+    height: 128px;
+    text-align: center;
+    & h1{
+      margin: 40px 0 0;
+      display: inline-block;
+      height: 49px;
+      & a{
+        width: 185px;
+        height: 49px;
+        line-height: 49px;
+        display: inline-block;
+        margin: 0 8px 0 0;
+        & img{
+          width: 185px;
+          height: 49px;
+        }
+      }
+    }
+  }
+    .sign-up__bar{
+      padding: 40px 0 0 44px;
+      border: 0;
+      display: inline-block;
+      vertical-align: top;
+      &--box{
+        list-style: none;
+        margin: 0;
+        & li{
+          margin: 0 40px 0 0;
+          min-width: 60px;
+          height: 32px;
+          position: relative;
+          z-index: 1;
+          display: inline-block;
+          font-size: 12px;
+          color: #888;
+          .bar-status{
+            width: 12px;
+            height: 12px;
+            margin: 8px auto 0;
+            background: #ccc;
+            border-radius: 50%;
+            &:before{
+              @include status-def;
+              right: 50%;
+            }
+            &:after{
+              @include status-def;
+            }
+          }
+        }
+        & li:last-child{
+          margin: 0;
+        }
+      }
+    }
+    &__footer{
+      width: 456px;
+      height: 220px;
+      margin: 0 auto;
+      padding: 40px 0;
+      text-align: center;
+      ul{
+        li{
+          display: inline-block;
+          font-size: 12px;
+          padding: 0;
+        }
+        a{
+          display: block;
+          color: #333;
+        }
+      }  
+    .footer-logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      display: block;
+    }
+    p{
+      margin: 8px 0 0;
+      small{
+        font-size: 13px;
+      }
+    }
+  }
+}
+

@@ -85,6 +85,16 @@ $txt-color-bk: #333;
   font-weight: bold;
 }
 
+@mixin status-def{
+  position: absolute;
+  bottom: -1px;
+  z-index: -1;
+  display: block;
+  content: '';
+  width: 100%;
+  height: 2px;
+  background: #ccc;
+}
 
 
 
