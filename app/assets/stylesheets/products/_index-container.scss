@@ -3,6 +3,7 @@
   padding: 40px 0;
   height: 100%;
   width: 100%;
+  color: #333;
   .pickup-head{
     font-size: 28px;
     font-weight: bold;
@@ -54,6 +55,7 @@
             }
           }
           .items-box-body{
+            color: #333;
             position: absolute;
             bottom: 0;
             left: 0;
@@ -77,6 +79,9 @@
               .like{
                 display: inline-block; 
                 float: right;
+                i.far.fa-heart{
+                  color: #ccc;
+                }
               }
             }
           }

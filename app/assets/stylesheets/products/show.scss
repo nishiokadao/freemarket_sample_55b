@@ -1,5 +1,7 @@
 .defalt-container{
   background-color: #F5F5F5;
+  height: 100%;
+  color: #333;
   .category-bar{
     background-color: white;
     position: relative;
@@ -62,13 +64,26 @@
                 font-weight: 400;
               }
               td{
-                padding: 8px;
+                padding: 10px;
                 a{
                   color: #0099e8;
                 }
                 .evaluation{
                   .item-user-ratings{
                     display: inline-block;
+                    font-size: 14px;
+                    i.fas.fa-laugh{
+                      color: #ef5185;
+                      font-size: 17px;
+                    }
+                    i.fas.fa-meh{
+                      color: #fba933;
+                      font-size: 17px;
+                    }
+                    i.fas.fa-frown{
+                      color: #6ab5d8;
+                      font-size: 17px;
+                    }
                   }
                 }
               }
@@ -159,9 +174,15 @@
     font-size: 14px;
     .nav-item-link-prev{
       float: left;
+      a{
+        color: #0099e8;
+      }
     }
     .nav-item-link-next{
       float: right;
+      a{
+        color: #0099e8;
+      }
     }
   }
   .item-social-media-box{
@@ -191,7 +212,81 @@
     }
   }
   .items-in-user-profile{
-
+    height: 100%;
+    width: 700px;
+    margin: 0 auto;
+    .items-box-container.items-in-user-profile{
+      margin-bottom: 40px;
+      .items-box-head{
+        margin: 24px 0px 0px;
+        font-size: 22px;
+        a{
+          color: #0099e8;
+          font-weight: bold;
+        }
+      }
+      .items-box-content__clearfix{
+        margin-bottom: 10px;
+        width: 700px;
+        height: 720px;
+        width: auto;
+        .items-box{
+          margin: 0 8px 8px 0;
+          background-color: white;
+          width: 220px;
+          height: 330px;
+          position: relative;
+          display: inline-block;
+          a{
+            color: black;
+            .items-box-photo{
+              overflow: hidden;
+              .other_img{
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 220px;
+                height: 220px;
+  
+              }
+            }
+            .items-box-body{
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              z-index: 1;
+              height: 78px;
+              width: 181px;
+              padding: 16px;
+              .items-box-name{
+                overflow: hidden;
+                font-weight: 400;
+                text-align: left;
+                line-height: 100%;
+                height: 3em;
+              }
+              .items-box-num{
+                .items-box-price{
+                  font-weight: bold;
+                  display: inline-block; 
+                  font-size: 17px;
+                }
+                .like{
+                  display: inline-block; 
+                  float: right;
+                  i.far.fa-heart{
+                    color: #ccc;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
