@@ -127,4 +127,14 @@
         = link_to root_path do
           %i.fab.fa-pinterest-square
   .items-in-user-profile
+    %section.items-in-user-profile 
+      %h2.items-box-head
+        = link_to root_path do
+          testさんのその他の出品
+      .items-box-content__clearfix
+        %section.items-box
+          = link_to root_path do
+            %figure.items-box-photo
+              = img_tag 
+
 = render 'index-footer'
