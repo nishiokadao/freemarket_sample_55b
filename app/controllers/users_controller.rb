@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
-  def signout
-  end  
-   
-  def show 
+
+  def show
+  end
+
+  def first
+
   end
 
   def detail
@@ -13,6 +15,10 @@ class UsersController < ApplicationController
 
   def credit
   end
+  
+  def signout
+  end 
+  
 end
 
 
