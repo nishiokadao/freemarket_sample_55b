@@ -18,7 +18,7 @@ body{
 
 // ＊＊＊＊＊＊＊＊＊＊ ログイン ＊＊＊＊＊＊＊＊＊＊
 
-.container{
+.login-container{
   padding: 0 0 220px;
   &__header{
     height: 128px;
@@ -95,7 +95,7 @@ body{
         }
       }
     }
-    .container__main--login-panel--form{
+    .login-container__main--login-panel--form{
       padding: 24px 64px 32px;
       &--input-email{
         margin: 0;

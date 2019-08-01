@@ -1,34 +1,34 @@
-.container
-  .container__header
+.login-container
+  .login-container__header
     %h1
       =link_to "https://www.mercari.com/jp/" do
         =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808"
-  .container__main
-    .container__main--login-panel
-      .container__main--login-panel--create-account
+  .login-container__main
+    .login-container__main--login-panel
+      .login-container__main--login-panel--create-account
         %p アカウントをお持ちでない方はこちら
         =link_to "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F" do
           %p.create-account__title 新規会員登録
-      .container__main--login-panel--sns-login
+      .login-container__main--login-panel--sns-login
         %button#facebook.btn-def.btn-sns
           %i.fab.fa-facebook-square 
           Facebookでログイン
         %button#google.btn-def.btn-sns  
           Googleでログイン
       =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
-        .container__main--login-panel--form
-          .container__main--login-panel--form--input-email
+        .login-container__main--login-panel--form
+          .login-container__main--login-panel--form--input-email
             =f.email_field :email, placeholder: "メールアドレス", class: "input-box__text input-def"
-          .container__main--login-panel--form--input-pass
+          .login-container__main--login-panel--form--input-pass
             =f.password_field :password, placeholder: "パスワード", class: "input-box__text input-def"
-          .container__main--login-panel--form--input-box
+          .login-container__main--login-panel--form--input-box
             .recaptcha{"data-sitekey": "6Ldrya8UAAAAAPT_OeZNFRcDngNJFCYuHZNKlVTE"}
               %iframe{src: "https://www.google.com/recaptcha/api2/anchor?ar=1&k=6LfZGCYTAAAAAHoK-s7Lg5OdYg5Fq4susvALmZoc&co=aHR0cHM6Ly93d3cubWVyY2FyaS5jb206NDQz&hl=ja&v=v1563777128698&size=normal&cb=fp11vndmy16a"}
           %button.submit-btn.btn-def ログイン
           %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           =link_to "https://www.mercari.com/jp/password/reset/start/" do
             %p パスワードをお忘れの方
-  .container__footer
+  .login-container__footer
     %nav
       %ul.clearfix
         %li
