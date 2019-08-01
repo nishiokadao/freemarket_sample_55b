@@ -16,9 +16,9 @@ body{
   background-color: $gray;
 }
 
-// ＊＊＊＊＊＊＊＊＊＊ ↓ ログイン ↓ ＊＊＊＊＊＊＊＊＊＊
+// ＊＊＊＊＊＊＊＊＊＊ ログイン ＊＊＊＊＊＊＊＊＊＊
 
-.container{
+.login-container{
   padding: 0 0 220px;
   &__header{
     height: 128px;
@@ -60,15 +60,18 @@ body{
           color: rgb(51, 51, 51);
         }
         & a{
-          font-size: 14px;
-          display: block;
-          margin: 8px 0 0;
-          border: 1px solid #0099e8;
-          background: #0099e8;
-          color: $lit-gray;
-          line-height: 40px;
-          text-decoration: none;
+          .create-account__title{
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+            display: block;
+            margin: 8px 0 0;
+            border: 1px solid #0099e8;
+            background: #0099e8;
+            color: $lit-gray;
+            text-decoration: none;
           }
+        }
       }
       &--sns-login{
         height: 116px;
@@ -98,7 +101,7 @@ body{
         }
       }
     }
-    .container__main--login-panel--form{
+    .login-container__main--login-panel--form{
       padding: 24px 64px 32px;
       &--input-email{
         margin: 0;
@@ -171,7 +174,7 @@ body{
   }
 }
 
-// ＊＊＊＊＊＊＊＊＊＊ ↓ 新規登録分岐画面 ↓ ＊＊＊＊＊＊＊＊＊＊
+// ＊＊＊＊＊＊＊＊＊＊ 新規登録分岐画面 ＊＊＊＊＊＊＊＊＊＊
 
 .container__main--section{
   width: 700px;

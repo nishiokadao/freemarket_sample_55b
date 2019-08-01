@@ -85,6 +85,18 @@ $txt-color-bk: #333;
   font-weight: bold;
 }
 
+@mixin status-def{
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+@mixin active-bar{
+  font-weight: 600;
+  color: #ea352d;
+}
 
 
 
