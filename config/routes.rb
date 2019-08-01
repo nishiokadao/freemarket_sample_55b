@@ -3,9 +3,7 @@ Rails.application.routes.draw do
   
   root 'products#index'
 
-  get 'products/show' => 'products#show'
-
-  resources :products, only: [:index, :new] do
+  resources :products, only: [:index, :new, :show] do
     collection do
       get 'buy'
     end
