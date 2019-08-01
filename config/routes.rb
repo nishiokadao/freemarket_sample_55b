@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show] do
     collection do
       get 'signout'
+      get 'detail'
+      get 'profile'
+      get 'credit'
     end
   end
 end
