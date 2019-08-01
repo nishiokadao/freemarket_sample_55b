@@ -1,0 +1,104 @@
+$gray: #f5f5f5;
+$lit-gray: #fff;
+$txt-color-bk: #333;
+
+
+@mixin main-font{
+  font-family: "Source Sans Pro", Helvetica, Arial, 游ゴシック体, YuGothic, メイリオ, Meiryo, sans-serif;
+}
+
+@mixin input-def{
+  margin: 0;
+  width: 294px;
+  height: 28px;
+  padding: 10px 16px 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background: $lit-gray;
+  line-height: 1.5;
+  font-size: 16px;
+}
+
+@mixin btn-def{
+  display: block;
+  width: 100%;
+  line-height: 48px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  text-align: center;
+}
+
+@mixin facebook{
+  background: #385185;
+  color: $lit-gray;
+  margin: 16px 0 0;
+  font-family: inherit;
+  font-size: 14px;
+  color: $lit-gray
+}
+@mixin facebk-icon{
+  display: inline-block;
+  font-size: 30px;
+  position: absolute;
+  top: 20%;
+  left: 16px;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin google{
+  margin: 16px 0 0;
+  background: $lit-gray url(https://www.mercari.com/jp/assets/img/common/common/google.svg)no-repeat 3px top;
+  border: #979797 solid 1px;
+  color: #333;
+}
+
+@mixin not-found{
+  padding: 160px 0 60px;
+  background: url('https://www.mercari.com/jp/assets/img/common/common/logo-gray-icon.svg?24257587');
+  background-repeat: no-repeat;
+  background-position: center 40px;
+  background-size: 78px 85px;
+  text-align: center;
+  font-size: 16px;
+  color: #ccc;
+  font-weight: bold;
+}
+
+@mixin active-tab{
+  border-top: 2px solid #ea352d;
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+@mixin not-active-tab{
+  position: relative;
+  display: block;
+  color: #333;
+  font-size: 16px;
+  line-height: 72px;
+  font-weight: bold;
+}
+
+@mixin status-def{
+  width: 12px;
+  height: 12px;
+  margin: 8px auto 0;
+  background-color: #ccc;
+  border-radius: 50%;
+}
+
+@mixin active-bar{
+  font-weight: 600;
+  color: #ea352d;
+}
+
+
+
+
+

@@ -1,0 +1,78 @@
+= render 'users/indexheader'
+.show-container
+  .show-container__main
+    = render 'users/mypage_side_nav'
+    .show-container__main--content
+      %section.show-container__main--content--user-icon
+        =link_to "https://www.mercari.com/jp/" do
+          %figure.user-icon__avater
+            = image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png'
+          %h2.user-icon__avater--name 名前
+          .user-icon__numbers
+            .user-icon__numbers--rate-number
+              評価
+              %span 0
+            .user-icon__numbers--products-count
+              出品数
+              %span 0
+      %section.show-container__main--content--notice-todo
+        %ul.tabs-title
+          %li.notice
+            %h3 
+              =link_to 'https://www.mercari.com/jp/' do
+                お知らせ
+          %li.todo
+            %h3
+              =link_to 'https://www.mercari.com/jp/' do
+                やることリスト
+        .tab-content
+          %ul.tab-notification
+            -# あとで使う
+            -# %li
+            -#   =link_to 'https://www.mercari.com/jp/' do {class: "tab-links"}
+            -#     %figure
+            -#       = image_tag '//static.mercdn.net/images/mercari_profile.png', class: "small-mercari"
+            -#     .tab-body
+            -#       .tab-body__text 事務局から個別メッセージ「Googleログイン通知」
+            -#       %time 
+            -#         %i.far.fa-clock
+            -#         %span  15時間前
+            -#     %i.fas.fa-chevron-right
+            %li.no-notification 現在、やることリストはありません
+            -# あとで使う
+            -# %li.all-notifications 一覧を見る
+          -# %ul.tab-todo
+          -#   %li
+          -#     =link_to 'https://www.mercari.com/jp/' do {class: "tab-links"}
+          -#       %figure
+          -#         = image_tag '//static.mercdn.net/images/mercari_profile.png', class: "small-mercari"
+          -#       .tab-body
+          -#         .tab-body__text 事務局から個別メッセージ「Googleログイン通知」
+          -#         %time 
+          -#           %i.far.fa-clock
+          -#           %span  15時間前
+          -#       %i.fas.fa-chevron-right
+          -#   %li.no-notification 現在、お知らせはありません
+          -#   %li.all-notifications 一覧を見る
+      %section.show-container__main--content--trade
+        %h2.show-container__main--content--trade-head 購入した商品
+        %ul.tabs-title
+          %li.trade-now
+            %h3
+              =link_to 'https://www.mercari.com/jp/' do
+                取引中
+          %li.trade-past
+            %h3
+              =link_to 'https://www.mercari.com/jp/' do
+                過去の取引
+        .tab-content
+          -# あとで使う
+            -# %ul.tab-trade__now
+            -#   %li.no-tarade 取引中の商品がありません
+            -#   %li.all-trades 一覧を見る
+          %ul.tab-tade__past
+            %li.no-trade  過去に取引した商品がありません
+            -# %li.all-trades 一覧を見る
+= render 'shared/footer'
+
+
