@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :users, only: [:show, :new] do
     collection do
+      get 'signout'
       get 'first'
       get 'detail'
       get 'profile'

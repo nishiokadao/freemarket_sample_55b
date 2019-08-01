@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def first
+
   end
 
   def detail
@@ -14,6 +15,10 @@ class UsersController < ApplicationController
 
   def credit
   end
+  
+  def signout
+  end 
+  
 end
 
 
