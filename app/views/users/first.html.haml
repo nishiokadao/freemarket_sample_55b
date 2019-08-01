@@ -81,16 +81,18 @@
           .input-group
             %p.info-messase「次へ進む」のボタンを押すことにより
             =link_to 'https://www.mercari.com/jp/tos_list/' do
-              %p.info-message 利用規約
-            %p.info-message に同意したものとみなします
+              利用規約
+            %p.info-message 
+              に同意したものとみなします
           .input-group
             %button.submit-btn.btn-def 次へ進む
             %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           .input-group.right-info
             %p.info-message
               =link_to 'https://www.mercari.com/jp/help_center/article/423/' do
-                %p.info-message 本人情報の登録について
-                %i.fas.fa-chevron-right
+                %p.info-message  
+                  本人情報の登録について
+                  %i.fas.fa-chevron-right
   .reg-container__footer
     %nav
       %ul.clearfix

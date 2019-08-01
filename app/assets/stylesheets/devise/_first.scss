@@ -164,6 +164,11 @@
               }
             }
             button.submit-btn.btn-def{
+              border: 1px solid #ea352d;
+              background: #ea352d;
+              width: 100%;
+              line-height: 48px;
+              color: #fff;
             }
             input{
             }
@@ -171,6 +176,8 @@
           .right-info{
             .info-message{
               p.info-message{
+                span{
+
               }
               i.fas.fa-chevron-right{
               }
@@ -178,6 +185,7 @@
           }
         }
       }
+    }
     }
   }
         // & li:last-child{
