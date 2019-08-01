@@ -1,0 +1,38 @@
+.user-side-navigation {
+  display: block;
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
+  &__list {
+    li {
+      display: list-item;
+      text-align: match-parent;
+      list-style: none;
+      border-top: 1px solid #eee;
+      li:first-child {
+        margin: 0;
+      }
+    }
+    &--item {
+      position: relative;
+      display: block;
+      padding: 16px;
+      background: #fff;
+      font-size: 14px;
+      color: #333;
+    }
+    .fa-angle-right {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      color: #ccc;
+      transform: translate(0, -50%);
+      transition: all ease-out .2s;
+    }
+  }
+  &__head {
+    margin: 40px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,33 @@
+= render 'users/indexheader'
+%nav.index__head-nav
+  %ul
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          メルカリ
+          %i.fas.fa-chevron-right
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          マイページ
+          %i.fas.fa-chevron-right
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          プロフィール
+          %i.fas.fa-chevron-right
+.profile-main.clearfix
+  = render 'users/mypage_side_nav'
+  .pro-content
+    %section.pro-content__box
+      %h2.pro-content__box--head
+        プロフィール
+      = form_for "", html:{class: "pro-content__box--form"} do |f|
+        .profile-icon
+          %figure
+            = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", class:"profile-icon__image", width:"60", heght:"60"
+          = f.text_field:name, placeholder:"例)AYA★セール中", class:"profile-icon__name"
+        .profile-box
+          = f.text_area:text, class:"profile-box__text", placeholder: "例）こんにちは☆ご覧いただきありがとうございます！かわいいものやきれいめオフィスカジュアル中心に出品しています。服のサイズは主に9号です。気持ちよくお取引できるよう心がけていますので、商品や発送方法などご質問がありましたらお気軽にどうぞ♪"
+          = f.submit "変更する", class:"profile-box__btn"
+= render 'users/indexfooter'
