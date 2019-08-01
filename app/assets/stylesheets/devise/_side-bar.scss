@@ -1,5 +1,8 @@
 .user-side-navigation {
   display: block;
+  float: left;
+  width: 280px;
+  margin: 0 40px 0 0;
   &__list {
     li {
       display: list-item;
