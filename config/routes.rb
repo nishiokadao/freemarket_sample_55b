@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   root 'products#index'
   resources :users, only: [:show] do
     collection do
+      get 'detail'
       get 'profile'
     end
   end
