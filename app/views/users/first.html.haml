@@ -24,55 +24,56 @@
     .reg-container__main--content
       %h2.reg-container__main--content-title 会員情報入力
       =form_for("") do |f|
-        .reg-container__main--content--input
-          .input-group
-            %label ニックネーム
-            %span.red-box 必須
-            =f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "input-def"
-          .input-group
-            %label メールアドレス
-            %span.red-box 必須
-            =f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-def"
-          .input-group
-            %label パスワード
-            %span.red-box 必須
-            =f.password_field :password, placeholder: "6文字以上", class: "input-def"
-          .input-group
-            %label パスワード(確認)
-            %span.red-box 必須
-            =f.password_field :password, placeholder: "6文字以上", class: "input-def"
-          .input-group
-            %h3 本人確認
-            %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-          .input-group
-            .label-titile
-              %label お名前(全角)
+        .reg-container__main--content-title--input
+          .input-groups
+            .input-group
+              %label ニックネーム
               %span.red-box 必須
-            =f.text_field :name, placeholder: "例) 山田", class: "input-def half-form"
-            =f.text_field :name, placeholder: "例) 彩", class: "input-def half-form"
-          .input-group
-            .label-titile
-              %label お名前カナ(全角)
+              =f.text_field :nickname, placeholder: "例）メルカリ太郎", class: "input-def"
+            .input-group
+              %label メールアドレス
               %span.red-box 必須
-            =f.text_field :name, placeholder: "例) ヤマダ", class: "input-def half-form"
-            =f.text_field :name, placeholder: "例) アヤ", class: "input-def half-form"
-          .input-group
-            %label 生年月日
-            %span.red-box 必須
-            .date-select
-              %i.fas.fa-chevron-down
-              =f.date_select :birth_date, class: "select-def"
-              %span 年
-            .date-select
-              %i.fas.fa-chevron-down
-              =f.date_select :birth_date, class: "select-def"
-              %span 月
-            .date-select
-              %i.fas.fa-chevron-down
-              =f.date_select :birth_date, class: "select-def"
-              %span 日
-          %p.onfo-message 
-            ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+              =f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-def"
+            .input-group
+              %label パスワード
+              %span.red-box 必須
+              =f.password_field :password, placeholder: "6文字以上", class: "input-def"
+            .input-group
+              %label パスワード(確認)
+              %span.red-box 必須
+              =f.password_field :password, placeholder: "6文字以上", class: "input-def"
+            .input-group
+              %h3 本人確認
+              %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+            .input-group
+              .label-titile
+                %label お名前(全角)
+                %span.red-box 必須
+              =f.text_field :name, placeholder: "例) 山田", class: "input-def half-form"
+              =f.text_field :name, placeholder: "例) 彩", class: "input-def half-form"
+            .input-group
+              .label-titile
+                %label お名前カナ(全角)
+                %span.red-box 必須
+              =f.text_field :name, placeholder: "例) ヤマダ", class: "input-def half-form"
+              =f.text_field :name, placeholder: "例) アヤ", class: "input-def half-form"
+            .input-group
+              %label 生年月日
+              %span.red-box 必須
+              .date-select
+                %i.fas.fa-chevron-down
+                =f.date_select :birth_date, class: "select-def"
+                %span 年
+              .date-select
+                %i.fas.fa-chevron-down
+                =f.date_select :birth_date, class: "select-def"
+                %span 月
+              .date-select
+                %i.fas.fa-chevron-down
+                =f.date_select :birth_date, class: "select-def"
+                %span 日
+            %p.onfo-message 
+              ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .reg-container__main--content--input
           .input-group
             .recaptcha{"data-sitekey": "6Ldrya8UAAAAAPT_OeZNFRcDngNJFCYuHZNKlVTE"}
@@ -83,7 +84,7 @@
               %p.info-message 利用規約
             %p.info-message に同意したものとみなします
           .input-group
-            %button.submit-btn.btn-def ログイン
+            %button.submit-btn.btn-def 次へ進む
             %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           .input-group.right-info
             %p.info-message
