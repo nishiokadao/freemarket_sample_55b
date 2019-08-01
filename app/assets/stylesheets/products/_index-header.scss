@@ -1,5 +1,4 @@
 * {
-  // border-style: solid;
   background-repeat: no-repeat;
   padding: 0;
   margin: 0;
@@ -119,6 +118,100 @@
 
 .index-right-content {
   float: right;
+}
+// マイページ部分の追加部分
+.user-nav {
+  display: flex;
+  list-style: none;
+  font-size: 0;
+  &__like {
+    padding: 0 14px;
+    padding-left: 0;
+    cursor: pointer;
+    &--link {
+      display: block;
+      height: 44px;
+      line-height: 32px;
+      font-size: 0;
+      color: #333;
+      .far.fa-heart{
+        font-size: 18px;
+        color:#ccc;
+        vertical-align: middle;
+      }
+      span {
+        margin-left: 10px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__bell {
+    padding: 0 14px;
+    &--link {
+      display: block;
+      height: 44px;
+      line-height: 32px;
+      font-size: 0;
+      color: #333;
+      .far.fa-bell {
+        font-size:20px;
+        color: #ccc;
+        vertical-align: middle;
+      }
+      span {
+        margin-left: 10px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__task {
+    padding: 0 14px;
+    &--link {
+      display: block;
+      height: 44px;
+      line-height: 32px;
+      font-size: 0;
+      color: #333;
+      .fas.fa-check {
+        font-size: 16px;
+        color: #ccc;
+        vertical-align: middle;
+
+      }
+      span {
+        margin-left: 10px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
+  &__mypage {
+    padding: 0 14px;
+    &--link {
+      display: block;
+      height: 44px;
+      line-height: 32px;
+      font-size: 0;
+      color: #333;
+      text-decoration: none;
+      &--image {
+        display: inline-block;
+        text-align: center;
+        vertical-align: middle;
+        .face {
+          border-radius: 50%;
+          vertical-align: bottom;
+        }
+      }
+      span {
+        margin-left: 10px;
+        font-size: 14px;
+        vertical-align: middle;
+      }
+    }
+  }
 }
 
 .header-login-navigation {
@@ -277,3 +370,25 @@
   }
 }
 
+.index__head-nav{
+  position: relative;
+  border-top: 1px solid #eee;
+  -webkit-box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+  background: #fff;
+  ul{
+    overflow: visible;
+    width: 1020px;
+    margin: 0 auto;
+    padding: 16px 0;
+    white-space: normal;
+    li{
+      display: inline-block;
+    font-size: 14px;
+    line-height: 1.2;
+    &--title{
+      color: #333;
+    }
+    }
+  }
+}
