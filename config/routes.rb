@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     collection do
       get 'detail'
       get 'profile'
+      get 'credit'
     end
   end
 end
