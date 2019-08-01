@@ -110,7 +110,6 @@ GEM
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-
     diff-lcs (1.3)
     dotenv (2.7.4)
     dotenv-rails (2.7.4)
@@ -122,7 +121,6 @@ GEM
     erubis (2.7.0)
     excon (0.65.0)
     execjs (2.7.0)
-
     factory_bot (5.0.2)
       activesupport (>= 4.2.0)
     factory_bot_rails (5.0.2)
@@ -130,7 +128,6 @@ GEM
       railties (>= 4.2.0)
     faraday (0.15.4)
       multipart-post (>= 1.2, < 3)
-
     ffi (1.11.1)
     fog-aws (3.5.2)
       fog-core (~> 2.1)
@@ -178,6 +175,7 @@ GEM
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
+    json (2.2.0)
     jwt (2.2.1)
     kgio (2.11.2)
     listen (3.1.5)
@@ -276,6 +274,8 @@ GEM
     rb-fsevent (0.10.3)
     rb-inotify (0.10.0)
       ffi (~> 1.0)
+    recaptcha (5.0.0)
+      json
     regexp_parser (1.6.0)
     responders (3.0.0)
       actionpack (>= 5.0)
@@ -375,12 +375,9 @@ DEPENDENCIES
   chromedriver-helper
   coffee-rails (~> 4.2)
   devise
-
-  factory_bot_rails
-
   dotenv-rails
   erb2haml
-
+  factory_bot_rails
   fog-aws
   font-awesome-rails
   haml-rails
@@ -396,6 +393,7 @@ DEPENDENCIES
   puma (~> 3.11)
   rails (~> 5.2.2, >= 5.2.2.1)
   rails-controller-testing
+  recaptcha
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
