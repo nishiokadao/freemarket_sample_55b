@@ -10,7 +10,7 @@
         .select-form__content
           = link_to "https://www.mercari.com/jp/signup/registration/?after_save_callback=https://www.mercari.com/jp/", {class: "mail-btn"} do
             %i.far.fa-envelope
-            %p メールアドレスで登録する
+            メールアドレスで登録する
           %button#facebook.btn-def.btn-sns
             %i.fab.fa-facebook-square
             = link_to '/users/auth/facebook', method: :post do
@@ -34,3 +34,8 @@
       =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", alt: "mercari", height: "65", width: "80"
     %p
       %small © 2019 Mercari
+
+
+  -# - if devise_mapping.omniauthable?
+  -#   - resource_class.omniauth_providers.each do |provider|
+  -#     = link_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), method: :post
