@@ -1,7 +1,6 @@
 @import "style";
 
 .reg-container{
-  padding: 0 0 220px;
   &__header{
     height: 128px;
     text-align: center;
@@ -81,7 +80,6 @@
         line-height: 1.5;
         border-bottom: 1px solid #f5f5f5;
         &--input{
-          padding: 20px 40px 64px;
           .input-groups{
             width: 340px;
             height: 100%;
@@ -95,10 +93,13 @@
                 margin-inline-start: 0px;
                 margin-inline-end: 0px;
                 font-weight: bold;
-
+              }
+              p{
+                font-size: 14px;
               }
               label{
                 font-weight: 600;
+                font-size: 14px;
                 display: inline-block;
               }
               .red-box{
@@ -121,14 +122,15 @@
               }
               .label-titile{
                 label{
-
+                  line-height: 30px;
                 }
-                .red-box {
+                .red-box{
 
                 }
               }
-              .input-def half-form{
-
+              .input-def.half-form{
+                width: calc(50% - 10px);
+                margin:2px;
               }
               .date-select{
                 i.fas.fa-chevron-down{
@@ -137,6 +139,40 @@
                 .select-def{
 
                 }
+              }
+            }
+            p.onfo-message{
+              color: #888;
+              font-size: 14px;
+            }
+          }
+        }
+        &--bottom{
+          margin: 0 auto;
+          width: 340px;
+          .input-group{
+            margin-top: 32px;
+            font-size: 14px;
+            .recaptcha{
+              iframe{
+                width: 304px;
+                height: 78px;
+              }
+            }
+            .info-messase{
+              span{
+              }
+            }
+            button.submit-btn.btn-def{
+            }
+            input{
+            }
+          }
+          .right-info{
+            .info-message{
+              p.info-message{
+              }
+              i.fas.fa-chevron-right{
               }
             }
           }
