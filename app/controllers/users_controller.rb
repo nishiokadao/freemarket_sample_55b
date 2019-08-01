@@ -1,20 +1,19 @@
 class UsersController < ApplicationController
+
   def show
   end
 
   def first
   end
 
-  def second
+  def detail
   end
 
-  def third
+  def profile
   end
 
-  def forth
+  def credit
   end
-
-  def fifh
-  end
-
 end
+
+
