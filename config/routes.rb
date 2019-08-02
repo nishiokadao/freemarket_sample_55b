@@ -10,11 +10,9 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :new] do
     collection do
       get 'first'
-      get 'second'
-      get 'third'
-      get 'forth'
-      get 'fifith'
+      get 'detail'
+      get 'profile'
+      get 'credit'
     end
   end
-
 end

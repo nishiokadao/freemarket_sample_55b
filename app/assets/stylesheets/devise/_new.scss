@@ -84,6 +84,9 @@ body{
           @include btn-def;
           @include facebook;
           position: relative;
+          a {
+            color: white;
+          }
           .fab.fa-facebook-square {
             @include facebk-icon;
           }
@@ -92,6 +95,9 @@ body{
           @include google;
           @include btn-def;
           border: #979797 solid 1px;
+          a {
+            color: black;
+          }
         }
       }
     }
@@ -211,6 +217,9 @@ body{
         @include facebook;
         position: relative;
         border-radius: 4px;
+        a {
+          color: white;
+        }
         .fab.fa-facebook-square {
           @include facebk-icon;
         }
@@ -220,6 +229,9 @@ body{
         @include btn-def;
         border: #979797 solid 1px;
         border-radius: 4px;
+        a {
+          color: black;
+        }
       }
     }
   }
