@@ -89,4 +89,4 @@ gem 'omniauth-facebook'
 gem 'dotenv-rails'
 gem 'erb2haml'
 gem 'omniauth-google-oauth2'
-gem 'recaptcha', require: "recaptcha/rails"
+# gem 'recaptcha', require: "recaptcha/rails"

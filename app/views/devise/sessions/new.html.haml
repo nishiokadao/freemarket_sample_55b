@@ -24,7 +24,7 @@
           .login-container__main--login-panel--form--input-pass
             =f.password_field :password, placeholder: "パスワード", class: "input-box__text input-def"
           .login-container__main--login-panel--form--input-box
-            = recaptcha_tags
+            -# = recaptcha_tags
           %button.submit-btn.btn-def ログイン
           %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           = link_to "https://www.mercari.com/jp/password/reset/start/" do
