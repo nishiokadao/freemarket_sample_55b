@@ -2,10 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-@import "devise/new";
-@import "devise/show";
-@import "devise/detail";
-@import "devise/side-bar";
-
+@import "users/show";
+@import "users/first";
+@import "users/detail";
+@import "users/signout";
+@import "users/profile";
+@import "users/credit";
+@import "users/mypage_side_nav";
 
 

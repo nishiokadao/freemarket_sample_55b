@@ -1,0 +1,28 @@
+= render 'users/indexheader'
+%nav.index__head-nav
+  %ul
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          メルカリ
+          %i.fas.fa-chevron-right
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          マイページ
+          %i.fas.fa-chevron-right
+    %li
+      =link_to "https://www.mercari.com/jp/" do
+        %span.index__head-nav--title
+          ログアウト
+          %i.fas.fa-chevron-right
+.signout-main
+  = render 'users/mypage_side_nav'
+  .signout-main__right
+    .signout-main__right--box
+      = form_for "", html:{class:"signout-form"} do |f|
+        .signout-form__box
+          = f.submit "ログアウト", class:"signout-form__box--btn"
+          -# = f.hidden_fieldがはいる
+= render 'products/index-footer'
+                

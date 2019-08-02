@@ -1,0 +1,31 @@
+.index-header
+  .index-header-inner
+    .index-header-top
+      %h1
+        = link_to "https://www.mercari.com/jp/" do
+          = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372")
+      %form.index-header-form
+        %input.index-input-default{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
+        %i.index-search-icon.fas.fa-search
+    .index-header-navigation-box.clearfix
+      %nav.index-left-content
+        %ul.header-navigation
+          %li
+            %h2
+              = link_to "https://www.mercari.com/jp/category/", {class: "header-navigation-list-parent"} do
+                %i.fas.fa-bars
+                %span カテゴリーから探す
+          %li
+            %h2
+              = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
+                %i.fas.fa-tags
+                %span ブランドから探す
+      .index-right-content
+        %ul.header-login-navigation
+          %li
+            = link_to '新規会員登録', new_user_registration_path, {class: "index-header-btn btn-red"}
+          %li
+            = link_to 'ログイン', new_user_session_path, {class: "index-header-btn header-login"}
+          -# 作業で必要なため一時的にログアウトボタンつけてます。
+          %li
+            = link_to 'ログアウト', destroy_user_session_path, method: :delete

@@ -1,0 +1,334 @@
+@import "products/new-mixin";
+
+.new-content {
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+
+  &__header {
+    height: 128px;
+    text-align: center;
+    h1 {
+      margin: 40px 0 0;
+      display: inline-block;
+      width: 185px;
+      height: 49px;
+      line-height: 49px;
+    }
+  }
+  &__main{
+    display: block;
+    &--sellbox{
+      width: 700px;
+      height: 100%;
+      margin: 0 auto;
+      background-color: #fff;
+      .sellbox-head {
+        padding: 32px 16px;
+        font-size: 22px;
+        line-height: 1.5;
+        text-align: center;
+        font-weight:bold;
+      }
+      .sellbox-form {
+        border-top: 1px solid #eee;
+        &__upload {
+          width: 620px;
+          padding: 35px 40px 35px 40px;
+          &--head {
+            font-size: 16px;
+            font-weight: bold;
+            &--require {
+              background-color: #ea352d;
+              @include require();
+            }
+          }
+          p {
+            margin: 8px 0 0;
+            line-height: 1.5;
+            font-size: 14px;
+          }
+          &--drop {
+            display: block;
+            width: 620px;
+            height: 162px;
+            margin: 16px auto 0;
+            &--box {
+              display: inline;
+              &--image {
+                float: left;
+                display: block;
+              }
+            }
+            &--post {
+              width: 620px;
+              position: relative;
+              min-height: 162px;
+              background: #f5f5f5;
+              border: 1px dashed #ccc;
+              font-size: 0;
+              text-align: center;
+              cursor: pointer;
+              &--image {
+                display: none;
+              }
+              &--text {
+                position: absolute;
+                top: 50%;
+                left: 16px;
+                right: 16px;
+                text-align: center;
+                font-size: 14px;
+                line-height: 1.5;
+                transform: translate(0, -50%);
+                pointer-events: none;
+                white-space: pre-wrap;
+                word-wrap: break-word;
+              }
+            }
+          }
+        }
+        &__post {
+          padding: 40px;
+          border-top: 1px solid #eee;
+          &--group {
+            margin: 0 0 40px 0;
+            &--head {
+              font-weight: 600;
+              display: inline-block;
+              &--require {
+                background-color: #ea352d;
+                @include require();
+              }
+            }
+              &--name {
+                height: 48px;
+                width: 588px;
+                padding: 0 16px 0 16px;
+                margin-top: 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+                background: #fff;
+                line-height: 1.5;
+                font-size: 16px;
+              }
+          }
+          &--group-sec {
+            margin: 0;
+              &--text {
+                font-family: inherit;
+                margin-top: 8px;
+                width: 600px;
+                height: 120px;
+                max-width: 100%;
+                min-height: 104px;
+                padding: 10px;
+                border: 1px solid #ccc;
+                background: #fff;
+                font-size: 16px;
+                line-height: 1.5;
+              }
+          }
+        }
+        &__post.clearfix {
+          padding: 40px 40px 0 40px;
+          border-top: 1px solid #eee;
+          .sellbox-form__post-head {
+            float: left;
+            color: #888;
+            font-size: 14px;
+          }
+          .sellbox-form__post--box {
+            float: right;
+            width: 400px;
+            margin: 0;
+              .select-box {
+                margin: 8px 0 0;
+                position: relative;
+                background: #fff;
+                .fa-angle-down {
+                  position: absolute;
+                  right: 16px;
+                  top: 50%;
+                  z-index: 2;
+                  color: #888;
+                  font-size: 20px;
+                  transform: translate(0, -50%);
+                  font-style: normal;
+                  font-variant: normal;
+                  text-transform: none;
+                  line-height: 1;
+                }
+                select {
+                  width: 366px;
+                  outline:none;
+                  position: relative;
+                  z-index: 2;
+                  height: 46px;
+                  padding: 0 16px;
+                  border-radius: 4px;
+                  border: 1px solid #ccc;
+                  color: #888;
+                  background: 0;
+                  font-size: 16px;
+                  line-height: 1.5;
+                  cursor: pointer;
+                  -webkit-appearance: none;
+                }
+              }
+          }
+          .sellbox-form__post--box {
+            float: right;
+            width: 400px;
+            margin: 0;
+            &--price{
+              list-style: none;
+              .price-group {
+                padding: 0 0 24px;
+                border: 0;
+                height: 48px;
+                  &__box--head {
+                    width: 50%;
+                    line-height: 48px;
+                    float: left;
+                    font-weight: 600;
+                    display: inline-block;
+                    &--require {
+                      background-color: #ea352d;
+                      @include require();
+                    }
+                  }
+                  &__box--input {
+                    width: 50%;
+                    height: 48px;
+                    text-align: right;
+                    float: right;
+                    display: flex;
+                    &--yen {
+                      line-height: 48px;
+                    }
+                    &--value {
+                      display: inline-block;
+                      width: 80%;
+                      height: 48px;
+                      margin: 0 0 0 5%;
+                      .value-def {
+                        width: 80%;
+                        padding: 10px 16px 8px;
+                        border-radius: 4px;
+                        border: 1px solid #ccc;
+                        background: #fff;
+                        line-height: 1.5;
+                        font-size: 16px;
+                      }
+                    }
+                  }
+              }
+              .price-group__box.clearfix {
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                .price-group__box--left {
+                  float: left;
+                }
+                .price-group__box--right {
+                  float: right;
+                  font-size:10px;
+                }
+              }
+              .price-group__box--bold {
+                padding: 24px 0;
+                border-top: 1px solid #ccc;
+                font-weight: 600;
+                margin-bottom: 40px;
+                &--left {
+                  font-size: 16px;
+                  float: left;
+                }
+                &--right {
+                  font-size: 24px;
+                  float: right;
+                }
+              }
+            }
+          }
+        }
+        .sellbox-form__btn{
+          padding: 40px;
+          border-top: 1px solid #eee;
+          div {
+            font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
+            font-size: 14px;
+            color: #333;
+            p {
+              line-height: 1.5;
+              .btn-link {
+                color: #0099e8;
+                text-decoration: none;
+              }
+            }
+          }
+          .btn-red {
+            margin: 40px 0 0;
+            background: #ea352d;
+            border: 1px solid #ea352d;
+            color: #fff;
+            display: block;
+            width: 100%;
+            line-height: 48px;
+            font-size: 14px;
+            cursor: pointer;
+            text-align: center;
+          }
+          .btn-gry {
+            width: 45%;
+            height: 48px;
+            margin: 24px auto 0;
+            background: #aaa;
+            border: 1px solid #aaa;
+            cursor: pointer;
+            text-align: center;
+            line-height: 48px;
+            font-size: 14px;
+            touch-action: manipulation;
+            &__link {
+              color: #fff;
+            }
+          }
+          .btn-gry:hover {
+            opacity: 0.7;
+          }
+        }
+      }
+    }
+  }
+  &__footer{
+    width: 456px;
+    height: 120px;
+    margin: 0 auto;
+    padding: 40px 0;
+    text-align: center;
+    ul{
+      li{
+        display: inline-block;
+        font-size: 12px;
+        padding: 0;
+      }
+      a{
+        display: block;
+        color: #333;
+      }
+    }
+    .footer-logo{
+      width: 80px;
+      height: 65px;
+      margin: 40px auto 0;
+      display: block;
+    }
+    p{
+      margin: 8px 0 0;
+      small{
+        font-size: 13px;
+      }
+    }
+  }
+}

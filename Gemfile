@@ -70,6 +70,7 @@ end
 
 group :production do
   gem 'unicorn', '5.4.1'
+  gem 'capistrano-rails-console'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
