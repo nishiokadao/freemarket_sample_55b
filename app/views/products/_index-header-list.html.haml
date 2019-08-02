@@ -23,9 +23,9 @@
       .index-right-content
         %ul.header-login-navigation
           %li
-            = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
+            = link_to '新規会員登録', new_user_registration_path, {class: "index-header-btn btn-red"}
           %li
-            = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
+            = link_to 'ログイン', new_user_session_path, {class: "index-header-btn header-login"}
           -# 作業で必要なため一時的にログアウトボタンつけてます。
           %li
             = link_to 'ログアウト', destroy_user_session_path, method: :delete
