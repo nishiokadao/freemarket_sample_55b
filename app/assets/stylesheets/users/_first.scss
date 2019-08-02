@@ -150,6 +150,7 @@
         &--bottom{
           margin: 0 auto;
           width: 340px;
+          padding-bottom: 64px;
           .input-group{
             margin-top: 32px;
             font-size: 14px;
@@ -159,19 +160,26 @@
                 height: 78px;
               }
             }
-            .info-messase{
-              span{
-              }
+            p.info-messase{
+              display: inline-block;
+              text-align: center;
+            }
+            a{
+              color: #0099e8;
             }
             button.submit-btn.btn-def{
+              border: 1px solid #ea352d;
+              background: #ea352d;
+              width: 100%;
+              line-height: 48px;
+              color: #fff;
             }
             input{
             }
           }
-          .right-info{
-            .info-message{
-              p.info-message{
-              }
+          .input-group.right-info{
+            p.info-message--right{
+              text-align: right;
               i.fas.fa-chevron-right{
               }
             }
