@@ -22,5 +22,5 @@ Rails.application.routes.draw do
       get 'buy'
     end
   end
- end
+end
 
