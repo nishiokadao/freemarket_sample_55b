@@ -50,35 +50,37 @@
               font-weight: bold;
             }
           }
-          .inner-pay {
-            list-style: none;
-            &__box {
-              padding: 24px 0;
-              border-bottom: 1px solid #eee;
-              &--form {
-                position: relative;
-                max-width: 320px;
-                margin: 0 auto;
-                  .pay-card {
-                    vertical-align: middle;
-                  }
-                &--num {
-                  margin: 8px 0 0;
-                  font-size: 16px;
-                }
-                &--btn {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  padding: 4px 6px;
-                  background: #fff;
-                  border-radius: 3px;
-                  border: 1px solid #ea352d;
-                  color: #ea352d;
-                }
+        &--box {
+          padding: 24px 0;
+          border-bottom: 1px solid #eee;
+          .inner-box {
+            max-width: 320px;
+            margin: 0 auto;
+            &__link {
+              margin: 0;
+              margin-bottom: 8px !important;
+              background: #ea352d;
+              border: 1px solid #ea352d;
+              color: #fff;
+              display: block;
+              width: 100%;
+              line-height: 48px;
+              font-size: 14px;
+              cursor: pointer;
+              text-align: center;
+              text-decoration: none;
+              .far.fa-credit-card {
+                margin-right: 16px;
+                display: inline-block;
+                font-style: normal;
+                font-weight: 400;
+                font-variant: normal;
+                text-transform: none;
+                line-height: 1;
               }
             }
           }
+        }
         &--setting {
           display: block;
           margin: 40px 0 0;
