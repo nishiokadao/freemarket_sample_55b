@@ -7,7 +7,7 @@
     %section.new-content__main--sellbox
       %h2.sellbox-head
         商品の情報を入力
-      = form_for "", html:{class: "sellbox-form"} do |f|
+      = form_for @product, html:{class: "sellbox-form"} do |f|
         .sellbox-form__upload
           %h3.sellbox-form__upload--head
             出品画像
