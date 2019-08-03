@@ -163,6 +163,9 @@
                 .select-def{
                 }
               }
+              .birth_date_field{
+                
+              }
             }
             p.onfo-message{
               color: #888;
@@ -190,12 +193,22 @@
             a{
               color: #0099e8;
             }
+
             button.submit-btn.btn-def{
               border: 1px solid #ea352d;
               background: #ea352d;
               width: 100%;
               line-height: 48px;
               color: #fff;
+            }
+            .sign-up__submit-btn{
+              .btn{
+                border: 1px solid #ea352d;
+                background: #ea352d;
+                width: 100%;
+                line-height: 48px;
+                color: #fff;
+              }
             }
             input{
             }

@@ -3,19 +3,19 @@ class UsersController < ApplicationController
   def show
   end
 
-  def first
+  def select_sign_up
   end
 
-  def second
+  def sign_up_second
   end
 
-  def third
+  def sign_up_third
   end
 
-  def forth
+  def sign_up_forth
   end
 
-  def fifth
+  def sign_up_fifth
   end
 
   def detail

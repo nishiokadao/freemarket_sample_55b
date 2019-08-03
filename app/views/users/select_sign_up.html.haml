@@ -8,7 +8,7 @@
       %h2.container__main--section--title 新規会員登録
       .select-form
         .select-form__content
-          = link_to "https://www.mercari.com/jp/signup/registration/?after_save_callback=https://www.mercari.com/jp/", {class: "mail-btn"} do
+          = link_to new_user_registration_path, {class: "mail-btn"} do
             %i.far.fa-envelope
             メールアドレスで登録する
           %button#facebook.btn-def.btn-sns
