@@ -4,7 +4,18 @@ class UsersController < ApplicationController
   end
 
   def first
+  end
 
+  def second
+  end
+
+  def third
+  end
+
+  def forth
+  end
+
+  def fifth
   end
 
   def detail

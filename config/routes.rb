@@ -12,6 +12,10 @@ Rails.application.routes.draw do
     collection do
       get 'signout'
       get 'first'
+      get 'second'
+      get 'third'
+      get 'forth'
+      get 'fifth'
       get 'detail'
       get 'profile'
       get 'credit'

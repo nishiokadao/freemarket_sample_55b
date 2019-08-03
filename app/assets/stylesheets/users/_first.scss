@@ -84,8 +84,25 @@
             width: 340px;
             height: 100%;
             margin: 0 auto;
+            .completion-message{
+              padding-top: 80px;
+              text-align: center;
+            }
             .input-group{
               margin-top: 32px;
+              ul{
+                li{
+                  .card-image{
+                    width: 40px;
+                    height: 25px;
+                    padding-top: 5px;
+                  }
+                }
+              }
+
+              .input-def-message{
+                font-size: 14px;
+              }
               h3{
                 display: block;
                 font-size: 16px;
@@ -111,6 +128,15 @@
                 font-size: 12px;
                 vertical-align: top;
               }
+              .gray-box{
+                background: #ccc;
+                color: white;
+                margin: 0 0 0 8px;
+                padding: 2px 4px;
+                border-radius: 2px;
+                font-size: 12px;
+                vertical-align: top;
+              }
               .input-def{
                 height: 48px;
                 border-radius: 4px;
@@ -125,7 +151,6 @@
                   line-height: 30px;
                 }
                 .red-box{
-
                 }
               }
               .input-def.half-form{
@@ -134,10 +159,8 @@
               }
               .date-select{
                 i.fas.fa-chevron-down{
-
                 }
                 .select-def{
-
                 }
               }
             }
