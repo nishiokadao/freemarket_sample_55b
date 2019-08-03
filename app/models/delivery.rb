@@ -1,3 +1,3 @@
 class Delivery < ApplicationRecord
-  has_many :products
+  has_one :product
 end

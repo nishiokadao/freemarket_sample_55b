@@ -7,6 +7,7 @@
     %section.new-content__main--sellbox
       %h2.sellbox-head
         商品の情報を入力
+        -#フォーム始まり 
       = form_for @product, html:{class: "sellbox-form"} do |f|
         .sellbox-form__upload
           %h3.sellbox-form__upload--head
@@ -24,10 +25,12 @@
               -#   $("sellbox-form__upload--drop--post").on('click', function(){
               -#     $('#image').click();
               -#   });
-              = f.file_field:image, class:"sellbox-form__upload--drop--post--image", id:"image"
-              %pre.sellbox-form__upload--drop--post--text
-                ドラッグアンドドロップ
-                またはクリックしてファイルをダウンロード
+              -# ファイルのフォーム
+              = f.fields_for :image do |image|
+                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"image"
+                %pre.sellbox-form__upload--drop--post--text
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをダウンロード
         .sellbox-form__post
           .sellbox-form__post--group
             %lavel.sellbox-form__post--group--head
@@ -35,13 +38,13 @@
               %span.sellbox-form__post--group--head--require
                 必須
             %div
-              = f.text_field:name, placeholder:"商品名(必須40字まで)", class:"sellbox-form__post--group--name"
+              = f.text_field :name, placeholder:"商品名(必須40字まで)", class:"sellbox-form__post--group--name"
           .sellbox-form__post--group-sec
             %lavel.sellbox-form__post--group--head
               商品の説明
               %span.sellbox-form__post--group--head--require
                 必須
-            = f.text_area:text, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+            = f.text_area :description, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             商品の詳細
@@ -53,8 +56,10 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select.select-default
-                  %option{value: ""} ---
+                .select-default
+                  -# カテゴリーのフォーム
+                  = f.fields_for :category do |category|
+                    =category.select :name, ["レディース", "メンズ", "キッズ"], prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 商品の状態
@@ -62,8 +67,9 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                -# conditionのセレクト
+                .select-default
+                  =f.select :condition, ["新品、未使用", "未使用に近い","目立った傷や汚れなし"], prompt: "---"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             配送について
@@ -75,8 +81,9 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select.select-default
-                  %option{value: ""} ---
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.select :delivery_method, ["送料込み(出品者負担)", "着払い(購入者負担)"], prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送元の地域
@@ -84,8 +91,9 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.select :shipping_place, ["兵庫", "京都", "大阪", "和歌山", "奈良"], prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送までの日数
@@ -93,8 +101,9 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.select :days_to_ship, ["1~2日で発送", "2~3日で発送", "3~4日で発送"], prompt: "---"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             販売価格(300~9,999,999)
@@ -110,7 +119,7 @@
                     .price-group__box--input--yen
                       &yen;
                     .price-group__box--input--value
-                      = f.text_field:text, class:"value-def", placeholder:"例) 300"
+                      = f.text_field :price, class:"value-def", placeholder:"例) 300"
               %li.price-group__box.clearfix
                 .price-group__box--left
                   販売手数料(10%)            
@@ -146,9 +155,9 @@
                 加盟店規約
               %span
                 に同意したことになります。
-          = f.submit "出品する", class:"btn-red"
+          = link_to "出品する", "/products/edit", class:"btn-red", method: :post do
           .btn-gry
-            = link_to "#",class:"btn-gry__link" do
+            = link_to root_parh, class:"btn-gry__link" do
               もどる
   .new-content__footer
     %nav
