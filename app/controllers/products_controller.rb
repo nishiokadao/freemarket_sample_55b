@@ -10,16 +10,18 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.build_image
-    @product.categories.build
+    # あとで使う    2.time{@product.images.build}
     @product.build_delivery
+    @product.categories.build
   end
 
   def create
     @product= Product.new(product_params)
     if @product.save!
-      # delivery_id = Delivery.find(@product.id).id       #作成したdeliveryのIDを取り出す
-      # product = Product.find(@product.id)               #作成したItemのidを取り出す
-      # product.update(delivery_id: delivery_id)          #productテーブルにderivery_idのカラムを入れる
+      # あとで使う
+      # params[:images]['image'].each do |a|
+      #   @image = @product.images.create!(image: a, product_id: @product.id)
+      # end
       redirect_to root_path
     else
       redirect_to new_product_path
