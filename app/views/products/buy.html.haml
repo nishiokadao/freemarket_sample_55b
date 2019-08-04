@@ -32,7 +32,6 @@
             = form_tag(action: :pay, method: :post) do
               %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "#{ENV['PAYJ_PUBLIC_KEY']}"}
             -# = f.hidden_fieldがここにいっぱい入ります！
-            -# = f.submit "購入する", class:"buy-btn"
             -# = f.hidden_field
       %section.buy-content__main--box--user
         .user-inner
