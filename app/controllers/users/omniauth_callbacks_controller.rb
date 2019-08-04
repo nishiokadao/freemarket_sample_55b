@@ -14,7 +14,7 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   #共通の設定
   def callback_from(provider)
     # provider = provider.to_s
-    @user = User.from_omniauth(request.env['omniauth.auth'])
+    # @user = User.from_omniauth(request.env['omniauth.auth'])
 
     if @user
       sign_in_and_redirect @user, event: :authentication

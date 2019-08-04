@@ -26,17 +26,17 @@ class User < ApplicationRecord
     User.where(provider: auth.provider, uid: auth.uid).first
   end
   
-  def self.new_with_session(params, session)
+  def self.new_with_session(params, session)   
     super.tap do |user|
       if data = session["devise.omniauth_data"] && session["devise.omniauth_data"]["info"]
         user.name = data["name"] if user.name.blank?
         user.email = data["email"] if user.email.blank?
       end
-      if data = session["devise.omniauth_data"]
-        user.provider = data["provider"] if user.provider.blank?
-        user.uid = data["uid"] if user.uid.blank?
-        user.password = Devise.friendly_token[0,20] if user.password.blank?
-      end
+      # if data = session["devise.omniauth_data"]
+      #   user.provider = data["provider"] if user.provider.blank?
+      #   user.uid = data["uid"] if user.uid.blank?
+      #   user.password = Devise.friendly_token[0,20] if user.password.blank
+      # end
     end
   end
 end
