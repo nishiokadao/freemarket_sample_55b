@@ -13,7 +13,7 @@
             = image_tag "https://static.mercdn.net/thumb/photos/m60327513337_1.jpg?1564447955", class:"item-inner__image--photo"
           %p.item-inner__name
             Aesop 巾着
-          = form_for "", html:{class: "item-inner__form"} do |f|
+          = form_for @product, url:pay_products_path, html:{class: "item-inner__form"} do |f|
             %p.price
               ¥700
               %span.price__fee
@@ -29,8 +29,10 @@
                 .price-table__bold--right
                   %span.price-table__bold--right--pay
                     ¥ 700
+            = form_tag(action: :pay, method: :post) do
+              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_12e96021c762e46f94b2f548"}
             -# = f.hidden_fieldがここにいっぱい入ります！
-            = f.submit "購入する", class:"buy-btn"
+            -# = f.submit "購入する", class:"buy-btn"
             -# = f.hidden_field
       %section.buy-content__main--box--user
         .user-inner
