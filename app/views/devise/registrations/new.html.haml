@@ -57,6 +57,12 @@
                 %span.red-box 必須
               =f.text_field :name, placeholder: "例) ヤマダ", class: "input-def half-form"
               =f.text_field :name, placeholder: "例) アヤ", class: "input-def half-form"
+            .input-group
+              .label-titile 
+              =f.hidden_field :uid
+            .input-group
+              .label-titile
+              =f.hidden_field :provider
             -# .input-group
             -#   .birth_date_field
             -#     %label 生年月日
