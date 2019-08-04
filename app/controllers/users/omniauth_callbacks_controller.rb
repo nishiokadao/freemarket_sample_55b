@@ -20,10 +20,9 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       sign_in_and_redirect @user, event: :authentication
       flash[:notice] = I18n.t('devise.omniauth_callbacks.success', kind: provider.capitalize)
     else
-      session["devise.#{provider}_data"] = request.env["omniauth.auth"].except("extra")
+      session["devise.omniauth_data"] = request.env["omniauth.auth"].except("extra")
       @user = User.new()
-      redirect_to first_users_path
-      # render 'users/first'
+      redirect_to new_user_registration_path
     end
   end
   
