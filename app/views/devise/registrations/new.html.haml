@@ -27,6 +27,10 @@
         .reg-container__main--content-title--input
           .input-groups
             .input-group
+              %label お名前(全角)
+              %span.red-box 必須
+              =f.text_field :name, placeholder: "例) 山田太郎", class: "input-def"
+            .input-group
               %label メールアドレス
               %span.red-box 必須
               =f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-def"
@@ -41,18 +45,6 @@
             .input-group
               %h3 本人確認
               %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
-            .input-group
-              .label-titile
-                %label お名前(全角)
-                %span.red-box 必須
-              =f.text_field :name, placeholder: "例) 山田", class: "input-def half-form"
-              =f.text_field :name, placeholder: "例) 彩", class: "input-def half-form"
-            .input-group
-              .label-titile
-                %label お名前カナ(全角)
-                %span.red-box 必須
-              =f.text_field :name, placeholder: "例) ヤマダ", class: "input-def half-form"
-              =f.text_field :name, placeholder: "例) アヤ", class: "input-def half-form"
             %p.onfo-message 
               ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
         .reg-container__main--content-title--bottom
@@ -66,10 +58,9 @@
               に同意したものとみなします
           .input-group
             .sign-up__submit-btn
-            %form{action: sign_up_second_users}
               =f.submit "次へ進む" ,:class=>"btn"
               -# %button.submit-btn.btn-def 次へ進む
-              %input{type: "hidden", value: sign_up_second_users_path }
+              -# %input{type: "hidden", value: sign_up_second_users_path }
           .input-group.right-info
             %p.info-message--right
               =link_to 'https://www.mercari.com/jp/help_center/article/423/' do

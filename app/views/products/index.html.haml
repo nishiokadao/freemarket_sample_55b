@@ -1,5 +1,10 @@
 .wrapper
-  = render 'products/index-header'
+  -if user_signed_in?
+    = render 'users/indexheader'
+    = render 'products/index-header'
+  -else
+    = render 'products/index-header-list'
+    = render 'products/index-header'
   = render 'products/index-container'
   = render 'products/index-footer'
   -# = render 'sessions/loguot'

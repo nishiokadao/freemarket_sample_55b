@@ -42,9 +42,7 @@
               =f.text_field :tell, placeholder: "000-111-2222", class: "input-def"
         .reg-container__main--content-title--bottom
           .input-group
-            %button.submit-btn.btn-def 次へ進む
-            %input{type: "hidden", value: "https://www.mercari.com/jp/"}
-
+            =link_to "次へ進む", sign_up_forth_users_path, class: "link_button"
   .reg-container__footer
     %nav
       %ul.clearfix

@@ -11,8 +11,7 @@
               %br 会員登録が完了しました。
         .reg-container__main--content-title--bottom
           .input-group
-            %button.submit-btn.btn-def メルカリをはじめる
-            %input{type: "hidden", value: "https://www.mercari.com/jp/"}
+            =link_to "メルカリをはじめる", root_path, class: "link_button"
   .reg-container__footer
     %nav
       %ul.clearfix

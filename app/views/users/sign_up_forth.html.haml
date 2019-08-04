@@ -34,9 +34,7 @@
                 %i.fas.fa-question-circle
                 カードの裏面の番号とは？
           .input-group
-            %button.submit-btn.btn-def 次へ進む
-            %input{type: "hidden", value: "https://www.mercari.com/jp/"}
-
+            =link_to "次へ進む", sign_up_fifth_users_path, class: "link_button"
   .reg-container__footer
     %nav
       %ul.clearfix
