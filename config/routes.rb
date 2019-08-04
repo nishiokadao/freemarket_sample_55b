@@ -20,6 +20,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show] do
     collection do
       get 'buy'
+      patch 'pay'
     end
   end
 end
