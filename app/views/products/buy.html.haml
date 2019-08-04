@@ -30,7 +30,7 @@
                   %span.price-table__bold--right--pay
                     ¥ 700
             = form_tag(action: :pay, method: :post) do
-              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_12e96021c762e46f94b2f548"}
+              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "#{ENV['PAYJ_PUBLIC_KEY']}"}
             -# = f.hidden_fieldがここにいっぱい入ります！
             -# = f.submit "購入する", class:"buy-btn"
             -# = f.hidden_field
