@@ -9,7 +9,7 @@
   %section.item-box-container
     .item-box-container__single-sontainer
       %h1.item-name
-        ワンピース
+        = @product.name
       %p.item-word
         testさんから出品されました。レディースの商品で、未定から2~3日で発送されます。
       .item-main-content
@@ -55,7 +55,7 @@
               %th
                 商品の状態
               %td
-                目立った傷や汚れなし
+                = @product.condition
             %tr
               %th
                 配送料の負担
@@ -70,7 +70,7 @@
               %th
                 配送元地域
               %td
-                = link_to "大阪", root_path
+                = @product.delivery_method
             %tr
               %th
                 発送日の目安
@@ -78,7 +78,8 @@
                 ２〜３日で発送          
       .item-price-box
         %span.item-price__bold
-          ¥3,500
+          ¥
+          = @product.price
         %span.item-tax
           （税込）
         %span.item-shipping-fee
@@ -86,14 +87,13 @@
       = link_to'購入画面に進む', root_path ,class:"item-buy-btn"
       .item-description
         %p.item-description__inner
-          新品タグ付きです。
-          ご不明点あればコメントしてください。
+          = @product.description
       .item-button-container
         .item-button-left
           = link_to root_path, class:"item-button-like" do
             %i.far.fa-heart
             %span
-            いいね！1
+            = @product.status
           = link_to root_path, class:"item-button-report" do
             %i.far.fa-flag
             %span
