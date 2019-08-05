@@ -39,4 +39,6 @@ class User < ApplicationRecord
       end
     end
   end
+
+  has_many :credits
 end
