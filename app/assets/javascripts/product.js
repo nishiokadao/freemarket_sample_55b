@@ -1,5 +1,10 @@
 $(document).on('turbolinks:load', function(){
 
+  $("sellbox-form__upload--drop--post").on('click', function(){
+    $('#image').click();
+  });
+
+
 
   $('#product_price').on('keyup', function(){
     var input= $(this).val();
@@ -12,8 +17,7 @@ $(document).on('turbolinks:load', function(){
   $('#product_price').on('keydown',function(){
     $('.price-group__box--right').empty();
     $('.price-group__box--bold--right').empty();
-    });
-
+  });
 
 });
 
