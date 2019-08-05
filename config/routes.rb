@@ -28,5 +28,7 @@ Rails.application.routes.draw do
       patch 'pay'
     end
   end
+
+  resources :credits, only: [:new, :create, :index]
 end
 
