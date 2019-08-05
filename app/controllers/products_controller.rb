@@ -12,10 +12,11 @@ class ProductsController < ApplicationController
     @product.build_image
     # あとで使う    2.time{@product.images.build}
     @product.build_delivery
-    @product.categories.build
+    @product.build_category
   end
 
   def create
+    binding.pry
     @product= Product.new(product_params)
     if @product.save!
       # あとで使う
@@ -33,7 +34,7 @@ class ProductsController < ApplicationController
 
   private
   def product_params
-    params.require(:product).permit(:name, :description, :condition, :price, category_attributes: [:id, :name], image_attributes: [:id, :image, :product_id], delivery_attributes: [:id, :days_to_ship, :mode, :delivery_method,:shipping_place]).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :description, :condition_id, :price, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method,:prefecture_id]).merge(seller_id: current_user.id)
   end
 
 

@@ -61,7 +61,7 @@
                 .select-default
                   -# カテゴリーのフォーム
                   = f.fields_for :category do |category|
-                    =category.select :name, ["レディース", "メンズ", "キッズ"], prompt: "---"
+                    =category.collection_select :name_id, Genre.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 商品の状態
@@ -71,7 +71,7 @@
                 %i.fas.fa-angle-down
                 -#商品状態nのセレクト
                 .select-default
-                  =f.select :condition, ["新品、未使用", "未使用に近い","目立った傷や汚れなし"], prompt: "---"
+                  =f.collection_select :condition_id, Condition.all, :id, :name, prompt: "---"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             配送について
@@ -86,7 +86,7 @@
                 -# 配送料負担のフォーム
                 .select-default
                   = f.fields_for :delivery do |delivery|
-                    =delivery.select :delivery_method, ["送料込み(出品者負担)", "着払い(購入者負担)"], prompt: "---", name: "delivery_method"
+                    =delivery.collection_select :payment_id, Payment.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送元の地域
@@ -94,10 +94,10 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                -# 発送元のフォーム
+                -# 発送地のフォーム
                 .select-default
                   = f.fields_for :delivery do |delivery|
-                    =delivery.select :shipping_place, ["兵庫", "京都", "大阪", "和歌山", "奈良"], prompt: "---", name: "shiping_place"
+                    =delivery.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送までの日数
@@ -108,7 +108,7 @@
                 -# 発送までの日数フォーム
                 .select-default
                   = f.fields_for :delivery do |delivery|
-                    =delivery.select :days_to_ship, ["1~2日で発送", "2~3日で発送", "3~4日で発送"], prompt: "---", name: "days_to_ship"
+                    =delivery.collection_select :days_to_ship_id, Preparation.all, :id, :name, prompt: "---"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             販売価格(300~9,999,999)

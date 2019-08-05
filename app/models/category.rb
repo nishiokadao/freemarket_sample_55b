@@ -1,6 +1,7 @@
 class Category < ApplicationRecord
-  has_many :category_products
-  has_many :products, through: :category_products
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :genre
 
-  
+  has_one :product
+
 end
