@@ -39,7 +39,7 @@
                 %span
                   やることリスト
             %li.user-nav__mypage
-              =link_to "/users/#{current_user.id}", {class:"user-nav__mypage--link"} do
+              =link_to user_path(current_user.id), {class:"user-nav__mypage--link"} do
                 .user-nav__mypage--link--image
                   = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32", class:"face"
                 %span
