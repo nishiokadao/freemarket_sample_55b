@@ -194,7 +194,7 @@
               color: #0099e8;
             }
 
-            button.submit-btn.btn-def{
+            .submit-btn.btn-def{
               border: 1px solid #ea352d;
               background: #ea352d;
               width: 100%;
@@ -210,7 +210,14 @@
                 color: #fff;
               }
             }
-            input{
+            .link_button{
+              background: #ea352d;
+              display: block;
+              line-height: 48px;
+              color: #fff;
+              height: 50px;
+              width: 340px;
+              text-align: center;
             }
           }
           .input-group.right-info{

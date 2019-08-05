@@ -12,8 +12,7 @@
               %p.input-def-message 本人確認のため、携帯電話のSMS(ショートメッセージサービス)を利用して認証を行います。
         .reg-container__main--content-title--bottom
           .input-group
-            %button.submit-btn.btn-def SNSを送信する
-            %input{type: "hidden", value: "https://www.mercari.com/jp/"}
+            =link_to "SNSを送信する", sign_up_third_users_path, class: "link_button"
             ※電話番号は本人確認や不正利用防止のために利用します。他のユーザーに公開されることはありません。
           .input-group.right-info
             %p.info-message--right
