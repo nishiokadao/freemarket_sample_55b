@@ -11,17 +11,18 @@
       %h1.item-name
         = @product.name
       %p.item-word
-        testさんから出品されました。レディースの商品で、未定から2~3日で発送されます。
+        = @user.name  + "さんから出品されました。レディースの商品で、未定から2~3日で発送されます。"
       .item-main-content
         .item-photo
-          = image_tag("https://static.mercdn.net/item/detail/orig/photos/m88797828029_1.jpg?1563454084",class:"product-img")
+          - @images.each do |image|
+            = image_tag image.image, class:"product-img"
         %table.item-detail-table
           %tbody
             %tr
               %th
                 出品者
               %td
-                = link_to"test",root_path
+                = @user.name
                 .evaluation
                   .item-user-ratings
                     %i.fas.fa-laugh
@@ -128,8 +129,7 @@
     %section.items-box-container.items-in-user-profile 
     
       %h2.items-box-head
-        = link_to root_path do
-          testさんのその他の出品
+        = @user.name  + "さんのその他の出品"
       .items-box-content__clearfix
         %section.items-box
           = link_to root_path do
