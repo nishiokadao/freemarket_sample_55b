@@ -12,10 +12,10 @@
       .login-container__main--login-panel--sns-login
         %button#facebook.btn-def.btn-sns
           %i.fab.fa-facebook-square 
-          = link_to '/users/auth/facebook', method: :post do
+          = link_to user_facebook_omniauth_authorize_path, method: :post do
             Facebookでログイン
         %button#google.btn-def.btn-sns  
-          = link_to '/users/auth/google_oauth2', method: :post do
+          = link_to user_google_oauth2_omniauth_authorize_path, method: :post do
             Googleでログイン
       =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
         .login-container__main--login-panel--form
@@ -24,7 +24,6 @@
           .login-container__main--login-panel--form--input-pass
             =f.password_field :password, placeholder: "パスワード", class: "input-box__text input-def"
           .login-container__main--login-panel--form--input-box
-            -# = recaptcha_tags
           %button.submit-btn.btn-def ログイン
           %input{type: "hidden", value: "https://www.mercari.com/jp/"}
           = link_to "https://www.mercari.com/jp/password/reset/start/" do
