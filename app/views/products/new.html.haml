@@ -161,6 +161,7 @@
                 加盟店規約
               %span
                 に同意したことになります。
+          = f.hidden_field :status, value: 0
           = f.submit "出品する", class:"btn-red"
           .btn-gry
             = link_to "もどる", root_path, class:"btn-gry__link"

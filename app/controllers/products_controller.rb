@@ -16,14 +16,13 @@ class ProductsController < ApplicationController
   end
 
   def create
-    binding.pry
     @product= Product.new(product_params)
     if @product.save!
       # あとで使う
       # params[:images]['image'].each do |a|
       #   @image = @product.images.create!(image: a, product_id: @product.id)
       # end
-      redirect_to root_path
+      redirect_to root_path, notice: '出品が完了しました。'
     else
       redirect_to new_product_path
     end
