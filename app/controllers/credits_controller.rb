@@ -1,26 +1,30 @@
 class CreditsController < ApplicationController
+  require "payjp"
+  before_action :set_credit
 
-
-  def new # カードの登録画面。送信ボタンを押すとcreateアクションへ。
+  def new 
     credit = Credit.where(user_id: current_user.id).first
-    redirect_to action: "index" if card.present?
+    redirect_to action: "index" if credit.present?
   end
 
   def index
-    
+    if @card.present?
+      Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
+      customer = Payjp::Customer.retrieve(@card.payjp_id)
+      @card_information = customer.cards.retrieve(@card.card_id)
+    end
   end
 
-  def create #PayjpとCardのデータベースを作成
-    Payjp.api_key = ENV['PAYJ_SECRET_KEY']
-
+  def create 
+    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
-      # トークンが正常に発行されていたら、顧客情報をPAY.JPに登録します。
       customer = Payjp::Customer.create(
-        card: params['payjp-token'], # 直前のnewアクションで発行され、送られてくるトークンをここで顧客に紐付けて永久保存します。
+        card: params['payjp-token']
       )
-      @credit = Credit.new(user_id: current_user.id, customer_id: customer.id, card_id: customer.default_card)
+      binding.pry
+      @credit = Credit.new(user_id: current_user.id, payjp_id: customer.id, card_id: customer.default_card)
       if @credit.save
         redirect_to action: "index"
       else
@@ -32,7 +36,7 @@ class CreditsController < ApplicationController
   private
 
   def set_credit
-    # @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
+    @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
   end
 
 
