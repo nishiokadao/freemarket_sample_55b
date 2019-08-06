@@ -29,8 +29,8 @@
                 .price-table__bold--right
                   %span.price-table__bold--right--pay
                     ¥ 700
-            = form_tag(action: :pay, method: :post) do
-              %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "#{ENV['PAYJ_PUBLIC_KEY']}"}
+            = link_to pay_products_path, method: :post, class:"buy-btn" do
+              購入する
       %section.buy-content__main--box--user
         .user-inner
           %h3
@@ -49,10 +49,10 @@
         .user-inner
           %h3
             支払い方法
-          %address.user-inner__text
-            ******************111
-            %br
-            01/25
+          .inner-pay__box--form--num
+            = "**** **** ****#{@card_nam}"
+          .inner-pay__box--form--num
+            = "#{@exp_month} / #{@exp_year}"
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2787198863", alt:"master-card", class:"user-inner__card"
           = link_to "#", class:"user-inner__edit" do
             %span

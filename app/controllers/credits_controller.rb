@@ -8,14 +8,20 @@ class CreditsController < ApplicationController
   end
 
   def index
-    if @card.present?
+    if @credit.blank?
+      redirect_to action: "new" 
+    else
       Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
-      customer = Payjp::Customer.retrieve(@card.payjp_id)
-      @card_information = customer.cards.retrieve(@card.card_id)
+      customer = Payjp::Customer.retrieve(@credit.payjp_id)
+      @default_credit_info = customer.cards.retrieve(@credit.card_id)
+      @card_nam = @default_credit_info.last4
+      @exp_month = @default_credit_info.exp_month
+      @exp_year = @default_credit_info.exp_year.to_s.slice(2,3)
     end
   end
 
   def create 
+    # binding.pry
     Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
     if params['payjp-token'].blank?
       redirect_to action: "new"
@@ -23,13 +29,24 @@ class CreditsController < ApplicationController
       customer = Payjp::Customer.create(
         card: params['payjp-token']
       )
-      binding.pry
       @credit = Credit.new(user_id: current_user.id, payjp_id: customer.id, card_id: customer.default_card)
+      # binding.pry
       if @credit.save
         redirect_to action: "index"
       else
         redirect_to action: "create"
       end
+    end
+  end
+
+  def destroy
+    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
+    customer = Payjp::Customer.retrieve(@credit.payjp_id)
+    customer.delete
+    if @credit.destroy
+      redirect_to credit_users_path, notice: "削除しました"
+    else
+      redirect_to action: "index", alert: "削除できませんでした"
     end
   end
 

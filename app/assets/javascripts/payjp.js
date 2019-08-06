@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
       cvc: document.getElementById("cvc").value,
       exp_month: document.getElementById("exp_month").value,
       exp_year: document.getElementById("exp_year").value
-    }; 
+    };
 
     Payjp.createToken(card, (status, response) => {
       if (status === 200) { 
@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
         $("#form-inner").append(
           $('<input type="hidden" name="payjp-token">').val(response.id)
         ); 
+
         $("#form-inner").get(0).submit();
         alert("登録が完了しました"); 
       } else {

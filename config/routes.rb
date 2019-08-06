@@ -25,10 +25,10 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show] do
     collection do
       get 'buy'
-      patch 'pay'
+      post'pay'
     end
   end
 
-  resources :credits, only: [:new, :create, :index]
+  resources :credits, only: [:new, :create, :index, :destroy]
 end
 
