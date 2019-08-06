@@ -1,8 +1,22 @@
 $(document).on('turbolinks:load', function(){
 
-  $("sellbox-form__upload--drop--post").on('click', function(){
-    $('#image').click();
-  });
+  // $('.sellbox-form__upload--drop--post').on('click', function(){
+  //   $('#post_image').click();
+  // });
+  function readURL(input) {
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        $('.upload-image__prev--figure--src').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+
+$('#post__image').change(function(){
+  $('.sellbox-form__upload--drop--box--image').removeAttr('style');
+  readURL(this);
+})
 
 
 

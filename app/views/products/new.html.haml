@@ -18,16 +18,18 @@
             最大10枚までアップロードできます
           .sellbox-form__upload--drop
             .sellbox-form__upload--drop--box
-              .sellbox-form__upload--drop--box--image
+              .sellbox-form__upload--drop--box--image{style: "display: none;"}
                 %ul
+                  %li.upload-image__prev
+                    %figure.upload-image__prev--figure
+                      =image_tag "", {class: "upload-image__prev--figure--src"}
+                    %button.upload-image__prev--btn
+                      =link_to "編集"
+                      =link_to "削除"
             .sellbox-form__upload--drop--post  
-              -# :javascript
-              -#   $("sellbox-form__upload--drop--post").on('click', function(){
-              -#     $('#image').click();
-              -#   });
               -# ファイルのフォーム
               = f.fields_for :image do |image|
-                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"image"
+                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
                 %pre.sellbox-form__upload--drop--post--text
                   ドラッグアンドドロップ
                   またはクリックしてファイルをダウンロード
