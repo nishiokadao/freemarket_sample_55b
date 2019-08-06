@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
+  // あとで使う
   // $('.sellbox-form__upload--drop--post').on('click', function(){
   //   $('#post_image').click();
   // });
