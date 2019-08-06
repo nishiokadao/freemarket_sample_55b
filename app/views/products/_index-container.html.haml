@@ -7,7 +7,7 @@
     .items-box-content
       - @products.each do |product|
         %section.items-box
-          = link_to root_path do
+          =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
               =image_tag('https://animalplaza.co.jp/wp-content/themes/animalplaza/img/top_sec04_img01.jpg',class:"img")
             .items-box-body

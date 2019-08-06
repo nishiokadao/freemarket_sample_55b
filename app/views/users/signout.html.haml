@@ -22,7 +22,7 @@
     .signout-main__right--box
       = form_for "", html:{class:"signout-form"} do |f|
         .signout-form__box
-          = f.submit "ログアウト", class:"signout-form__box--btn"
+          = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"signout-form__box--btn"
           -# = f.hidden_fieldがはいる
 = render 'products/index-footer'
                 
