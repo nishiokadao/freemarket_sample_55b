@@ -90,4 +90,5 @@ gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'erb2haml'
 
-
+gem 'omniauth-google-oauth2'
+gem 'active_hash'

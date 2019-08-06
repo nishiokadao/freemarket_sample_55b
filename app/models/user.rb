@@ -6,6 +6,8 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
   # validates :name, presence: true
 
+  has_many :products
+
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first
   end
@@ -23,4 +25,5 @@ class User < ApplicationRecord
       end
     end
   end
+
 end
