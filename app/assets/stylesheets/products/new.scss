@@ -58,10 +58,41 @@
               &--image {
                 float: left;
                 display: block;
+                .upload-image__prev{
+                  width: 116px;
+                  margin: 0 0 10 10;
+                  &--figure{
+                    overflow: hidden;
+                    height: 116px;
+                    background-color: #f5f5f5;
+                    &--src{
+                    position: static;
+                    height: 140px;
+                    }
+                  }
+                  &--btn{
+                    font-size: 14px;
+                    display: flex;
+                    width: 100%;
+                    border-style: none;
+                    background: #f5f5f5;
+                    a{
+                      display: inline-block;
+                      line-height: 44px;
+                      width: 50%;
+                      text-align: center;  
+                      color: #0099e8;
+                      &:last-child{
+                        border-left: 1px solid #eee;
+                      }
+                    }
+                  }
+                }
               }
             }
             &--post {
-              width: 620px;
+              float: right;
+              width: 491px;
               position: relative;
               min-height: 162px;
               background: #f5f5f5;
@@ -70,7 +101,6 @@
               text-align: center;
               cursor: pointer;
               &--image {
-                display: none;
               }
               &--text {
                 position: absolute;

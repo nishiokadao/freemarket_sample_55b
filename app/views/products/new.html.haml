@@ -7,7 +7,8 @@
     %section.new-content__main--sellbox
       %h2.sellbox-head
         商品の情報を入力
-      = form_for "", html:{class: "sellbox-form"} do |f|
+        -#フォーム始まり 
+      = form_for @product, url: '/products', html:{class: "sellbox-form"} do |f|
         .sellbox-form__upload
           %h3.sellbox-form__upload--head
             出品画像
@@ -17,31 +18,37 @@
             最大10枚までアップロードできます
           .sellbox-form__upload--drop
             .sellbox-form__upload--drop--box
-              .sellbox-form__upload--drop--box--image
+              .sellbox-form__upload--drop--box--image{style: "display: none;"}
                 %ul
+                  %li.upload-image__prev
+                    %figure.upload-image__prev--figure
+                      =image_tag "", {class: "upload-image__prev--figure--src"}
+                    %button.upload-image__prev--btn
+                      =link_to "編集"
+                      =link_to "削除"
             .sellbox-form__upload--drop--post  
-              -# :javascript
-              -#   $("sellbox-form__upload--drop--post").on('click', function(){
-              -#     $('#image').click();
-              -#   });
-              = f.file_field:image, class:"sellbox-form__upload--drop--post--image", id:"image"
-              %pre.sellbox-form__upload--drop--post--text
-                ドラッグアンドドロップ
-                またはクリックしてファイルをダウンロード
+              -# ファイルのフォーム
+              = f.fields_for :image do |image|
+                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
+                %pre.sellbox-form__upload--drop--post--text
+                  ドラッグアンドドロップ
+                  またはクリックしてファイルをダウンロード
         .sellbox-form__post
           .sellbox-form__post--group
             %lavel.sellbox-form__post--group--head
               商品名
               %span.sellbox-form__post--group--head--require
                 必須
+                -# 商品名のフォーム
             %div
-              = f.text_field:name, placeholder:"商品名(必須40字まで)", class:"sellbox-form__post--group--name"
+              = f.text_field :name, placeholder:"商品名(必須40字まで)", class:"sellbox-form__post--group--name"
           .sellbox-form__post--group-sec
             %lavel.sellbox-form__post--group--head
               商品の説明
               %span.sellbox-form__post--group--head--require
                 必須
-            = f.text_area:text, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
+                -# 商品説明のフォーム
+            = f.text_area :description, class:"sellbox-form__post--group-sec--text", placeholder:"商品の説明（必須 1,000文字以内）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             商品の詳細
@@ -53,8 +60,10 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select.select-default
-                  %option{value: ""} ---
+                .select-default
+                  -# カテゴリーのフォーム
+                  = f.fields_for :category do |category|
+                    =category.collection_select :name_id, Genre.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 商品の状態
@@ -62,8 +71,9 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                -#商品状態nのセレクト
+                .select-default
+                  =f.collection_select :condition_id, Condition.all, :id, :name, prompt: "---"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             配送について
@@ -75,8 +85,10 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select.select-default
-                  %option{value: ""} ---
+                -# 配送料負担のフォーム
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.collection_select :payment_id, Payment.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送元の地域
@@ -84,8 +96,10 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                -# 発送地のフォーム
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.collection_select :prefecture_id, Prefecture.all, :id, :name, prompt: "---"
             .sellbox-form__post--group
               %lavel.sellbox-form__post--group--head
                 発送までの日数
@@ -93,8 +107,11 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                %select
-                  %option{value: ""} ---
+                -# 発送までの日数フォーム
+                .select-default
+                  = f.fields_for :delivery do |delivery|
+                    =delivery.collection_select :days_to_ship_id, Preparation.all, :id, :name, prompt: "---"
+                    =delivery.hidden_field :mode, value: "0"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             販売価格(300~9,999,999)
@@ -109,8 +126,9 @@
                   .price-group__box--input
                     .price-group__box--input--yen
                       &yen;
+                      -# 価格のフォーム
                     .price-group__box--input--value
-                      = f.text_field:text, class:"value-def", placeholder:"例) 300"
+                      = f.number_field :price, class:"value-def", placeholder:"例) 300"
               %li.price-group__box.clearfix
                 .price-group__box--left
                   販売手数料(10%)            
@@ -146,10 +164,10 @@
                 加盟店規約
               %span
                 に同意したことになります。
+          = f.hidden_field :status, value: 0
           = f.submit "出品する", class:"btn-red"
           .btn-gry
-            = link_to "#",class:"btn-gry__link" do
-              もどる
+            = link_to "もどる", root_path, class:"btn-gry__link"
   .new-content__footer
     %nav
       %ul.clearfix
