@@ -111,6 +111,7 @@
                 .select-default
                   = f.fields_for :delivery do |delivery|
                     =delivery.collection_select :days_to_ship_id, Preparation.all, :id, :name, prompt: "---"
+                    =delivery.hidden_field :mode, value: "0"
         .sellbox-form__post.clearfix
           %h3.sellbox-form__post-head
             販売価格(300~9,999,999)
