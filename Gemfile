@@ -89,6 +89,6 @@ gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 gem 'dotenv-rails'
 gem 'erb2haml'
-
 gem 'omniauth-google-oauth2'
+gem 'payjp'
 gem 'active_hash'

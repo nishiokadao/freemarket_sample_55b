@@ -13,7 +13,7 @@
             = image_tag "https://static.mercdn.net/thumb/photos/m60327513337_1.jpg?1564447955", class:"item-inner__image--photo"
           %p.item-inner__name
             Aesop 巾着
-          = form_for "", html:{class: "item-inner__form"} do |f|
+          = form_for @product, url:pay_products_path, html:{class: "item-inner__form"} do |f|
             %p.price
               ¥700
               %span.price__fee
@@ -29,9 +29,8 @@
                 .price-table__bold--right
                   %span.price-table__bold--right--pay
                     ¥ 700
-            -# = f.hidden_fieldがここにいっぱい入ります！
-            = f.submit "購入する", class:"buy-btn"
-            -# = f.hidden_field
+            = link_to pay_products_path, method: :post, class:"buy-btn" do
+              購入する
       %section.buy-content__main--box--user
         .user-inner
           %h3
@@ -50,10 +49,10 @@
         .user-inner
           %h3
             支払い方法
-          %address.user-inner__text
-            ******************111
-            %br
-            01/25
+          .inner-pay__box--form--num
+            = "**** **** ****#{@card_nam}"
+          .inner-pay__box--form--num
+            = "#{@exp_month} / #{@exp_year}"
           = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2787198863", alt:"master-card", class:"user-inner__card"
           = link_to "#", class:"user-inner__edit" do
             %span

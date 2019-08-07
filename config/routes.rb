@@ -26,6 +26,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create] do
     collection do
       get 'buy'
+      post'pay'
     end
   end
+
+  resources :credits, only: [:new, :create, :index, :destroy]
 end

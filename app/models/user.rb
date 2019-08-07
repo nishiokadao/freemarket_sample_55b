@@ -7,6 +7,7 @@ class User < ApplicationRecord
   # validates :name, presence: true
 
   has_many :products
+  has_many :credits
 
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first
