@@ -20,6 +20,7 @@ Rails.application.routes.draw do
       get 'detail'
       get 'profile'
       get 'credit'
+      get 'exhibit'
     end
   end
   resources :products, only: [:index, :new, :show, :create] do

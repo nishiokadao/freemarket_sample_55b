@@ -10,7 +10,8 @@
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
-              = image_tag product.images[0].image, class:"img"
+            - @image.each do |image|
+              = image_tag image.image.url, class:"img"
             .items-box-body
               %h3.items-box-name
                 = product.name
