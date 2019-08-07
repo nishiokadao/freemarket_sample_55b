@@ -5,6 +5,6 @@ class Delivery < ApplicationRecord
   belongs_to_active_hash :payment
 
 
-  has_one :product
+  belongs_to :product
   
 end
