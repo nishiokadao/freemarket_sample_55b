@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.includes(:image).order("created_at DESC")
-    # @images = Image.all
   end
 
   def show
@@ -39,6 +38,7 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
+    #TODO: 不正な値のとき遷移する？
     # else
     # render 'edit'
     end
@@ -74,5 +74,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
   end
+
 
 end
