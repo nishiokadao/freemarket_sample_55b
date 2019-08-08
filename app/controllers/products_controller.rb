@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.includes(:image)
-    @images = Image.all
+    @products = Product.includes(:image).order("created_at DESC")
+    # @images = Image.all
   end
 
   def show
@@ -34,6 +34,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    binding.pry
   end
 
   def update
