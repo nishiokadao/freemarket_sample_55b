@@ -1,0 +1,54 @@
+= render 'users/indexheader'
+%nav.user-navigation
+  %ul
+    %li
+      = link_to "/", itemprop: "url" do
+        %span メルカリ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span マイページ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span 出品した商品 - 出品中
+.item_state-container
+  .item_state-container__right-content
+    %section.mypage-tab-container
+      %h2.mypage-tab-container__header
+        出品した商品
+      %ul.mypage-tab-container__tab
+        %li.mypage-tab-container__tab--active
+          %h3
+            = link_to "/" do
+              出品中
+        %li.mypage-tab-container__tab--deal
+          %h3
+            = link_to "/" do
+              取引中
+        %li.mypage-tab-container__tab--sold
+          %h3
+            = link_to "/" do
+              売却済み
+      .mypage-tab-container__content
+        %ul.mypage-tab-container__content--item-list
+          %li
+            = link_to "https://www.mercari.com/jp/items/m12948959379/", class: "mypage-tab-container__content--item-list--link" do
+              %figure.item-list--figure
+                = image_tag "//static.mercdn.net/thumb/photos/m12948959379_1.jpg?1531251364", class: "item-list--figure__image"
+              .item-list--body
+                .item-list--body__text
+                  二階堂ふみ アダルト 上下セット
+                .item-list--body__bottom
+                  %span.listing-item-count
+                    %i.listing-item-count__like.far.fa-heart
+                    %span 5000
+                  %span.listing-item-count
+                    %i.listing-item-count__message.far.fa-comment
+                    %span 24657
+                  .listing-item-status
+                    出品中
+              %i.fas.fa-angle-right
+  .user-edit-container__left-content
+    = render 'users/mypage_side_nav'
+= render 'products/index-footer'
