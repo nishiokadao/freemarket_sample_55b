@@ -1,7 +1,6 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @image = Image.all
+    @products = Product.includes(:image)
   end
 
   def show
@@ -20,7 +19,6 @@ class ProductsController < ApplicationController
 
   def create
     @product= Product.new(product_params)
-    
     if @product.save!
       # あとで使う
       # params[:images]['image'].each do |a|
