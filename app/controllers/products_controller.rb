@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
   def index
     @products = Product.includes(:image)
-    # binding.pry
-    # @images = Image.all
   end
 
   def show
