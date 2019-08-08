@@ -1,5 +1,4 @@
 class Product < ApplicationRecord
-  # has_many :images
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to_active_hash :condition
   # belongs_to_active_hash :tradestatus
@@ -13,6 +12,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :delivery, update_only: true
   accepts_nested_attributes_for :category, update_only: true
 
+  # mount_uploader :image, ImageUploader
   # enum :status, {"出品中": 0}
 
 end

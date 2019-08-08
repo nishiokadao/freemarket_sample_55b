@@ -20,7 +20,6 @@ class ProductsController < ApplicationController
 
   def create
     @product= Product.new(product_params)
-    
     if @product.save!
       # あとで使う
       # params[:images]['image'].each do |a|
