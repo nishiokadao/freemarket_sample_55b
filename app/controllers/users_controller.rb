@@ -30,6 +30,9 @@ class UsersController < ApplicationController
   
   def signout
   end 
+
+  def item_state
+  end
   
 end
 

@@ -1,0 +1,145 @@
+.item_state-container {
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
+  overflow: scroll;
+  &__right-content {
+    float: right;
+    width: 700px;
+  }
+  .mypage-tab-container:nth-of-type(1) {
+    margin: 0;
+  }
+  .mypage-tab-container {
+    background-color: #fff;
+    &__header {
+      padding: 0 16px;
+      background: #fafafa;
+      font-size: 16px;
+      line-height: 72px;
+      font-weight: bold;
+    }
+    &__tab {
+      border: 0;
+      background: #eee;
+      font-size: 0;
+      li {
+        width: 33.3%;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+      }
+      h3 {
+        font-size: 22px;
+        font-weight: bold;
+      }
+      &--active {
+        background: #fff;
+        a {
+          border-top: 2px solid #ea352d;
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+        }
+      }
+      &--deal, &--sold {
+        a {
+          position: relative;
+          display: block;
+          color: #333;
+          font-size: 16px;
+          line-height: 72px;
+        }
+      }
+    }
+    &__content {
+      margin: 0;
+      padding: 0;
+      height: 84px;
+      &--item-list {
+        display: block;
+        li {
+          display: list-item;
+          text-align: match-parent;
+          list-style: none;
+          position: relative;
+        }
+        li:first-child {
+          border-bottom: 1px solid #eee;
+        }
+        li:last-child {
+          border: 0;
+        }
+        &--link {
+          display: block;
+          padding: 16px;
+          color: #333;
+          width: 668px;
+          height: 51px;
+        }
+        .item-list--figure {
+          position: relative;
+          overflow: hidden;
+          float: left;
+          width: 48px;
+          height: 48px;
+          &__image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+          }
+        }
+        .item-list--body {
+          margin-right: 100px;
+          margin: 0 40px 0 68px;
+          &__text {
+            overflow: hidden;
+            display: -webkit-box;
+            max-height: 4.4em;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis;
+            line-height: 1.5;
+            font-size: 14px;
+          }
+          .listing-item-count {
+            vertical-align: 2px;
+            margin: 0 6px 0 0;
+            &__like, &__message {
+              vertical-align: middle;
+              color: #ccc;
+            }
+            span {
+              vertical-align: middle;
+              margin: 0 0 0 2px;
+              font-size: 16px;
+              color: #888;
+            }
+          }
+          .listing-item-status {
+            background: #0099e8;
+            display: inline-block;
+            margin: 8px 0 0 0;
+            padding: 5px 6px;
+            border-radius: 2px;
+            font-size: 12px;
+            color: #fff;
+            font-weight: 600;
+          }
+        }
+        .fa-angle-right {
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          transform: translate(0, -50%);
+        }
+      }
+    }
+  }
+}
