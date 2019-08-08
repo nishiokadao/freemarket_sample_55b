@@ -15,7 +15,7 @@
       .item-main-content
         .item-photo
           - @images.each do |image|
-            = image_tag image.image, class:"product-img"
+            = image_tag image.image.url, class:"product-img"
         %table.item-detail-table
           %tbody
             %tr
@@ -71,7 +71,7 @@
               %th
                 配送元地域
               %td
-                = @product.delivery_method
+                = @product.delivery
             %tr
               %th
                 発送日の目安
