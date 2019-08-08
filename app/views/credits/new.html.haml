@@ -1,15 +1,18 @@
-.reg-container
-  = render 'users/user_header'
+.buy-content
+  %header.buy-content__header
+    %h1
+      = link_to "https://www.mercari.com/jp/" do
+        = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
   .reg-container__main
     .reg-container__main--content
       %h2.reg-container__main--content-title 支払い方法
-      =form_for("") do |f|
+      =form_with url: credits_path,id: "form-inner", method: :post do |f|
         .reg-container__main--content-title--input
           .input-groups
             .input-group
               %label カード番号
               %span.red-box 必須
-              =f.text_field :cardnumber, placeholder: "半角数字のみ", class: "input-def"
+              =f.text_field:card_number, placeholder: "半角数字のみ", class: "input-def", maxlength: "16", id:"card_number"
               %ul
                 %li
                   = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/visa.svg?863303983", class:"card-image"
@@ -22,23 +25,24 @@
             .input-group
               %label 有効期限
               %span.red-box 必須
-              = f.select:text,class:"month-box" 
-              %span 月/
-              = f.select:text,class:"year-box" 
+              %br
+              = f.select:exp_month, [["--", 0],["01",1],["02",2],["03",3],["04",4],["05",5],["06",6],["07",7],["08",8],["09",9],["10",10],["11",11],["12",12]],{} ,id:"exp_month"
+              %span 月
+              %br
+              = f.select:exp_year, [["--", 0],["19",2019],["20",2020],["21",2021],["22",2022],["23",2023],["24",2024],["25",2025],["26",2026],["27",2027],["28",2028],["29",2029]],{} , id:"exp_year"
               %span 年
-
             .input-group
               %label セキュリティコード
               %span.red-box 必須
-              =f.text_field :cord, placeholder: "カード背面４桁もしくは３桁の番号", class: "input-def"
+              =f.text_field:cvc, placeholder: "カード背面４桁もしくは３桁の番号", class: "input-def", id:"cvc"
         .reg-container__main--content-title--bottom
           .input-group.right-info
             %p.info-message--right
               = link_to "https://www.mercari.com/jp/privacy/" do
                 %i.fas.fa-question-circle
                 カードの裏面の番号とは？
-          .input-group
-            =link_to "次へ進む", sign_up_fifth_users_path, class: "link_button"
+          #card_token
+            =f.submit "登録する", class:"submit-btn.btn-def", id:"token"
   .reg-container__footer
     %nav
       %ul.clearfix

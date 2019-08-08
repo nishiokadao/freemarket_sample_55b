@@ -12,6 +12,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :delivery
   accepts_nested_attributes_for :category
 
+  # mount_uploader :image, ImageUploader
   # enum :status, {"出品中": 0}
 
 end

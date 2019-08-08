@@ -1,4 +1,3 @@
--breadcrumb :cards
 = render 'users/indexheader'
 %nav.index__head-nav
   %ul
@@ -28,14 +27,15 @@
           .inner-top
             %h3.inner-top__head
               クレジットカード一覧
-        .cre-content__box--inner--box
-          .inner-box
-            = link_to new_credit_path, class:"inner-box__link" do
-              %i.far.fa-credit-card
-              クレジットカードを追加する
-        .cre-content__box--inner--setting
-          = link_to "https://www.mercari.com/jp/help_center/category/6/", class:"setting-link" do
-            %span
-              支払い方法について
-            %i.fas.fa-angle-right
-= render 'products/index-footer'
+        %ul.inner-pay
+          %li.inner-pay__box
+            .inner-pay__box--form
+              %figure
+                = image_tag "//www-mercari-jp.akamaized.net/assets/img/card/master-card.svg?2787198863", width:"34", height:"20", alt:"master-card", class:"pay-card"
+              .inner-pay__box--form--num
+                = "**** **** ****#{@card_nam}"
+              .inner-pay__box--form--num
+                = "#{@exp_month} / #{@exp_year}"
+              = link_to credit_path(@credit.id),class:"delete", method: :delete do
+                削除する
+

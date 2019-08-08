@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_06_075424) do
+ActiveRecord::Schema.define(version: 2019_08_07_064559) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parent_id"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(version: 2019_08_06_075424) do
   create_table "credits", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "payjp_id", null: false
+    t.string "card_id", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_credits_on_user_id"
   end
 
   create_table "deliveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -63,10 +67,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_075424) do
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
     t.integer "seller_id", null: false
-    t.bigint "image_id", null: false
-    t.bigint "delivery_id", null: false
-    t.index ["delivery_id"], name: "index_products_on_delivery_id"
-    t.index ["image_id"], name: "index_products_on_image_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -89,7 +89,6 @@ ActiveRecord::Schema.define(version: 2019_08_06_075424) do
   add_foreign_key "categories", "products"
   add_foreign_key "category_products", "categories"
   add_foreign_key "category_products", "products"
+  add_foreign_key "credits", "users"
   add_foreign_key "deliveries", "products"
-  add_foreign_key "products", "deliveries"
-  add_foreign_key "products", "images"
 end
