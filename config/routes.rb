@@ -20,11 +20,12 @@ Rails.application.routes.draw do
       get 'detail'
       get 'profile'
       get 'credit'
-      get 'exhibit'
+      get 'item_state'
     end
   end
   resources :products, only: [:index, :new, :show, :create] do
     collection do
+      get 'exhibit'
       get 'buy'
       post'pay'
     end
