@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.all
-    @image = Image.all
+    @products = Product.includes(:image)
+    @images = Image.all
   end
 
   def show
@@ -31,6 +31,20 @@ class ProductsController < ApplicationController
       redirect_to new_product_path
     end
   end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to root_path
+    # else
+    # render 'edit'
+    end
+  end
+
 
   def buy
     @product = Product.find(1)

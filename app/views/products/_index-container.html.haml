@@ -6,12 +6,10 @@
       = link_to"レディース新着アイテム",root_path
     .items-box-content
       - @products.each do |product|
-        
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
-            - @image.each do |image|
-              = image_tag image.image.url, class:"img"
+              = image_tag product.image.image.url, class:"img"
             .items-box-body
               %h3.items-box-name
                 = product.name

@@ -9,9 +9,9 @@ class Product < ApplicationRecord
   has_one :image
   has_one :delivery
   has_one :category
-  accepts_nested_attributes_for :image
-  accepts_nested_attributes_for :delivery
-  accepts_nested_attributes_for :category
+  accepts_nested_attributes_for :image ,update_only: true
+  accepts_nested_attributes_for :delivery, update_only: true
+  accepts_nested_attributes_for :category, update_only: true
 
   # enum :status, {"出品中": 0}
 
