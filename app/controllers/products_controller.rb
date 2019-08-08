@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @images = Image.where(product_id:@product.id)
-    @user = User.find(params[:id])
+    @user = User.find(@product.seller_id)
   end
   
   def new

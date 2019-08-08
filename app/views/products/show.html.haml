@@ -14,8 +14,8 @@
         = @user.name  + "さんから出品されました。レディースの商品で、未定から2~3日で発送されます。"
       .item-main-content
         .item-photo
-          - @images.each do |image|
-            = image_tag image.image, class:"product-img"
+          -# - @images.each do |image|
+          -#   = image_tag image.image, class:"product-img"
         %table.item-detail-table
           %tbody
             %tr
@@ -56,7 +56,7 @@
               %th
                 商品の状態
               %td
-                = @product.condition
+                = @product.condition.name
             %tr
               %th
                 配送料の負担
@@ -71,7 +71,7 @@
               %th
                 配送元地域
               %td
-                = @product.delivery_method
+                = @product.delivery.prefecture.name
             %tr
               %th
                 発送日の目安
