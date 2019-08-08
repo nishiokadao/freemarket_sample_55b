@@ -1,28 +1,40 @@
-.defalt-container
-  = render 'users/indexheader'
-  %nav.category-bar
-    %ul
-      %li
-        メルカリ  ＞
-        %span
-          レディース
-  %section.item-box-container
-    .item-box-container__single-sontainer
+= render 'users/indexheader'
+%nav.user-navigation
+  %ul
+    %li
+      = link_to "/", itemprop: "url" do
+        %span メルカリ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span マイページ
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span 出品した商品 - 出品中
+      %i.fas.fa-angle-right
+    %li
+      = link_to "/", itemprop: "url" do
+        %span 出品商品画面
+.exhibit-container
+  .exhibit-container__right-content
+    %section.item-box-container
+    .item-box-container__single-container
       %h1.item-name
-        = @product.name
+        -# = @product.name
       -# %p.item-word
       -#   = @user.name  + "さんから出品されました。レディースの商品で、未定から2~3日で発送されます。"
       .item-main-content
         .item-photo
-          - @images.each do |image|
-            = image_tag image.image.url, class:"product-img"
+          -# - @images.each do |image|
+            -# = image_tag image.image, class:"product-img"
         %table.item-detail-table
           %tbody
             %tr
               %th
                 出品者
               %td
-                = @user.name
+                -# = @user.name
                 .evaluation
                   .item-user-ratings
                     %i.fas.fa-laugh
@@ -56,7 +68,7 @@
               %th
                 商品の状態
               %td
-                = @product.condition.name
+                -# = @product.condition_id
             %tr
               %th
                 配送料の負担
@@ -71,7 +83,7 @@
               %th
                 配送元地域
               %td
-                = @product.delivery
+                -# = @product.delivery_method
             %tr
               %th
                 発送日の目安
@@ -80,7 +92,7 @@
       .item-price-box
         %span.item-price__bold
           ¥
-          = @product.price
+          -# = @product.price
         %span.item-tax
           （税込）
         %span.item-shipping-fee
@@ -88,13 +100,13 @@
       = link_to'購入画面に進む', buy_products_path ,class:"item-buy-btn"
       .item-description
         %p.item-description__inner
-          = @product.description
+          -# = @product.description
       .item-button-container
         .item-button-left
           = link_to root_path, class:"item-button-like" do
             %i.far.fa-heart
             %span
-            = @product.status
+            -# = @product.status
           = link_to root_path, class:"item-button-report" do
             %i.far.fa-flag
             %span
@@ -129,7 +141,7 @@
     %section.items-box-container.items-in-user-profile 
     
       %h2.items-box-head
-        = @user.name  + "さんのその他の出品"
+        -# = @user.name  + "さんのその他の出品"
       .items-box-content__clearfix
         %section.items-box
           = link_to root_path do

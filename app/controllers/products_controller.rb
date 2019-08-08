@@ -68,6 +68,8 @@ class ProductsController < ApplicationController
       redirect_to buy_product_path, notice: "削除しました"
   end
 
+  def exhibit
+  end
 
   private
   
