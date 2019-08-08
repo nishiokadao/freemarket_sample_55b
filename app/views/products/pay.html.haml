@@ -15,4 +15,5 @@
         .inner__price
           = "¥#{@product.price}"
     .pay-content__main--image
-      =image_tag "http://www.mocchiblog.com/wp-content/images/2013/07/mercari_mark-204x300.png",size: "200x200", class:"mercari"
+      =link_to root_path do
+        =image_tag "http://www.mocchiblog.com/wp-content/images/2013/07/mercari_mark-204x300.png",size: "200x200", class:"mercari"
