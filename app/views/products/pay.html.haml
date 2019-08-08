@@ -8,10 +8,11 @@
       発送をお待ちください
     .pay-content__main--info
       .photo
-        = image_tag @image.image.url,class:"item-inner__image--photo"
-      .name
-        = @product.name
-      .price
-        = "¥#{@product.price}"
+        = image_tag @image.image.url,class:"photo__buy"
+      .inner
+        .inner__name
+          = @product.name
+        .inner__price
+          = "¥#{@product.price}"
     .pay-content__main--image
       =image_tag "http://www.mocchiblog.com/wp-content/images/2013/07/mercari_mark-204x300.png",size: "200x200", class:"mercari"

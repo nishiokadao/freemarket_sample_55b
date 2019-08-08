@@ -25,23 +25,29 @@
       height: 300px;
       position: relative;
       .photo {
+        float: left;
         position: absolute;
         top:0px;
-        left:100px;
+        left:50px;
+        &__buy {
+          height: 250px;
+          width: 300px;
+        }
       }
-      .name {
-        font-size: 20px;
+      .inner{
+        float: right;
         position: absolute;
-        top: 10px;
-        right: 270px;
+        top:10px;
+        right: 200px;
+        &__name {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+        &__price {
+          margin-top:10px;
+          font-size: 20px;
+        }
       }
-      .price {
-        font-size: 20px;
-        position: absolute;
-        top: 50px;
-        right: 250px;
-      }
-
     }
     &--image {
       bottom: 0;
