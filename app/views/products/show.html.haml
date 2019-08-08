@@ -56,7 +56,7 @@
               %th
                 商品の状態
               %td
-                = @product.condition_id
+                = @product.condition.name
             %tr
               %th
                 配送料の負担
@@ -71,7 +71,7 @@
               %th
                 配送元地域
               %td
-                = @product.delivery
+                = @product.delivery.prefecture.name
             %tr
               %th
                 発送日の目安

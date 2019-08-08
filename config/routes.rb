@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       get 'item_state'
     end
   end
-  resources :products, only: [:index, :new, :show, :create] do
+  resources :products, only: [:index, :new, :show, :create, :edit, :update] do
     collection do
       get 'exhibit'
       get 'buy'

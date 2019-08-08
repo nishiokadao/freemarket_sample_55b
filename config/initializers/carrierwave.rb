@@ -17,5 +17,5 @@ CarrierWave.configure do |config|
     config.fog_directory  = 'onigiri55b'
     config.asset_host = 'https://s3-ap-northeast-1.amazonaws.com/onigiri55b'  
   end
-
 end
+                

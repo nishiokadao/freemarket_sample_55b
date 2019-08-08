@@ -1,12 +1,12 @@
 class ProductsController < ApplicationController
   def index
-    @products = Product.includes(:image)
+    @products = Product.includes(:image).order("created_at DESC")
   end
 
   def show
     @product = Product.find(params[:id])
     @images = Image.where(product_id:@product.id)
-    @user = User.find(params[:id])
+    @user = User.find(@product.seller_id)
   end
   
   def new
@@ -29,6 +29,20 @@ class ProductsController < ApplicationController
       redirect_to new_product_path
     end
   end
+
+  def edit
+    @product = Product.find(params[:id])
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update(product_params)
+      redirect_to root_path
+    else
+      render 'edit'
+    end
+  end
+
 
   def buy
     @product = Product.find(1)
@@ -61,5 +75,6 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
   end
+
 
 end
