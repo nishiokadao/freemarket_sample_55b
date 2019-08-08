@@ -9,19 +9,42 @@
     margin: 0 auto;
     text-align: center;
     &--head {
-      line-height: 200px;
-      height: 200px;
+      line-height: 100px;
+      height: 100px;
       font-size: 25px;
       .far.fa-clock{
         font-size: 25px;
       }
     }
-    &--image {
-      margin-bottom: 100px;
-    }
     &--text {
-      font-size: 25px;
+      height: 100px;
+      font-size: 20px;
       color: red;
+    }
+    &--info {
+      height: 300px;
+      position: relative;
+      .photo {
+        position: absolute;
+        top:0px;
+        left:100px;
+      }
+      .name {
+        font-size: 20px;
+        position: absolute;
+        top: 10px;
+        right: 270px;
+      }
+      .price {
+        font-size: 20px;
+        position: absolute;
+        top: 50px;
+        right: 250px;
+      }
+
+    }
+    &--image {
+      bottom: 0;
     }
   }
 }
