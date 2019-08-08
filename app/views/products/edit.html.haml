@@ -29,9 +29,9 @@
             .sellbox-form__upload--drop--post  
               -# ファイルのフォーム
               = f.fields_for :image do |image|
-                = image_tag(image.image.content)
+                = image_tag(@product.image.image.url)
                 = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
-                = image.hidden_field :id, value: image.image.id 
+                = image.hidden_field :id, value: @product.image.id 
                 %pre.sellbox-form__upload--drop--post--text
                   ドラッグアンドドロップ
                   またはクリックしてファイルをダウンロード
