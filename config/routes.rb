@@ -26,10 +26,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
     collection do
       get 'exhibit/:id' => 'products#exhibit'
-      get 'buy'
-      post'pay'
+      get 'buy/:id' => 'products#buy' 
+      get 'pay/:id' => 'products#pay'
     end
   end
-
   resources :credits, only: [:new, :create, :index, :destroy]
 end
