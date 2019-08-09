@@ -32,6 +32,8 @@ class UsersController < ApplicationController
   end 
 
   def item_state
+    @user = User.find_by(id: current_user.id)
+    @products = Product.includes(:image).where(seller_id: @user.id)
   end
   
 end
