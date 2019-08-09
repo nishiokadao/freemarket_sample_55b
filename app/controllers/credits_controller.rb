@@ -11,7 +11,7 @@ class CreditsController < ApplicationController
     if @credit.blank?
       redirect_to action: "new" 
     else
-      Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+      Payjp.api_key = ‘sk_test_634d5041b80a0c0fca6d2552’
       customer = Payjp::Customer.retrieve(@credit.payjp_id)
       @default_credit_info = customer.cards.retrieve(@credit.card_id)
       @card_nam = @default_credit_info.last4
@@ -21,7 +21,7 @@ class CreditsController < ApplicationController
   end
 
   def create 
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = ‘sk_test_634d5041b80a0c0fca6d2552’
     if params['payjp-token'].blank?
       redirect_to action: "new"
     else
@@ -38,7 +38,7 @@ class CreditsController < ApplicationController
   end
 
   def destroy
-    Payjp.api_key = ENV['PAYJP_SECRET_KEY']
+    Payjp.api_key = ‘sk_test_634d5041b80a0c0fca6d2552’
     customer = Payjp::Customer.retrieve(@credit.payjp_id)
     customer.delete
     if @credit.destroy
