@@ -48,7 +48,7 @@ class ProductsController < ApplicationController
   def buy
     ## payjp情報
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
-    Payjp.api_key = ‘sk_test_634d5041b80a0c0fca6d2552’
+    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
     customer = Payjp::Customer.retrieve(@credit.payjp_id)
     @default_credit_info = customer.cards.retrieve(@credit.card_id)
     @card_nam = @default_credit_info.last4
@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
 
   def pay
     credit = Credit.where(user_id: current_user.id).first
-    Payjp.api_key = ‘sk_test_634d5041b80a0c0fca6d2552’
+    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
     Payjp::Charge.create(
     amount: @product.price, 
     customer: credit.payjp_id, 
