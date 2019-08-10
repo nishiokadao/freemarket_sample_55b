@@ -2,17 +2,17 @@
 %nav.index__head-nav
   %ul
     %li
-      =link_to "https://www.mercari.com/jp/" do
+      =link_to root_path do
         %span.index__head-nav--title
           メルカリ
           %i.fas.fa-chevron-right
     %li
-      =link_to "https://www.mercari.com/jp/" do
+      =link_to user_path(current_user) do
         %span.index__head-nav--title
           マイページ
           %i.fas.fa-chevron-right
     %li
-      =link_to "https://www.mercari.com/jp/" do
+      =link_to destroy_user_session do
         %span.index__head-nav--title
           ログアウト
           %i.fas.fa-chevron-right

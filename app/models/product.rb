@@ -13,5 +13,7 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :category, update_only: true
 
   validates :name, :status, :description, :price, :condition_id, presence: true
+  validates :image, presence: true
+
 
 end
