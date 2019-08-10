@@ -2,15 +2,15 @@
 %nav.user-navigation
   %ul
     %li
-      = link_to "/", itemprop: "url" do
+      = link_to root_path, itemprop: "url" do
         %span メルカリ
       %i.fas.fa-angle-right
     %li
-      = link_to "/", itemprop: "url" do
+      = link_to user_path(current_user), itemprop: "url" do
         %span マイページ
       %i.fas.fa-angle-right
     %li
-      = link_to "/", itemprop: "url" do
+      = link_to item_state_users_path, itemprop: "url" do
         %span 出品した商品 - 出品中
       %i.fas.fa-angle-right
     %li

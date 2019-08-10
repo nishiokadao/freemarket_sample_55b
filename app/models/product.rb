@@ -12,8 +12,9 @@ class Product < ApplicationRecord
   accepts_nested_attributes_for :delivery, update_only: true
   accepts_nested_attributes_for :category, update_only: true
 
-  # mount_uploader :image, ImageUploader
-  # enum :status, {"出品中": 0}
+  validates :name, :status, :description, :price, :condition_id, presence: true
+  validates :image, presence: true
+
 
   def self.search(search)
     return Product.all unless search

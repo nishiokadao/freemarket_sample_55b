@@ -25,7 +25,7 @@
             =f.password_field :password, placeholder: "パスワード", class: "input-box__text input-def"
           .login-container__main--login-panel--form--input-box
           %button.submit-btn.btn-def ログイン
-          %input{type: "hidden", value: "https://www.mercari.com/jp/"}
+          %input{type: "hidden", value: root_path}
           = link_to "https://www.mercari.com/jp/password/reset/start/" do
             パスワードをお忘れの方
   .login-container__footer
@@ -40,7 +40,7 @@
         %li
           = link_to "https://www.mercari.com/jp/tokutei/" do
             特定商取引に関する表記
-    = link_to "https://www.mercari.com/jp/", {class: "footer-logo"} do
+    = link_to root_path, class: "footer-logo" do
       =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808", alt: "mercari", height: "65", width: "80"
     %p
       %small © 2019 Mercari
