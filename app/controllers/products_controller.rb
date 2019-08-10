@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
+  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edi, :update]
   before_action :set_all_products, only: [:show, :exhibit]
-  before_action :set_product, only: [:show, :buy, :pay]
   before_action :set_image, only: [:show, :buy, :pay]
 
   def index
@@ -28,11 +28,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -41,7 +39,6 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product = Product.find(params[:id])
     @product.destroy
     redirect_to root_path
   end
@@ -78,7 +75,6 @@ class ProductsController < ApplicationController
   end
   
   def set_all_products
-    @product = Product.find(params[:id])
     @images = Image.where(product_id: @product.id)
     @user = User.find(@product.seller_id)
   end
