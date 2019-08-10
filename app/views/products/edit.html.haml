@@ -8,7 +8,7 @@
       %h2.sellbox-head
         商品の情報を編集
         -#フォーム始まり 
-      = form_for @product, url: product_path(@product.id), html:{class: "sellbox-form"} do |f|
+      = form_for @product, url: product_path(@product.id), class: "sellbox-form" do |f|
         .sellbox-form__upload
           %h3.sellbox-form__upload--head
             出品画像
@@ -22,7 +22,7 @@
                 %ul
                   %li.upload-image__prev
                     %figure.upload-image__prev--figure
-                      =image_tag(@product.image.image.url, {class: "upload-image__prev--figure--src"})
+                      =image_tag(@product.image.image.url, class: "upload-image__prev--figure--src")
                     %button.upload-image__prev--btn
                       =link_to "編集"
                       =link_to "削除"
