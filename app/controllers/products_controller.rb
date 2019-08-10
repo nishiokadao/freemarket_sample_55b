@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :buy, :pay]
   before_action :set_image, only: [:show, :buy, :pay]
+  before_action :authenticate_user!, only: [:create, :edit] 
 
   def index
     @products = Product.includes(:image).order("created_at DESC")
@@ -20,14 +21,10 @@ class ProductsController < ApplicationController
 
   def create
     @product= Product.new(product_params)
-    if @product.save!
-      # あとで使う
-      # params[:images]['image'].each do |a|
-      #   @image = @product.images.create!(image: a, product_id: @product.id)
-      # end
-      redirect_to root_path, notice: '出品が完了しました。'
+    if @product.save
+      redirect_to root_path
     else
-      redirect_to new_product_path
+      redirect_to new_product_path, notice: "入力されていない項目があります。"
     end
   end
 

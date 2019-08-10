@@ -282,6 +282,38 @@
             }
           }
         }
+        .js__modal-buy{
+          display: none;
+          position: fixed;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          z-index: 3000;
+          overflow-x: hidden;
+          &--back{
+            min-width: 768px;
+            margin: 20, auto;
+            width: 600px;
+            .modal-content{
+              position: relative;
+              overflow: hidden;
+              width: 95%;
+              max-width: 375px;
+              margin: 8px auto;
+              background: #fff;
+              .modal-head{
+                text-align: center;
+                line-height: 80px;
+                font-size: 18px;
+              }
+              .modal-content_body{
+                border-top: 1px solid #eee;
+                padding: 40px;
+              }
+            }
+          }
+        }
         .sellbox-form__btn{
           padding: 40px;
           border-top: 1px solid #eee;

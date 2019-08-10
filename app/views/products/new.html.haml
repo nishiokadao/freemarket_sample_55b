@@ -1,8 +1,11 @@
 .new-content
   %header.new-content__header
     %h1
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
+    - if flash[:notice]
+      %p
+        = flash[:notice] 
   .new-content__main
     %section.new-content__main--sellbox
       %h2.sellbox-head
@@ -139,6 +142,15 @@
                   販売利益
                 .price-group__box--bold--right
                   &minus;
+                  -# モーダルウィンドウ//始まり
+        .js__modal-buy
+          .js__model-buy--back
+            .modal-content
+              %h3.modal-head 出品が完了しました
+              .modal-content_body
+                あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
+                -# =link_to "続けて出品する", new_product_path, class: "btn-red" do
+                  -# モーダルウィンドウ//終わり
         .sellbox-form__btn
           %div
             %p
@@ -180,7 +192,7 @@
         %li
           =link_to "https://www.mercari.com/jp/tokutei/" do
             特定商取引に関する表記
-      = link_to "https://www.mercari.com/jp/", class:"footer-logo" do
+      = link_to root_path, class:"footer-logo" do
         = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo-gray.svg?2098311808",alt: "mercari", height: "65", width: "80"
       %p
         %small © 2019 Mercari

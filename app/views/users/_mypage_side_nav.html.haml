@@ -17,7 +17,7 @@
         いいね!一覧
         %i.fas.fa-angle-right.fa-2x
     %li
-      = link_to user_path(current_user), class: "user-side-navigation__list--item"do
+      = link_to new_product_path(current_user), class: "user-side-navigation__list--item"do
         出品する
         %i.fas.fa-angle-right.fa-2x
     %li
@@ -71,7 +71,7 @@
     設定
   %ul.user-side-navigation__list
     %li
-      = link_to user_path(current_user), class: "user-side-navigation__list--item" do
+      = link_to profile_users_path(current_user), class: "user-side-navigation__list--item" do
         プロフィール
         %i.fas.ffa-angle-right
     %li
@@ -87,7 +87,7 @@
         メール/パスワード
         %i.fas.fa-angle-right.fa-2x
     %li
-      = link_to user_path(current_user), class: "user-side-navigation__list--item" do
+      = link_to detail_users_path(current_user), class: "user-side-navigation__list--item" do
         本人情報
         %i.fas.fa-angle-right.fa-2x
     %li
