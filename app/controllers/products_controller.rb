@@ -39,8 +39,11 @@ class ProductsController < ApplicationController
   end
 
   def destroy
-    @product.destroy
-    redirect_to root_path
+    if @product.destroy
+      redirect_to item_state_users_path
+    else
+      render 'exhibit'
+    end
   end
 
   def buy
