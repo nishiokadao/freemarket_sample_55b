@@ -4,7 +4,7 @@
       %h1
         = link_to root_path do
           = image_tag("https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372")
-      = form_tag(search_products_path, :method => 'get', class:"index-header-form") do
+      = form_tag(search_products_path, method: 'get', class:"index-header-form") do
         = text_field_tag "search", "", placeholder: "何かお探しですか？", class:"index-input-default"
         = label :search, class: "search-label", for: "message_image" do
           %i.index-search-icon.fas.fa-search
