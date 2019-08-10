@@ -43,6 +43,12 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @products = Product.search(params[:search])
+    @search_keyward = params[:search] 
+    # binding.pry
+  end
+
 
   def buy
     @product = Product.find(1)

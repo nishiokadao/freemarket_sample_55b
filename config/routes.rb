@@ -28,6 +28,7 @@ Rails.application.routes.draw do
       get 'exhibit'
       get 'buy'
       post'pay'
+      get 'search'
     end
   end
 

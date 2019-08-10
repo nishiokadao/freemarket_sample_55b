@@ -15,4 +15,10 @@ class Product < ApplicationRecord
   # mount_uploader :image, ImageUploader
   # enum :status, {"出品中": 0}
 
+  def self.search(search)
+    return Product.all unless search
+    Product.where(['name LIKE ?', "%#{search}%"])
+  end
+
+
 end

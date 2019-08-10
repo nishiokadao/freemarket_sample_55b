@@ -1,5 +1,8 @@
 .defalt-container
-  = render 'users/indexheader'
+  -if user_signed_in?
+    = render 'users/indexheader'
+  -else
+    = render 'products/index-header-list'
   %nav.category-bar
     %ul
       %li
