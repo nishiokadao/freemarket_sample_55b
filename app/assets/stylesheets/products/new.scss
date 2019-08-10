@@ -282,8 +282,11 @@
             }
           }
         }
+        // モーダル始まり
         .js__modal-buy{
           display: none;
+          height: 100vh;
+          width: 100%;
           position: fixed;
           top: 0;
           right: 0;
@@ -314,6 +317,7 @@
             }
           }
         }
+        // モーダル終わり
         .sellbox-form__btn{
           padding: 40px;
           border-top: 1px solid #eee;

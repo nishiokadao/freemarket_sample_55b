@@ -34,9 +34,9 @@ $('#post__image').change(function(){
     $('.price-group__box--bold--right').empty();
   });
 
-  // $('.btn-red').on('click', function(){
-  //   window.alert("出品が完了しました。");
-  // });
+  $('.btn-red').on('click', function(){
+    window.alert("出品が完了しました。");
+  });
 
 });
 
