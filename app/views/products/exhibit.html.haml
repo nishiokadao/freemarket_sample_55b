@@ -122,6 +122,6 @@
             .modal-message-btn
               %button#modal-close-btn キャンセル
               %button#delete-confirmation-btn
-                = link_to product_path(@product.id), method: :delete do
+                = link_to product_path(@product), method: :delete do
                   削除する
 = render 'index-footer'
