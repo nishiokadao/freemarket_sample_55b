@@ -60,14 +60,13 @@
       height: 84px;
       &--item-list {
         display: block;
+        background: #fff;
+        border-bottom: 1px solid #eee;
         li {
           display: list-item;
           text-align: match-parent;
           list-style: none;
           position: relative;
-        }
-        li:first-child {
-          border-bottom: 1px solid #eee;
         }
         li:last-child {
           border: 0;

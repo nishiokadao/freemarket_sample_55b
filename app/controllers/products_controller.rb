@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :buy, :pay]
+  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edi, :update]
+  before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
 
   def index
@@ -13,7 +14,6 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.build_image
-    # あとで使う    2.time{@product.images.build}
     @product.build_delivery
     @product.build_category
   end
@@ -21,10 +21,6 @@ class ProductsController < ApplicationController
   def create
     @product= Product.new(product_params)
     if @product.save!
-      # あとで使う
-      # params[:images]['image'].each do |a|
-      #   @image = @product.images.create!(image: a, product_id: @product.id)
-      # end
       redirect_to root_path, notice: '出品が完了しました。'
     else
       redirect_to new_product_path
@@ -32,11 +28,12 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
+  end
+
+  def exhibit
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to root_path
     else
@@ -44,6 +41,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    if @product.destroy
+      redirect_to item_state_users_path
+    else
+      render 'exhibit'
+    end
+  end
 
   def buy
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
@@ -81,9 +85,12 @@ class ProductsController < ApplicationController
     @image = Image.find_by(product_id:@product.id)
   end
   
+  def set_all_products
+    @images = @product.image
+    @user = User.find(@product.seller_id)
+  end
+
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
   end
-
-
 end
