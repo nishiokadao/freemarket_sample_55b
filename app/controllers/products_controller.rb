@@ -46,6 +46,9 @@ class ProductsController < ApplicationController
 
 
   def buy
+    if @product.seller_id == current_user.id
+      redirect_to product_path(@product)
+    else
     ## payjp情報
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
     Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
@@ -54,6 +57,7 @@ class ProductsController < ApplicationController
     @card_nam = @default_credit_info.last4
     @exp_month = @default_credit_info.exp_month
     @exp_year = @default_credit_info.exp_year.to_s.slice(2,3)
+    end
   end
 
   def pay
