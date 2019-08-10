@@ -44,7 +44,7 @@
   .user-edit-container__right-content
     %section.mypage-identification
       %h2.mypage-identification__mypage-text 本人情報の登録
-      = form_for "/", class: "edit-form-contents", method: :post do |f|
+      = form_for "/", html:{class: "edit-form-contents", method: :post} do |f|
         .edit-form-contents__warning-message
           %p
             お客さまの本人情報をご登録ください

@@ -22,7 +22,7 @@
     %section.pro-content__box
       %h2.pro-content__box--head
         プロフィール
-      = form_for "", class: "pro-content__box--form" do |f|
+      = form_for "", html:{class: "pro-content__box--form"} do |f|
         .profile-icon
           %figure
             = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", class:"profile-icon__image", width:"60", heght:"60"
