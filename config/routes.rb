@@ -23,12 +23,12 @@ Rails.application.routes.draw do
       get 'item_state'
     end
   end
-  resources :products, only: [:index, :new, :show, :create, :edit, :update] do
+  resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
     collection do
+      get 'exhibit/:id' => 'products#exhibit', as: 'exhibit'
       get 'buy/:id' => 'products#buy' 
       get 'pay/:id' => 'products#pay'
     end
   end
-
   resources :credits, only: [:new, :create, :index, :destroy]
 end
