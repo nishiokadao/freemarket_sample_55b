@@ -30,6 +30,9 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def exhibit
+  end
+
   def update
     if @product.update(product_params)
       redirect_to root_path
