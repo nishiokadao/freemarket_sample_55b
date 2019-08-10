@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   end
   resources :products, only: [:index, :new, :show, :create, :edit, :update] do
     collection do
-      get 'buy/:id' => 'products#buy' 
-      get 'pay/:id' => 'products#pay'
+      get 'buy/:id' => 'products#buy', as: 'buy'
+      get 'pay/:id' => 'products#pay', as: 'pay'
     end
   end
 

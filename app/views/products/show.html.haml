@@ -84,7 +84,7 @@
           （税込）
         %span.item-shipping-fee
           送料込み
-      = link_to "/products/buy/#{@product.id}",product_id:@product.id, class:"item-buy-btn" do
+      = link_to buy_products_path(@product), class:"item-buy-btn" do
         購入を確定する
       .item-description
         %p.item-description__inner
