@@ -34,7 +34,7 @@
         - @products.each do |product|
           %ul.mypage-tab-container__content--item-list
             %li
-              = link_to "/products/exhibit/#{product.id}", class: "mypage-tab-container__content--item-list--link" do
+              = link_to imokenpi_products_path(product.id), class: "mypage-tab-container__content--item-list--link" do
                 %figure.item-list--figure
                   = image_tag product.image.image.url, class: "item-list--figure__image"
                 .item-list--body
