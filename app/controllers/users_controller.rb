@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
   end
 
   def select_sign_up
@@ -26,6 +27,7 @@ class UsersController < ApplicationController
   end
 
   def credit
+    @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
   end
   
   def signout

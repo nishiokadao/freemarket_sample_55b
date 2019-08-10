@@ -50,19 +50,24 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    ## payjp情報
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
-    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
-    customer = Payjp::Customer.retrieve(@credit.payjp_id)
-    @default_credit_info = customer.cards.retrieve(@credit.card_id)
-    @card_nam = @default_credit_info.last4
-    @exp_month = @default_credit_info.exp_month
-    @exp_year = @default_credit_info.exp_year.to_s.slice(2,3)
+    if @product.seller_id == current_user.id
+      redirect_to product_path(@product)
+    elsif @credit.blank?
+      redirect_to credit_users_path
+    else
+      Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
+      customer = Payjp::Customer.retrieve(@credit.payjp_id)
+      @default_credit_info = customer.cards.retrieve(@credit.card_id)
+      @card_nam = @default_credit_info.last4
+      @exp_month = @default_credit_info.exp_month
+      @exp_year = @default_credit_info.exp_year.to_s.slice(2,3)
+    end
   end
 
   def pay
     credit = Credit.where(user_id: current_user.id).first
-    Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
+    Payjp.api_key = Rails.application.credentials.PAYJP_SECRET_KEY
     Payjp::Charge.create(
     amount: @product.price, 
     customer: credit.payjp_id, 
