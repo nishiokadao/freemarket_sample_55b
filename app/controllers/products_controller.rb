@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edi, :update]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
-  before_action :authenticate_user!, only: [:create, :edit] 
 
   def index
     @products = Product.includes(:image).order("created_at DESC")
@@ -24,7 +23,7 @@ class ProductsController < ApplicationController
     if @product.save!
       redirect_to root_path, notice: '出品が完了しました。'
     else
-      redirect_to new_product_path, notice: "入力されていない項目があります。"
+      redirect_to new_product_path
     end
   end
 
@@ -51,9 +50,6 @@ class ProductsController < ApplicationController
   end
 
   def buy
-    if @product.seller_id == current_user.id
-      redirect_to product_path(@product)
-    else
     ## payjp情報
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
     Payjp.api_key = 'sk_test_634d5041b80a0c0fca6d2552'
@@ -62,7 +58,6 @@ class ProductsController < ApplicationController
     @card_nam = @default_credit_info.last4
     @exp_month = @default_credit_info.exp_month
     @exp_year = @default_credit_info.exp_year.to_s.slice(2,3)
-    end
   end
 
   def pay
@@ -86,7 +81,7 @@ class ProductsController < ApplicationController
   end
   
   def set_all_products
-    @images = Image.where(product_id: @product.id)
+    @images = @product.image
     @user = User.find(@product.seller_id)
   end
 
