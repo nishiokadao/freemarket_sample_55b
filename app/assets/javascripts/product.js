@@ -50,12 +50,13 @@ $(document).on('turbolinks:load', function(){
       $('.js__modal-buy').removeAttr('style');
       $('#js__modal-close').on('click', function(){
         $('.js__modal-buy').fadeOut();
-      });
-    .fail(function(){
-      alert("入力されていない項目があります。");
+      })
     })
+    .fail(function(){
+      alert('入力されていない項目があります。');
+    })
+
   });
-
-
 });
+
 
