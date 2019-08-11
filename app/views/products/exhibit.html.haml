@@ -99,7 +99,7 @@
             = @product.description
     - if current_user.id == @user.id 
       .exhibiting-item-change-box
-        = link_to "/", class: "exhibiting-item-change-box__btn btn-red" do
+        = link_to edit_product_path(@product.id), product_id: @product.id, class: "exhibiting-item-change-box__btn btn-red" do
           商品の編集
         %p.exhibiting-item-change-box__text
           or
