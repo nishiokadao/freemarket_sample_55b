@@ -3,6 +3,10 @@
   width: 1020px;
   padding: 0 0 40px;
   overflow: scroll;
+  img {
+    height: 238.5px;
+    width: 280px;
+  }
   &__right-content {
     float: right;
     width: 700px;
@@ -15,10 +19,7 @@
     width: 280px;
     margin: 0 40px 0 0;
     &--sp-image {
-      display: block
-      img {
-        width: 100%;
-      }
+      display: block;
     }
   }
 }
