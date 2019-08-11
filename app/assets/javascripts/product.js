@@ -55,7 +55,6 @@ $(document).on('turbolinks:load', function(){
     .fail(function(){
       alert('入力されていない項目があります。');
     })
-
   });
 });
 
