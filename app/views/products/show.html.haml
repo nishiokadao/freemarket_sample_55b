@@ -1,5 +1,8 @@
 .defalt-container
-  = render 'users/indexheader'
+  -if user_signed_in?
+    = render 'users/indexheader'
+  -else
+    = render 'products/index-header-list'
   %nav.category-bar
     %ul
       %li
@@ -10,8 +13,6 @@
     .item-box-container__single-sontainer
       %h1.item-name
         = @product.name
-      -# %p.item-word
-      -#   = @user.name  + "さんから出品されました。レディースの商品で、未定から2~3日で発送されます。"
       .item-main-content
         .item-photo
           = image_tag @image.image.url, class:"product-img"
@@ -84,7 +85,7 @@
           （税込）
         %span.item-shipping-fee
           送料込み
-      = link_to "/products/buy/#{@product.id}",product_id:@product.id, class:"item-buy-btn" do
+      = link_to buy_products_path(@product), class:"item-buy-btn" do
         購入を確定する
       .item-description
         %p.item-description__inner
