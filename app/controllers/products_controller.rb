@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
         format.json 
       end
     else
-      redirect_to new_product_path, notice: "*入力されていない項目があります。*"
+      redirect_to new_product_path, notice: "****入力されていない項目があります。****"
     end
   end
 

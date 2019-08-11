@@ -34,17 +34,6 @@ $(document).on('turbolinks:load', function(){
     $('.price-group__box--bold--right').empty();
   });
 
-  var modalWindow = 
-  ` <div class="js__modal-buy>
-      <div class ="js__model-buy--back">
-        <div class="modal-content">
-          <h3 class="modal-head"> 出品が完了しました</h3>
-          <div class="modal-content_body">あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。</div>
-        </div>
-      </div>
-    </div>
-  `
-
   $('#new_product').on('submit', function(e){
     e.preventDefault();
     var product = new FormData(this);
@@ -62,13 +51,9 @@ $(document).on('turbolinks:load', function(){
       $('#js__modal-close').on('click', function(){
         $('.js__modal-buy').fadeOut();
       });
-      $('.new_message')[0].reset();
-    })
     .fail(function(){
       alert("入力されていない項目があります。");
     })
-  
-  
   });
 
 
