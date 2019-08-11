@@ -30,16 +30,8 @@
 %nav.user-navigation
   %ul
     %li
-      = link_to "/", itemprop: "url" do
-        %span メルカリ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span マイページ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span 本人情報の登録
+      - breadcrumb :detil
+      = breadcrumbs separator: " &rsaquo; "
 .user-edit-container
   .user-edit-container__right-content
     %section.mypage-identification

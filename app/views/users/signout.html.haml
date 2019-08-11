@@ -2,20 +2,8 @@
 %nav.index__head-nav
   %ul
     %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          メルカリ
-          %i.fas.fa-chevron-right
-    %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          マイページ
-          %i.fas.fa-chevron-right
-    %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          ログアウト
-          %i.fas.fa-chevron-right
+      - breadcrumb :signout
+      = breadcrumbs separator: " &rsaquo; "
 .signout-main
   = render 'users/mypage_side_nav'
   .signout-main__right

@@ -1,4 +1,9 @@
 = render 'users/indexheader'
+%nav.index__head-nav
+  %ul
+    %li
+      - breadcrumb :mypage
+      = breadcrumbs separator: " &rsaquo; "
 .show-container
   .show-container__main
     = render 'users/mypage_side_nav'

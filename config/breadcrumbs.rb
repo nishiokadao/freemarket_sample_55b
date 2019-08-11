@@ -3,34 +3,44 @@ crumb :root do
 end
 
 crumb :mypage do
-  link "マイページ", user_path(current_user.id)
-  parentr :root
+  link "マイページ", user_path(current_user)
+  parent :root
 end
 
 crumb :cards do
-  link "支払い方法", user_credit_path
+  link "支払い方法", credit_users_path
   parent :mypage
 end
 
-crumb : do
-  link "クレジット情報入力", users_sign_up_forth_path
+crumb :new_credit do
+  link "クレジット情報入力", new_credit_path(current_user)
   parent :cards
 end
 
-crumb : do
-  link "商品出品画面", products_new_path
+crumb :new_product do
+  link "商品出品画面", new_product_path
   parent :mypage
 end
 
-crumb : do
-  link "本人情報登録", profile_index_path
+crumb :detil do
+  link "本人情報の登録", detail_users_path
   parent :mypage
 end
 
-crumb : do
-  link "", profile_index_path
-  parent :
+crumb :profile do
+  link "プロフィール", profile_users_path
+  parent :mypage
 end
+
+crumb :signout do
+  link "ログアウト", profile_users_path
+  parent :mypage
+end
+
+# crumb : do
+#   link "", profile_index_path
+#   parent :
+# end
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)

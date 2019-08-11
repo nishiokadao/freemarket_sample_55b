@@ -2,20 +2,9 @@
 %nav.index__head-nav
   %ul
     %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          メルカリ
-          %i.fas.fa-chevron-right
-    %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          マイページ
-          %i.fas.fa-chevron-right
-    %li
-      =link_to "https://www.mercari.com/jp/" do
-        %span.index__head-nav--title
-          プロフィール
-          %i.fas.fa-chevron-right
+      - breadcrumb :profile
+      = breadcrumbs separator: " &rsaquo; "
+
 .profile-main.clearfix
   = render 'users/mypage_side_nav'
   .pro-content
