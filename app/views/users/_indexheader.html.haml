@@ -1,3 +1,4 @@
+-breadcrumb :mypage
 .index-container
   .index-header
     .index-header-inner
@@ -24,25 +25,33 @@
                   %i.fas.fa-tags
                   %span ブランドから探す
         .index-right-content
-          %ul.user-nav
-            %li.user-nav__like
-              =link_to "#", class:"user-nav__like--link" do
-                %i.far.fa-heart
-                %span
-                  いいね!一覧
-            %li.user-nav__bell
-              =link_to "#", class:"user-nav__bell--link" do
-                %i.far.fa-bell
-                %span
-                  お知らせ
-            %li.user-nav__task
-              =link_to "#", class:"user-nav__task--link" do
-                %i.fas.fa-check
-                %span
-                  やることリスト
-            %li.user-nav__mypage
-              =link_to user_path(current_user.id), {class:"user-nav__mypage--link"} do
-                .user-nav__mypage--link--image
-                  = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32", class:"face"
-                %span
-                  マイページ
+          - if user_signed_in? 
+            %ul.user-nav
+              %li.user-nav__like
+                =link_to "#", class:"user-nav__like--link" do
+                  %i.far.fa-heart
+                  %span
+                    いいね!一覧
+              %li.user-nav__bell
+                =link_to "#", class:"user-nav__bell--link" do
+                  %i.far.fa-bell
+                  %span
+                    お知らせ
+              %li.user-nav__task
+                =link_to "#", class:"user-nav__task--link" do
+                  %i.fas.fa-check
+                  %span
+                    やることリスト
+              %li.user-nav__mypage           
+                =link_to user_path(current_user.id), {class:"user-nav__mypage--link"} do
+                  .user-nav__mypage--link--image
+                    = image_tag "http://static.mercdn.net/images/member_photo_noimage_thumb.png", width:"32", class:"face"
+                  %span
+                    マイページ
+          - else 
+            %ul.header-login-navigation
+              %li
+                = link_to '新規会員登録', select_sign_up_users_path, {class: "index-header-btn btn-red"}
+              %li
+                = link_to 'ログイン', new_user_session_path, {class: "index-header-btn header-login"}
+
