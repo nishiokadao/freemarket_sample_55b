@@ -80,7 +80,7 @@
         %i.fas.fa-angle-right.fa-2x
     %li
       -if @credit.present?
-        = link_to credits_path, class: "user-side-navigation__list--item" do
+        = link_to credits_path(@credit), class: "user-side-navigation__list--item" do
           支払い方法
           %i.fas.fa-angle-right.fa-2x
       - else
