@@ -95,9 +95,7 @@ class ProductsController < ApplicationController
   end
 
   def check_user
-    if @product.seller_id != current_user.id
-      redirect_to prohibit_products_path
-    end
+    redirect_to prohibit_products_path if @product.seller_id != current_user.id
   end
 
   def product_params
