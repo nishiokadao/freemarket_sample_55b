@@ -3,7 +3,7 @@
   .reg-container__main
     .reg-container__main--content
       %h2.reg-container__main--content-title 支払い方法
-      =form_for("") do |f|
+      = form_with do |f|
         .reg-container__main--content-title--input
           .input-groups
             .input-group
@@ -22,10 +22,12 @@
             .input-group
               %label 有効期限
               %span.red-box 必須
-              = f.select:text,class:"month-box" 
-              %span 月/
-              = f.select:text,class:"year-box" 
-              %span 年
+              .input-group__box
+                = f.text_field:text,class:"month-box" 
+                %span 月
+              .input-group__box
+                = f.text_field:text,class:"year-box"
+                %span 年
 
             .input-group
               %label セキュリティコード
