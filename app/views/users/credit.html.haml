@@ -1,9 +1,13 @@
 = render 'users/indexheader'
-- breadcrumb :cards 
-= breadcrumbs separator: " &rsaquo; "
+-# %nav.user-navigation
+-#   %ul
+-#     %li
+      
 %nav.index__head-nav
   %ul
     %li
+      - breadcrumb :cards 
+      = breadcrumbs separator: " &rsaquo; "
 .credit-main.clearfix
   = render 'users/mypage_side_nav'
   .cre-content
