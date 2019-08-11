@@ -26,6 +26,7 @@ Rails.application.routes.draw do
   resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
     collection do
       get 'search'
+      get 'details_search'
       get 'buy/:id' => 'products#buy', as: 'buy'
       get 'pay/:id' => 'products#pay', as: 'pay'
       get 'exhibit/:id' => 'products#exhibit', as: 'exhibit'
