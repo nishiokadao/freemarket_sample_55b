@@ -97,7 +97,6 @@
         .item-description
           %p.item-description__inner
             = @product.description
-    - if current_user.id == @user.id 
       .exhibiting-item-change-box
         = link_to "/", class: "exhibiting-item-change-box__btn btn-red" do
           商品の編集
