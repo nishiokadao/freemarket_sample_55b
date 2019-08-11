@@ -2,16 +2,8 @@
 %nav.user-navigation
   %ul
     %li
-      = link_to "/", itemprop: "url" do
-        %span メルカリ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span マイページ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span 出品した商品 - 出品中
+      - breadcrumb :item_state
+      = breadcrumbs separator: " &rsaquo; "
 .item_state-container
   .item_state-container__right-content
     %section.mypage-tab-container

@@ -37,6 +37,16 @@ crumb :signout do
   parent :mypage
 end
 
+crumb :item_state do
+  link "出品した商品-出品中", profile_users_path
+  parent :mypage
+end
+
+crumb :exhibit do
+  link "出品商品画面", profile_users_path
+  parent :item_state
+end
+
 # crumb : do
 #   link "", profile_index_path
 #   parent :
