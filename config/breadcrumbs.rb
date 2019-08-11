@@ -33,17 +33,17 @@ crumb :profile do
 end
 
 crumb :signout do
-  link "ログアウト", profile_users_path
+  link "ログアウト", psignout_users_path
   parent :mypage
 end
 
 crumb :item_state do
-  link "出品した商品-出品中", profile_users_path
+  link "出品した商品-出品中", item_state_users_path
   parent :mypage
 end
 
 crumb :exhibit do
-  link "出品商品画面", profile_users_path
+  link "出品商品画面", exhibit_products_path
   parent :item_state
 end
 
