@@ -28,8 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    products= Product.where(seller_id: current_user)
-    @product= products.find(params[:id])
+    @product= Product.find(params[:id])
   end
 
   def exhibit
