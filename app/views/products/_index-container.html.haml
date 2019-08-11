@@ -5,7 +5,7 @@
     %h3.text-center
       = link_to"レディース新着アイテム",root_path 
     .items-box-content
-      - @products.each do |product| 
+      - @products.first(4).each do |product|
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
@@ -27,9 +27,9 @@
     %h3.text-center
       = link_to"メンズ新着アイテム",root_path
     .items-box-content
-      - @products.each do |product|
+      - @products.first(4).each do |product|
         %section.items-box
-          = link_to root_path do
+          =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
               = image_tag product.image.image.url, class:"img"
             .items-box-body
@@ -52,9 +52,9 @@
     %h3.text-center
       = link_to"シャネル新着アイテム",root_path
     .items-box-content
-      - @products.each do |product|
+      - @products.first(4).each do |product|
         %section.items-box
-          = link_to root_path do
+          =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
               = image_tag product.image.image.url, class:"img"
             .items-box-body
@@ -74,9 +74,9 @@
     %h3.text-center
       = link_to"アディダス新着アイテム",root_path
     .items-box-content
-      - @products.each do |product|
+      - @products.first(4).each do |product|
         %section.items-box
-          = link_to root_path do
+          =link_to product_path(product.id), class: "items__box__btn" do
             %figure.items-box-photo
               = image_tag product.image.image.url, class:"img"
             .items-box-body

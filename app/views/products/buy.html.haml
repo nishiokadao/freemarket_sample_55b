@@ -1,7 +1,7 @@
 .buy-content
   %header.buy-content__header
     %h1
-      = link_to "https://www.mercari.com/jp/" do
+      = link_to root_path do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
   .buy-content__main
     %section.buy-content__main--box
@@ -10,12 +10,12 @@
       %section.buy-content__main--box--item
         .item-inner
           .item-inner__image
-            = image_tag "https://static.mercdn.net/thumb/photos/m60327513337_1.jpg?1564447955", class:"item-inner__image--photo"
+            = image_tag @image.image.url,class:"item-inner__image--photo"
           %p.item-inner__name
-            Aesop 巾着
-          = form_for @product, url:pay_products_path, html:{class: "item-inner__form"} do |f|
+            = @product.name
+          = form_with url: pay_products_path(@product),class:"item-inner__form", method: :post do |f|
             %p.price
-              ¥700
+              = "¥#{@product.price}"
               %span.price__fee
                 送料込み
             %ul.have-point
@@ -28,8 +28,8 @@
                   支払い金額
                 .price-table__bold--right
                   %span.price-table__bold--right--pay
-                    ¥ 700
-            = link_to pay_products_path, method: :post, class:"buy-btn" do
+                    = "¥#{@product.price}"
+            = link_to "/products/pay/#{@product.id}", product_id:@product.id, class:"buy-btn" do
               購入する
       %section.buy-content__main--box--user
         .user-inner

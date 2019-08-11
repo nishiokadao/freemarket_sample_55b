@@ -31,24 +31,25 @@
             = link_to "/" do
               売却済み
       .mypage-tab-container__content
-        %ul.mypage-tab-container__content--item-list
-          %li
-            = link_to "https://www.mercari.com/jp/items/m12948959379/", class: "mypage-tab-container__content--item-list--link" do
-              %figure.item-list--figure
-                = image_tag "//static.mercdn.net/thumb/photos/m12948959379_1.jpg?1531251364", class: "item-list--figure__image"
-              .item-list--body
-                .item-list--body__text
-                  二階堂ふみ アダルト 上下セット
-                .item-list--body__bottom
-                  %span.listing-item-count
-                    %i.listing-item-count__like.far.fa-heart
-                    %span 5000
-                  %span.listing-item-count
-                    %i.listing-item-count__message.far.fa-comment
-                    %span 24657
-                  .listing-item-status
-                    出品中
-              %i.fas.fa-angle-right
+        - @products.each do |product|
+          %ul.mypage-tab-container__content--item-list
+            %li
+              = link_to exhibit_products_path(product), class: "mypage-tab-container__content--item-list--link" do
+                %figure.item-list--figure
+                  = image_tag product.image.image.url, class: "item-list--figure__image"
+                .item-list--body
+                  .item-list--body__text
+                    = product.name
+                  .item-list--body__bottom
+                    %span.listing-item-count
+                      %i.listing-item-count__like.far.fa-heart
+                      %span 5000
+                    %span.listing-item-count
+                      %i.listing-item-count__message.far.fa-comment
+                      %span 24657
+                    .listing-item-status
+                      出品中
+                %i.fas.fa-angle-right
   .user-edit-container__left-content
     = render 'users/mypage_side_nav'
 = render 'products/index-footer'

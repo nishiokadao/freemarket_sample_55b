@@ -9,7 +9,7 @@
     = render 'users/mypage_side_nav'
     .show-container__main--content
       %section.show-container__main--content--user-icon
-        =link_to "https://www.mercari.com/jp/" do
+        =link_to root_path do
           %figure.user-icon__avater
             = image_tag 'https://static.mercdn.net/images/member_photo_noimage_thumb.png'
           %h2.user-icon__avater--name 
@@ -35,7 +35,7 @@
           %ul.tab-notification
             -# あとで使う
             -# %li
-            -#   =link_to 'https://www.mercari.com/jp/' do {class: "tab-links"}
+            -#   =link_to 'https://www.mercari.com/jp/', class: "tab-links" do
             -#     %figure
             -#       = image_tag '//static.mercdn.net/images/mercari_profile.png', class: "small-mercari"
             -#     .tab-body
@@ -49,7 +49,7 @@
             -# %li.all-notifications 一覧を見る
           -# %ul.tab-todo
           -#   %li
-          -#     =link_to 'https://www.mercari.com/jp/' do {class: "tab-links"}
+          -#     =link_to 'https://www.mercari.com/jp/', class: "tab-links" do
           -#       %figure
           -#         = image_tag '//static.mercdn.net/images/mercari_profile.png', class: "small-mercari"
           -#       .tab-body

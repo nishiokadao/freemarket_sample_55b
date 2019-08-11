@@ -1,19 +1,14 @@
-- breadcrumb :new_product
-= breadcrumbs separator: " &rsaquo; "
 .new-content
   %header.new-content__header
     %h1
       = link_to root_path do
         = image_tag "https://www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?2098311808", alt:"mercari"
-    - if flash[:notice]
-      %p
-        = flash[:notice] 
   .new-content__main
     %section.new-content__main--sellbox
       %h2.sellbox-head
-        商品の情報を入力
+        商品の情報を編集
         -#フォーム始まり 
-      = form_for @product, url: '/products', html:{class: "sellbox-form"} do |f|
+      = form_for @product, url: product_path(@product.id), html:{class: "sellbox-form"} do |f|
         .sellbox-form__upload
           %h3.sellbox-form__upload--head
             出品画像
@@ -23,11 +18,11 @@
             最大10枚までアップロードできます
           .sellbox-form__upload--drop
             .sellbox-form__upload--drop--box
-              .sellbox-form__upload--drop--box--image{style: "display: none;"}
+              .sellbox-form__upload--drop--box--image
                 %ul
                   %li.upload-image__prev
                     %figure.upload-image__prev--figure
-                      =image_tag "", class: "upload-image__prev--figure--src"
+                      =image_tag(@product.image.image.url, class: "upload-image__prev--figure--src")
                     %button.upload-image__prev--btn
                       =link_to "編集"
                       =link_to "削除"
@@ -35,6 +30,7 @@
               -# ファイルのフォーム
               = f.fields_for :image do |image|
                 = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
+                = image.hidden_field :id, value: @product.image.id 
                 %pre.sellbox-form__upload--drop--post--text
                   ドラッグアンドドロップ
                   またはクリックしてファイルをダウンロード
@@ -144,15 +140,6 @@
                   販売利益
                 .price-group__box--bold--right
                   &minus;
-                  -# モーダルウィンドウ//始まり
-        .js__modal-buy
-          .js__model-buy--back
-            .modal-content
-              %h3.modal-head 出品が完了しました
-              .modal-content_body
-                あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-                -# =link_to "続けて出品する", new_product_path, class: "btn-red" do
-                  -# モーダルウィンドウ//終わり
         .sellbox-form__btn
           %div
             %p
