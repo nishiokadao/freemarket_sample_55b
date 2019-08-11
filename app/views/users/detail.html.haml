@@ -13,28 +13,28 @@
           %ul.header-navigation
             %li
               %h2
-                = link_to "https://www.mercari.com/jp/category/", {class: "header-navigation-list-parent"} do
+                = link_to root_path, class: "header-navigation-list-parent" do
                   %i.fas.fa-bars
                   %span カテゴリーから探す
             %li
               %h2
-                = link_to "https://www.mercari.com/jp/brand/", {class: "header-navigation-list-parent"} do
+                = link_to root_path, class: "header-navigation-list-parent" do
                   %i.fas.fa-tags
                   %span ブランドから探す
         .index-right-content
           %ul.header-login-navigation
             %li
-              = link_to '新規会員登録', "https://www.mercari.com/jp/signup/", {class: "index-header-btn btn-red"}
+              = link_to '新規会員登録', new_user_path, class: "index-header-btn btn-red"
             %li
-              = link_to 'ログイン', "https://www.mercari.com/jp/login/?login_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F", {class: "index-header-btn header-login"}
+              = link_to 'ログイン', new_user_session_path, class: "index-header-btn header-login"
 %nav.user-navigation
   %ul
     %li
-      = link_to "/", itemprop: "url" do
+      = link_to root_path, itemprop: "url" do
         %span メルカリ
       %i.fas.fa-angle-right
     %li
-      = link_to "/", itemprop: "url" do
+      = link_to user_path(current_user), itemprop: "url" do
         %span マイページ
       %i.fas.fa-angle-right
     %li
