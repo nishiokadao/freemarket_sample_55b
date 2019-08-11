@@ -28,6 +28,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @product= Product.find(params[:id])
   end
 
   def exhibit
@@ -41,6 +42,11 @@ class ProductsController < ApplicationController
     end
   end
 
+  def search
+    @products = Product.search(params[:search])
+    @search_keyward = params[:search] 
+  end
+  
   def destroy
     if @product.destroy
       redirect_to item_state_users_path
@@ -48,6 +54,7 @@ class ProductsController < ApplicationController
       render 'exhibit'
     end
   end
+
 
   def buy
     @credit = Credit.where(user_id: current_user.id).first if Credit.where(user_id: current_user.id).present?
