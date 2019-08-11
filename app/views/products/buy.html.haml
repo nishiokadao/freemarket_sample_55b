@@ -13,7 +13,7 @@
             = image_tag @image.image.url,class:"item-inner__image--photo"
           %p.item-inner__name
             = @product.name
-          = form_with url:"/products/pay/#{@product.id}",class:"item-inner__form", method: :post do |f|
+          = form_with url: pay_products_path(@product),class:"item-inner__form", method: :post do |f|
             %p.price
               = "¥#{@product.price}"
               %span.price__fee
