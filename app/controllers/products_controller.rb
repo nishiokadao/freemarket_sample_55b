@@ -46,7 +46,6 @@ class ProductsController < ApplicationController
   def search
     @products = Product.search(params[:search])
     @search_keyward = params[:search] 
-    # binding.pry
   end
 
 
