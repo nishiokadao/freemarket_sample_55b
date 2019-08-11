@@ -1,5 +1,6 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edi, :update]
+  before_action :set_product, except: [:index, :new, :create, :prohibit, :search]
+  before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
 
@@ -32,6 +33,9 @@ class ProductsController < ApplicationController
   end
 
   def exhibit
+  end
+
+  def prohibit
   end
 
   def update
@@ -95,6 +99,10 @@ class ProductsController < ApplicationController
   def set_all_products
     @images = @product.image
     @user = User.find(@product.seller_id)
+  end
+
+  def check_user
+    redirect_to prohibit_products_path if @product.seller_id != current_user.id
   end
 
   def product_params
