@@ -22,9 +22,12 @@ class ProductsController < ApplicationController
   def create
     @product= Product.new(product_params)
     if @product.save
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json 
+      end
     else
-      redirect_to new_product_path, notice: "入力されていない項目があります。"
+      redirect_to new_product_path, notice: "*入力されていない項目があります。*"
     end
   end
 

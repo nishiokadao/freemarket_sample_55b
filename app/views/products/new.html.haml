@@ -143,14 +143,15 @@
                 .price-group__box--bold--right
                   &minus;
                   -# モーダルウィンドウ//始まり
-        .js__modal-buy
-          .js__model-buy--back.js__modal-buy--close
+        .js__modal-buy{style: "display: none;"}
+          .js__model-buy--back#js__modal-close
             .modal-content
               %h3.modal-head 出品が完了しました
               .modal-content_body
                 あなたが出品した商品は「出品した商品一覧」からいつでも見ることができます。
-                -# =link_to "続けて出品する", new_product_path, class: "btn-red" do
-                  -# モーダルウィンドウ//終わり
+                =link_to new_product_path, class: "btn-red" do
+                  続けて出品する
+                -# モーダルウィンドウ//終わり
         .sellbox-form__btn
           %div
             %p
@@ -177,7 +178,7 @@
               %span
                 に同意したことになります。
           = f.hidden_field :status, value: 0
-          = f.submit "出品する", class:"btn-red"
+          = f.submit "出品する", class:"btn-red", id:"js__modal-open"
           .btn-gry
             = link_to "もどる", root_path, class:"btn-gry__link"
   .new-content__footer

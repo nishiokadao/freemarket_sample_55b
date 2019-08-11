@@ -284,7 +284,7 @@
         }
         // モーダル始まり
         .js__modal-buy{
-          display: none;
+          // display: none;
           height: 100vh;
           width: 100%;
           position: fixed;
@@ -294,17 +294,25 @@
           left: 0;
           z-index: 3000;
           overflow-x: hidden;
-          &--back{
-            min-width: 768px;
+
+          .js__model-buy--back{
+            height: 100vh;
             margin: 20, auto;
-            width: 600px;
+            position: absolute;
+            width: 100%;
+            background: rgba(0,0,0,0.8);
+            display: block;
+
             .modal-content{
-              position: relative;
-              overflow: hidden;
-              width: 95%;
-              max-width: 375px;
+              position: absolute;
+              top: 25%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              width: 50%;
               margin: 8px auto;
               background: #fff;
+              overflow: hidden;
+
               .modal-head{
                 text-align: center;
                 line-height: 80px;
@@ -312,7 +320,13 @@
               }
               .modal-content_body{
                 border-top: 1px solid #eee;
-                padding: 40px;
+                padding: 64px;
+                a{
+                  display: inline-block;
+                  width: 100%;
+                  margin: 50px auto 0;
+                  text-align: center;
+                }
               }
             }
           }
