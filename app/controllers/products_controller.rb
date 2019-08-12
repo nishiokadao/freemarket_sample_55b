@@ -3,6 +3,8 @@ class ProductsController < ApplicationController
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
 
+  before_action :move_to_signin, except: [:index, :product, :show]
+
   def index
     @products = Product.includes(:image).order("created_at DESC")
   end
@@ -100,4 +102,9 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
   end
+  
+  def move_to_signin
+    redirect_to (new_user_session_path) unless user_signed_in?
+  end
+
 end
