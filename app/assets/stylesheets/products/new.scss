@@ -58,12 +58,14 @@
               &--image {
                 float: left;
                 display: block;
+                // プレビュー始まり
                 .upload-image__prev{
                   width: 116px;
                   margin: 0 0 10 10;
                   &--figure{
                     overflow: hidden;
                     height: 116px;
+                    width: auto;
                     background-color: #f5f5f5;
                     &--src{
                     position: static;
@@ -91,10 +93,11 @@
               }
             }
             &--post {
+              padding: 40px;
               float: right;
-              width: 491px;
+              width: 87%;
               position: relative;
-              min-height: 162px;
+              min-height: 80px;
               background: #f5f5f5;
               border: 1px dashed #ccc;
               font-size: 0;
@@ -114,6 +117,7 @@
                 pointer-events: none;
                 white-space: pre-wrap;
                 word-wrap: break-word;
+                font-weight: bold;
               }
             }
           }

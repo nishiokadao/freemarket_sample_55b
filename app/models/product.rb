@@ -5,10 +5,10 @@ class Product < ApplicationRecord
 
 
   belongs_to :user, optional: true
-  has_one :image, dependent: :destroy
+  has_many :images, dependent: :destroy
   has_one :delivery, dependent: :destroy 
   has_one :category, dependent: :destroy
-  accepts_nested_attributes_for :image ,update_only: true
+  accepts_nested_attributes_for :images ,update_only: true
   accepts_nested_attributes_for :delivery, update_only: true
   accepts_nested_attributes_for :category, update_only: true
 
