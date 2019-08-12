@@ -7,7 +7,7 @@
     .login-container__main--login-panel
       .login-container__main--login-panel--create-account
         %p アカウントをお持ちでない方はこちら
-        =link_to "https://www.mercari.com/jp/signup/?after_save_callback=https%3A%2F%2Fwww.mercari.com%2Fjp%2F" do
+        =link_to select_sign_up_users_path do
           %p.create-account__title 新規会員登録
       .login-container__main--login-panel--sns-login
         %button#facebook.btn-def.btn-sns
