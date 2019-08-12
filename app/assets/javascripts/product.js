@@ -20,12 +20,6 @@ $(document).on('turbolinks:load', function(){
     $('.sellbox-form__upload--drop--box--image').removeAttr('style');
     readURL(this);
   });
-  var clickW = ('#click-btn').outerWidth();
-  var imageW = ('.upload-image__prev').outerWidth();
-  $('.sellbox-form__upload--drop--box--image').removeAttr('style');
-  $('.sellbox-form__upload--drop--post').outerWidth(clickW - imageW);
-  readURL(this);
-  })
 
   $('#product_price').on('keyup', function(){
     var input= $(this).val();
