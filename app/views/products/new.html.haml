@@ -34,10 +34,10 @@
                     %button.upload-image__prev--btn
                       =link_to "編集"
                       =link_to "削除"
-            .sellbox-form__upload--drop--post  
+            .sellbox-form__upload--drop--post#click-btn 
               -# ファイルのフォーム
-              = f.fields_for :image do |image|
-                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
+              = f.fields_for :images do |image|
+                = image.file_field :image, :multiple => true, class:"sellbox-form__upload--drop--post--image", id:"post__image"
                 %pre.sellbox-form__upload--drop--post--text
                   ドラッグアンドドロップ
                   またはクリックしてファイルをダウンロード

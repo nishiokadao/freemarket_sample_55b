@@ -1,10 +1,11 @@
 $(document).on('turbolinks:load', function(){
 
-  // $('.js__modal-buy').css('display','none');
-  // あとで使う
-  // $('.sellbox-form__upload--drop--post').on('click', function(){
-  //   $('#post_image').click();
-  // });
+  var postBtn = document.getElementById('click-btn');
+
+  postBtn.addEventListener('click', function(){
+    $('#post__image').click();
+  });
+
   function readURL(input) {
     if (input.files && input.files[0]) {
       var reader = new FileReader();
@@ -19,6 +20,12 @@ $(document).on('turbolinks:load', function(){
     $('.sellbox-form__upload--drop--box--image').removeAttr('style');
     readURL(this);
   });
+  var clickW = ('#click-btn').outerWidth();
+  var imageW = ('.upload-image__prev').outerWidth();
+  $('.sellbox-form__upload--drop--box--image').removeAttr('style');
+  $('.sellbox-form__upload--drop--post').outerWidth(clickW - imageW);
+  readURL(this);
+  })
 
   $('#product_price').on('keyup', function(){
     var input= $(this).val();
