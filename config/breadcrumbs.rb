@@ -33,7 +33,7 @@ crumb :profile do
 end
 
 crumb :signout do
-  link "ログアウト", psignout_users_path
+  link "ログアウト", signout_users_path
   parent :mypage
 end
 
