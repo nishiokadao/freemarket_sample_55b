@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
+  // $('.js__modal-buy').css('display','none');
   // あとで使う
   // $('.sellbox-form__upload--drop--post').on('click', function(){
   //   $('#post_image').click();
@@ -18,8 +19,6 @@ $(document).on('turbolinks:load', function(){
     $('.sellbox-form__upload--drop--box--image').removeAttr('style');
     readURL(this);
   });
-
-
 
   $('#product_price').on('keyup', function(){
     var input= $(this).val();
@@ -47,7 +46,7 @@ $(document).on('turbolinks:load', function(){
       contentType: false
     })
     .done(function(){
-      $('.js__modal-buy').removeAttr('style');
+      $('.js__modal-buy').show();
       $('#js__modal-close').on('click', function(){
         $('.js__modal-buy').fadeOut();
       })
