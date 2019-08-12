@@ -24,23 +24,38 @@
               必須
           %p
             最大10枚までアップロードできます
-          .sellbox-form__upload--drop
-            .sellbox-form__upload--drop--box
-              .sellbox-form__upload--drop--box--image{style: "display: none;"}
-                %ul
-                  %li.upload-image__prev
-                    %figure.upload-image__prev--figure
-                      =image_tag "", class: "upload-image__prev--figure--src"
-                    %button.upload-image__prev--btn
-                      =link_to "編集"
-                      =link_to "削除"
-            .sellbox-form__upload--drop--post#click-btn 
+          .sellbox-form__upload--drop#click-btn
+            -# .sellbox-form__upload--drop--box
+              -# .sellbox-form__upload--drop--box--image
+              -#   %ul
+              -#     %li.upload-image__prev
+              -#       %figure.upload-image__prev--figure
+              -#         =image_tag "", class: "upload-image__prev--figure--src"
+              -#       %button.upload-image__prev--btn
+              -#         =link_to "編集"
+              -#         =link_to "削除"
+            .sellbox-form__upload--drop--post
               -# ファイルのフォーム
               = f.fields_for :images do |image|
-                = image.file_field :image, :multiple => true, class:"sellbox-form__upload--drop--post--image", id:"post__image"
-                %pre.sellbox-form__upload--drop--post--text
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをダウンロード
+                .dropzone-container.clearfix
+                  #preview
+                  -# img-view
+                    img src
+                  .dropzone-area
+                    = image.label :image, class: "dropzone-box", for: "upload-image" do
+                      .input_area
+                        = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image", class: "upload-image", 'data-image': 0
+                      %p
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをダウンロード
+                  #preview2
+                  .dropzone-area2
+                    = image.label :image, class: "dropzone-box", for: "upload-image" do
+                      %p
+                        ドラッグアンドドロップ
+                        %br
+                        またはクリックしてファイルをダウンロード
         .sellbox-form__post
           .sellbox-form__post--group
             %lavel.sellbox-form__post--group--head

@@ -53,45 +53,8 @@
             width: 620px;
             height: 162px;
             margin: 16px auto 0;
-            &--box {
-              display: inline;
-              &--image {
-                float: left;
-                display: block;
-                // プレビュー始まり
-                .upload-image__prev{
-                  width: 116px;
-                  margin: 0 0 10 10;
-                  &--figure{
-                    overflow: hidden;
-                    height: 116px;
-                    width: auto;
-                    background-color: #f5f5f5;
-                    &--src{
-                    position: static;
-                    height: 140px;
-                    }
-                  }
-                  &--btn{
-                    font-size: 14px;
-                    display: flex;
-                    width: 100%;
-                    border-style: none;
-                    background: #f5f5f5;
-                    a{
-                      display: inline-block;
-                      line-height: 44px;
-                      width: 50%;
-                      text-align: center;  
-                      color: #0099e8;
-                      &:last-child{
-                        border-left: 1px solid #eee;
-                      }
-                    }
-                  }
-                }
-              }
-            }
+            cursor: pointer;
+              // 投稿ボックス
             &--post {
               padding: 40px;
               float: right;
@@ -102,8 +65,31 @@
               border: 1px dashed #ccc;
               font-size: 0;
               text-align: center;
-              cursor: pointer;
-              &--image {
+              .dropzone-container{
+                #preview{
+                  img{
+                    position: static;
+                    height: 140px;
+                  }
+                }
+                .dropzone-area{
+                  .dropzone-box{
+                    .input-area{
+                      .upload-image{
+                        display: none;
+                      }
+                    }
+                    p{
+                      font-weight: bold;
+                    }
+                  }
+                }
+                .dropzone-area2{
+                  display: none;
+                  %p{
+                    font-weight: bold;
+                  }
+                }
               }
               &--text {
                 position: absolute;
@@ -416,3 +402,43 @@
     }
   }
 }
+
+            // &--box {
+            //   display: inline;
+            //   &--image {
+            //     float: left;
+            //     display: none;
+            //     // プレビュー始まり
+            //     .upload-image__prev{
+            //       width: 116px;
+            //       margin: 0 0 10 10;
+            //       &--figure{
+            //         overflow: hidden;
+            //         height: 116px;
+            //         width: auto;
+            //         background-color: #f5f5f5;
+            //         &--src{
+            //         position: static;
+            //         height: 140px;
+            //         }
+            //       }
+            //       &--btn{
+            //         font-size: 14px;
+            //         display: flex;
+            //         width: 100%;
+            //         border-style: none;
+            //         background: #f5f5f5;
+            //         a{
+            //           display: inline-block;
+            //           line-height: 44px;
+            //           width: 50%;
+            //           text-align: center;  
+            //           color: #0099e8;
+            //           &:last-child{
+            //             border-left: 1px solid #eee;
+            //           }
+            //         }
+            //       }
+            //     }
+            //   }
+            // }
