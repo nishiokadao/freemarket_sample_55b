@@ -46,6 +46,10 @@ class ProductsController < ApplicationController
     @products = Product.search(params[:search])
     @search_keyward = params[:search] 
   end
+
+  def details_search
+    
+  end
   
   def destroy
     if @product.destroy
