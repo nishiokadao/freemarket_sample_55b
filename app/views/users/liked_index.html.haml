@@ -1,0 +1,27 @@
+= render 'users/indexheader'
+%nav.index__head-nav
+  %ul
+    %li
+      -# - breadcrumb :item_state
+      -# = breadcrumbs separator: " &rsaquo; "
+.liked-index-container
+  .liked-index-container__right-content
+    %section.liked-index-main-container
+      %h2.liked-index-main-container__header
+        いいね!一覧
+      - @products.each do |product|  
+        %ul.liked-index-main-container__product-list  
+          %li
+            = link_to product_path(product), class: "liked-product-link" do
+              %figure
+                = image_tag product.image.image.url
+              .liked-product-body
+                .liked-product-body__text
+                  = product.name
+                .liked-product-body__text
+                  ¥
+                  = product.price
+              %i.liked-index-icon.fas.fa-angle-right
+  .liked-index-container__left-content
+    = render 'users/mypage_side_nav'
+= render 'products/index-footer'
