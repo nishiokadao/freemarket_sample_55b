@@ -9,9 +9,11 @@ class UsersController < ApplicationController
   end
 
   def sign_up_second
+    session[:phone]
   end
 
   def sign_up_third
+    # session[:]
   end
 
   def sign_up_forth
@@ -36,6 +38,7 @@ class UsersController < ApplicationController
   def item_state
     @products = Product.includes(:image).where(seller_id: current_user)
   end
+  
   
 end
 
