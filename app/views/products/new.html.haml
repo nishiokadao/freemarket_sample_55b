@@ -37,10 +37,13 @@
             .sellbox-form__upload--drop--post
               -# ファイルのフォーム
               = f.fields_for :images do |image|
-                .dropzone-container.clearfix
+                .dropzone-container
                   #preview
-                  -# img-view
-                    img src
+                  -#img_view
+                      img src
+                      btn-wrapper//.upload-image__prev--btn
+                        btnedit 編集
+                        btnelete 削除
                   .dropzone-area
                     = image.label :image, class: "dropzone-box", for: "upload-image" do
                       .input_area

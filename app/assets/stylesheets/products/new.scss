@@ -50,29 +50,60 @@
           }
           &--drop {
             display: block;
-            width: 620px;
+            width: 100%;
             height: 162px;
             margin: 16px auto 0;
-            cursor: pointer;
               // 投稿ボックス
             &--post {
-              padding: 40px;
-              float: right;
-              width: 87%;
-              position: relative;
-              min-height: 80px;
-              background: #f5f5f5;
-              border: 1px dashed #ccc;
-              font-size: 0;
-              text-align: center;
               .dropzone-container{
+                display: block;
                 #preview{
-                  img{
-                    position: static;
-                    height: 140px;
+                  display: inline-block;
+                  float: left;
+                  .img_view{
+                    height: 170px;
+                    display: inline-block;
+                    img{
+                      position: static;
+                      height: 140px;
+                      width: 116px;
+                      overflow: hidden;
+                    }
+                    .upload-image__prev--btn{
+                      font-size: 14px;
+                      display: flex;
+                      width: 100%;
+                      background: #f5f5f5;
+                      .edit-btn{
+                        display: inline-block;
+                        line-height: 32px;
+                        width: 50%;
+                        text-align: center;  
+                        color: #0099e8;
+                      }
+                      .delete-btn{
+                        display: inline-block;
+                        line-height: 32px;
+                        width: 50%;
+                        text-align: center;  
+                        color: #0099e8;
+                        border-left: 1px solid #eee;
+                      }
+                    }
                   }
                 }
                 .dropzone-area{
+                  padding: 40px;
+                  float: right;
+                  box-sizing: border-box;
+                  width: 100%;
+                  position: relative;
+                  min-height: 80px;
+                  background: #f5f5f5;
+                  border: 1px dashed #ccc;
+                  font-size: 0;
+                  text-align: center;
+                  cursor: pointer;
                   .dropzone-box{
                     .input-area{
                       .upload-image{
@@ -403,42 +434,3 @@
   }
 }
 
-            // &--box {
-            //   display: inline;
-            //   &--image {
-            //     float: left;
-            //     display: none;
-            //     // プレビュー始まり
-            //     .upload-image__prev{
-            //       width: 116px;
-            //       margin: 0 0 10 10;
-            //       &--figure{
-            //         overflow: hidden;
-            //         height: 116px;
-            //         width: auto;
-            //         background-color: #f5f5f5;
-            //         &--src{
-            //         position: static;
-            //         height: 140px;
-            //         }
-            //       }
-            //       &--btn{
-            //         font-size: 14px;
-            //         display: flex;
-            //         width: 100%;
-            //         border-style: none;
-            //         background: #f5f5f5;
-            //         a{
-            //           display: inline-block;
-            //           line-height: 44px;
-            //           width: 50%;
-            //           text-align: center;  
-            //           color: #0099e8;
-            //           &:last-child{
-            //             border-left: 1px solid #eee;
-            //           }
-            //         }
-            //       }
-            //     }
-            //   }
-            // }
