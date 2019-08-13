@@ -3,7 +3,7 @@ $(document).on('turbolinks:load', function(){
   // 投稿クリック範囲
   var postBtn = document.getElementById('click-btn');
   postBtn.addEventListener('click', function(){
-    $('#post-image').click();
+    $('#upload-image__btn').click();
   });
 
   // 複数表示

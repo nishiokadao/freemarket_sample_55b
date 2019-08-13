@@ -5,4 +5,6 @@ class Image < ApplicationRecord
   validates_associated :product
   validates :image, presence: true
 
+
+  
 end
