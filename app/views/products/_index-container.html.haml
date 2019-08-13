@@ -17,9 +17,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -39,9 +41,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -64,9 +68,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -86,8 +92,10 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
