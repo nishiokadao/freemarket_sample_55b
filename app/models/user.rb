@@ -8,6 +8,8 @@ class User < ApplicationRecord
 
   has_many :products
   has_many :credits
+  has_many :likes, dependent: :destroy
+  has_many :liked_products, through: :likes, source: :product
 
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first
