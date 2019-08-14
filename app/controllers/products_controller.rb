@@ -7,7 +7,18 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products = Product.includes(:image).order("created_at DESC")
+    ladies = Category.where(name_id:1).order("created_at DESC")
+      @products_ladies = ladies.map do |p|
+        p.product
+      end
+    mens = Category.where(name_id:2).order("created_at DESC")
+      @products_mens = mens.map do |p|
+        p.product
+      end
+    kids = Category.where(name_id:3).order("created_at DESC")
+      @products_kids = kids.map do |p|
+        p.product
+      end
   end
 
   def show
