@@ -2,16 +2,15 @@
 %script{:src => "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
 %script{:type => "text/javascript"}
 
-
 .index-container
-  .index-slider-container
-    .slider-contents
-      .slider-content-camp
-        %img{src: "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}
-      .slider-content
-        .slider-content-box
-          .slider-main-visual
-            .slider-main-visual-contents
+  .index-container__slider
+    .index-slider-contents
+      .index-slider-contents__camp
+        = image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"
+      .index-slider-contents__sp-image
+        .index-slider-contents__sp-image--box
+          .image-box-main
+            .image-box-main__contents
               %h2
                 スマホでかんたん
                 %br
@@ -20,11 +19,11 @@
                 メルカリはスマホカメラからすぐに出品できる
                 %br
                 購入時も安心な独自システムのアプリです
-              .top-main-visual-btn.clearfix
-                = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "left-left" do
-                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"}
-                = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "left-left" do
-                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"}    
-            %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "index-slider-image"}
-      .slider-content-sale
+              .image-box-main__contents--btn
+                = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "image-box-main__contents--btn--left" do
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"
+                = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "image-box-main__contents--btn--left" do
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"  
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "image-box-main__image" 
+      .index-slider-contents__sale
         = image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-summer-fes.jpg"

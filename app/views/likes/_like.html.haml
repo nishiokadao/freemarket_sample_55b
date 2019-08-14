@@ -15,7 +15,8 @@
           = product.likes_count
 -else
   .item-button-container__left--like
-    %i.far.fa-heart
+    =link_to new_user_session_path do
+      %i.far.fa-heart
       %span いいね！
       %span 
         = product.likes_count
