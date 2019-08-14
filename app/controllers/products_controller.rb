@@ -5,7 +5,6 @@ class ProductsController < ApplicationController
   before_action :set_image, only: [:show, :buy, :pay]
   skip_before_action :authenticate_user!, only:[:show, :index]
 
-
   def index
     @products = Product.includes(:image).order("created_at DESC")
     # @products_ladies = Product.index_category(1)
