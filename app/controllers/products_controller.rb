@@ -7,9 +7,10 @@ class ProductsController < ApplicationController
 
 
   def index
-    @products_ladies = Product.index_category(1)
-    @products_mens = Product.index_category(2)
-    @products_kids = Product.index_category(3)
+    @products = Product.includes(:image).order("created_at DESC")
+    # @products_ladies = Product.index_category(1)
+    # @products_mens = Product.index_category(2)
+    # @products_kids = Product.index_category(3)
   end
 
   def show
