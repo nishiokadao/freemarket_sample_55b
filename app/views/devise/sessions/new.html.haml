@@ -19,8 +19,6 @@
             Googleでログイン
       =form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| 
         .login-container__main--login-panel--form
-          -# .flash
-          -#   = flash.alert
           .login-container__main--login-panel--form--input-email
             =f.email_field :email, placeholder: "メールアドレス", class: "input-box__text input-def"
           .login-container__main--login-panel--form--input-pass
