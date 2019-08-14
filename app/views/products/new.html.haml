@@ -27,7 +27,7 @@
           .sellbox-form__upload--drop#click-btn
             .sellbox-form__upload--drop--post
               -# ファイルのフォーム
-              = f.fields_for :images do |image|
+              = f.fields_for :image do |image|
                 .dropzone-container
                   #preview
                   -# jsでの追加部分
@@ -195,7 +195,7 @@
           = f.hidden_field :status, value: 0
           = f.submit "出品する", class:"btn-red", id:"js__modal-open"
           .btn-gry
-            = link_to "もどる", root_path, class:"btn-gry__link"
+            = link_to "もどる", root_path, class:"btn-gry__link", id:"js__modal-back--index"
   .new-content__footer
     %nav
       %ul.clearfix

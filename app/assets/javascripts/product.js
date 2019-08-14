@@ -63,6 +63,7 @@ $(document).on('turbolinks:load', function(){
     var new_image = $(`<input id="upload-image__btn" class="upload-image" data-image= ${images.length} type="file" name="product[images_attributes][${images.length}][image]">`);
     input_area.prepend(new_image);
   });
+
   // 削除
   $(document).on('click', '.delete', function() {
     var target_image = $(this).parent().parent();
@@ -159,6 +160,7 @@ $(document).on('turbolinks:load', function(){
     $('.price-group__box--right').empty();
     $('.price-group__box--bold--right').empty();
   });
+
     // モーダルウィンドウ
   $('#new_product').on('submit', function(e){
     e.preventDefault();
@@ -174,12 +176,17 @@ $(document).on('turbolinks:load', function(){
     })
     .done(function(){
       $('.js__modal-buy').show();
+
       $('#js__modal-close').on('click', function(){
         $('.js__modal-buy').fadeOut();
       })
     })
     .fail(function(){
       alert('入力されていない項目があります。');
+    })
+    .always(function(){
+      $('#js__modal-open').removeAttr('disabled');
+      $('#js__modal-back--index').removeAttr('disabled');
     })
   });
 });
