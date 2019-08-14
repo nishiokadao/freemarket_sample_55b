@@ -46,3 +46,8 @@ crumb :exhibit do
   link "出品商品画面", exhibit_products_path
   parent :item_state
 end
+
+crumb :liked do
+  link "いいね！一覧", liked_index_users_path(current_user)
+  parent :mypage
+end
