@@ -7,18 +7,9 @@ class ProductsController < ApplicationController
 
 
   def index
-    ladies = Category.where(name_id:1).order("created_at DESC")
-      @products_ladies = ladies.map do |p|
-        p.product
-      end
-    mens = Category.where(name_id:2).order("created_at DESC")
-      @products_mens = mens.map do |p|
-        p.product
-      end
-    kids = Category.where(name_id:3).order("created_at DESC")
-      @products_kids = kids.map do |p|
-        p.product
-      end
+    @products_ladies = Product.index_category(1)
+    @products_mens = Product.index_category(2)
+    @products_kids = Product.index_category(3)
   end
 
   def show
