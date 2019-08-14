@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
-
   before_action :move_to_signin, except: [:index, :show]
 
   def index
@@ -25,12 +24,11 @@ class ProductsController < ApplicationController
     @product= Product.new(product_params)
     if @product.save
       respond_to do |format|
-        format.html { redirect_to root_path }
-        format.json 
-      end
+        format.html {redirect_to root_path, notice:'出品完了しました'}
+        format.json
+      end 
     else
       redirect_to new_product_path, notice: "****入力されていない項目があります。****"
-
     end
   end
 
@@ -112,7 +110,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image [], :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode], images_attributes: [:product_id, :image]).merge(seller_id: current_user.id)
   end
 
   def move_to_signin

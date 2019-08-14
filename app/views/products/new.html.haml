@@ -25,36 +25,28 @@
           %p
             最大10枚までアップロードできます
           .sellbox-form__upload--drop#click-btn
-            -# .sellbox-form__upload--drop--box
-              -# .sellbox-form__upload--drop--box--image
-              -#   %ul
-              -#     %li.upload-image__prev
-              -#       %figure.upload-image__prev--figure
-              -#         =image_tag "", class: "upload-image__prev--figure--src"
-              -#       %button.upload-image__prev--btn
-              -#         =link_to "編集"
-              -#         =link_to "削除"
             .sellbox-form__upload--drop--post
               -# ファイルのフォーム
               = f.fields_for :images do |image|
                 .dropzone-container
                   #preview
+                  -# jsでの追加部分
                   -#img_view
                       img src
                       btn-wrapper//.upload-image__prev--btn
                         btnedit 編集
                         btnelete 削除
                   .dropzone-area
-                    = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
                       .input_area
-                        = image.file_field :image, multiple: true, name: 'images[image][]', id: "upload-image__btn", class: "upload-image", 'data-image': 0
+                        = image.file_field :image, id: "upload-image__btn", class: "upload-image", 'data-image': 0, type: "file", name: "product[images_attributes][0][image]"
                       %p
                         ドラッグアンドドロップ
                         %br
                         またはクリックしてファイルをダウンロード
                   #preview2
                   .dropzone-area2
-                    = image.label :image, class: "dropzone-box", for: "upload-image" do
+                    = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
                       %p
                         ドラッグアンドドロップ
                         %br
@@ -97,7 +89,7 @@
                   必須
               .select-box
                 %i.fas.fa-angle-down
-                -#商品状態nのセレクト
+                -#商品状態のセレクト
                 .select-default
                   =f.collection_select :condition_id, Condition.all, :id, :name, prompt: "---"
         .sellbox-form__post.clearfix
