@@ -37,6 +37,7 @@ class UsersController < ApplicationController
     @products = Product.includes(:image).where(seller_id: current_user)
   end
   
+  
 end
 
 
