@@ -7,7 +7,7 @@
   .index-slider-container
     .slider-contents
       .slider-content-camp
-        %img{src: "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"}
+        = image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-camp.jpg"
       .slider-content
         .slider-content-box
           .slider-main-visual
@@ -22,9 +22,9 @@
                 購入時も安心な独自システムのアプリです
               .top-main-visual-btn.clearfix
                 = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "left-left" do
-                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"}
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/app-store.svg?3125985667"
                 = link_to "https://play.google.com/store/apps/details?id=com.kouzoh.mercari&hl=ja", class: "left-left" do
-                  %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"}    
-            %img{src: "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "index-slider-image"}
+                  = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/google-play.svg?3125985667"  
+            = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/top/main_content_pc.png?3125985667", class: "index-slider-image" 
       .slider-content-sale
         = image_tag "https://www.mercari.com/jp/assets/img/common/jp/top/banner-summer-fes.jpg"
