@@ -27,11 +27,11 @@ class Product < ApplicationRecord
     likes.find_by(user_id: user_id)
   end
 
-  scope :index_category,-> (num){
-      index_category = Category.where(name_id: num).order("created_at DESC")
-      index_category.map do |p|
-        p.product
-      end
-  }
+  # scope :index_category,-> (num){
+  #     index_category = Category.where(name_id: num).order("created_at DESC")
+  #     index_category.map do |p|
+  #       p.product
+  #     end
+  # }
 
 end
