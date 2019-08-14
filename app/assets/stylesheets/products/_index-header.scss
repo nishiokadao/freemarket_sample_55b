@@ -12,6 +12,112 @@
 
 .index-container {
   width: 100vw;
+  &__slider {
+    position: relative;
+    .prev-arrow {
+      background-color: transparent;
+      position: absolute;
+      top: 45%;
+      left: 60px;
+      cursor: pointer;
+      height: 46px;
+      width: 31px;
+      z-index: 1;
+      border: none;
+    }
+    .next-arrow{
+      background-color: transparent;
+      position: absolute;
+      top: 45%;
+      right: 60px;
+      cursor: pointer;
+      height: 46px;
+      width: 31px;
+      z-index: 1;
+      border: none;
+    }
+  }
+  .index-slider-contents {
+    &__camp {
+      background-color: rgb(238, 234, 234);
+      width: 100%;
+      img { 
+        width: auto; 
+        margin: 0 auto;  
+      }
+    }
+    &__sp-image {
+      width: 100%;
+      height: 390px;
+      background: url("https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg");
+      background-size: cover;
+      &--box {
+        width: 860px;
+        height: 100%;
+        margin: 0 auto;
+        position: relative;
+        .image-box-main {
+          position: relative;
+          width: 100%;
+          height: 390px;
+          &__contents {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            transform: translate(0, -50%);
+            h2 {
+              font-size: 60px;
+              line-height: 1.2;
+              display: block;
+              margin-block-start: 0.83em;
+              margin-block-end: 0.83em;
+              margin-inline-start: 0px;
+              margin-inline-end: 0px;
+              font-weight: bold;
+            }
+            p {
+              font-size: 18px;
+              margin: 16px 0 0;
+              line-height: 1.77778;
+              display: block;
+              margin-block-start: 1em;
+              margin-block-end: 1em;
+              margin-inline-start: 0px;
+              margin-inline-end: 0px;
+            }
+            &--btn {
+              margin: 24px 0 0;
+              line-height: 0;
+              height: 50px;
+              width: 480px;
+              &--left {
+                display: inline-block;
+                margin-right: 14px;
+                img {
+                  height: 50px;
+                  width: 170px;
+                }
+              }
+            }
+          }
+          &__image {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 440px;
+            height: 390px;
+          }
+        }
+      }
+    }
+    &__sale {
+      width: 100%;
+      height: 390px;
+      background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-summer-fes.jpg");
+      background-repeat: repeat-x;
+      margin: 0 auto;
+    }
+  }
 }
 
 .index-header {
@@ -256,115 +362,6 @@
   border: 1px solid #ea352d;
   color: #fff;
   line-height: 30px;
-}
-
-.slider-content-camp {
-  background-color: rgb(238, 234, 234);
-  width: 100%;
-  img { 
-    width: auto; 
-    margin: 0 auto;  
-  }
-}
-
-.slider-content {
-  width: 100%;
-  height: 390px;
-  background: url("https://www.mercari.com/jp/assets/img/common/jp/top/main_bg_pc.jpg");
-  background-size: cover;
-  .slider-content-box {
-    width: 860px;
-    height: 100%;
-    margin: 0 auto;
-    position: relative;
-  }
-}
-
-.slider-content-sale {
-  width: 100%;
-  height: 390px;
-  background-image: url("https://www.mercari.com/jp/assets/img/common/jp/top/banner-summer-fes.jpg");
-  background-repeat: repeat-x;
-  margin: 0 auto;
-}
-
-.slider-main-visual {
-  position: relative;
-  width: 100%;
-  height: 390px;
-  .slider-main-visual-contents {
-    position: absolute;
-    top: 45%;
-    left: 0;
-    transform: translate(0, -50%);
-    h2 {
-      font-size: 60px;
-      line-height: 1.2;
-      display: block;
-      margin-block-start: 0.83em;
-      margin-block-end: 0.83em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-      font-weight: bold;
-    }
-    p {
-      font-size: 18px;
-      margin: 16px 0 0;
-      line-height: 1.77778;
-      display: block;
-      margin-block-start: 1em;
-      margin-block-end: 1em;
-      margin-inline-start: 0px;
-      margin-inline-end: 0px;
-    }
-    .top-main-visual-btn {
-      margin: 24px 0 0;
-      line-height: 0;
-      height: 50px;
-      width: 480px;
-      .left-left {
-        display: inline-block;
-        margin-right: 14px;
-        img {
-          height: 50px;
-          width: 170px;
-        }
-      }
-    }
-  }
-  .index-slider-image {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 440px;
-    height: 390px;
-  }
-}
-
-.index-slider-container {
-  position: relative;
-  .prev-arrow {
-    background-color: transparent;
-    position: absolute;
-    top: 45%;
-    left: 60px;
-    cursor: pointer;
-    height: 46px;
-    width: 31px;
-    z-index: 1;
-    border: none;
-  }
-  .next-arrow{
-    background-color: transparent;
-    position: absolute;
-    top: 45%;
-    right: 60px;
-    cursor: pointer;
-    height: 46px;
-    width: 31px;
-    z-index: 1;
-    border: none;
-  }
 }
 
 .index__head-nav{
