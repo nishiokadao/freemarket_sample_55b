@@ -195,7 +195,6 @@
         font-size: 16px;
         color: #ccc;
         vertical-align: middle;
-
       }
       span {
         margin-left: 10px;
@@ -378,6 +377,17 @@
       position: absolute;
       bottom: 12px;
       left: 50%;
+      border-radius: 50%;
+      height: 14px;
+      width: 14px;
+      text-indent: -9999px;
+      opacity: 0.5;
+    }
+    #slick-slide-control02 {
+      display: inline-block;
+      position: absolute;
+      bottom: 12px;
+      right: 47%;
       border-radius: 50%;
       height: 14px;
       width: 14px;

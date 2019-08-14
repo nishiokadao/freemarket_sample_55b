@@ -1,0 +1,21 @@
+- if user_signed_in?
+  - if product.like_user(current_user.id)
+    .item-button-container__left--dislike
+      =link_to product_like_path(product, current_user.id, like), method: :delete, remote: true do
+        %i.fas.fa-heart
+        %span いいね！
+        %span 
+          = product.likes_count
+  - else
+    .item-button-container__left--like
+      =link_to product_likes_path(product, current_user.id), method: :post, remote: true do
+        %i.far.fa-heart
+        %span いいね！
+        %span
+          = product.likes_count
+-else
+  .item-button-container__left--like
+    %i.far.fa-heart
+      %span いいね！
+      %span 
+        = product.likes_count
