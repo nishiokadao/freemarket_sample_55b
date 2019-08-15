@@ -12,86 +12,6 @@
   width: 1100px;
   padding-bottom: 40px;
   display: block;
-  &__content{
-    float: right;
-    width: 700px;
-    &--box {
-      background-repeat: no-repeat;
-      margin: 0;
-      padding: 0;
-      .search-result {
-        margin: 0 0 16px;
-        @include font($weight:600);
-      }
-      .search-count {
-        margin: 16px 0;
-        font-size: 12px;
-        color: #888;
-      }
-      .search-item {
-        width: auto;
-        margin: 0 auto;
-        &__box{
-          margin: 0 20px 20px 0;
-          width: 160px;
-          position: relative;
-          float: left;
-          background: #fff;
-          &--show {
-            height: 240px;
-            display: block;
-            text-decoration: none;
-            .item-photo {
-              width: 160px;
-              height: 160px;
-              overflow: hidden;
-              position: relative;
-              &__img {
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                z-index: 1;
-                width: 100%;
-                vertical-align: middle;
-              }
-            }
-            .item-text {
-              height: 80px;
-              padding: 8px 12px;
-              &__name {
-                overflow: hidden;
-                position: relative;
-                height: 3em;
-                line-height: 1.5;
-                word-break: break-word;
-                white-space: normal;
-                @include font($size:14px);
-              }
-              &__num {
-                margin-top: 2px;
-                display: flex;
-                align-items: center;
-                &--price {
-                  @include font(#333,17px, 600);
-                }
-                &--icon {
-                  @include font ($size:16px);
-                  .far.fa-heart{
-                    display: inline-block;
-                    font-style: normal;
-                    line-height: 1;
-                    @include font ($color:#ccc,$size:16px);
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    }
-  }
   &__side {
     float: left;
     width: 280px;
@@ -192,6 +112,19 @@
               margin: 0 4px 0 0;
               vertical-align: middle;
             }
+            #q_category_category_id_eq{
+              @include font($size:16px,$weight:normal);
+              position: relative;
+              z-index: 2;
+              height: 48px;
+              width: 84%;
+              padding: 0 16px;
+              border-radius: 4px;
+              border: 1px solid #ccc;
+              background: 0;
+              line-height: 1.5;
+              cursor: pointer;
+            }
             &--def {
               @include font($size:16px,$weight:normal);
               position: relative;
@@ -219,14 +152,12 @@
           }
           &__check {
             .checkbox {
-              margin: 16px 0 0;
+              margin: 16px 0 auto;
               display: inline-block;
-              width: 48%;
               vertical-align: middle;
               word-break: break-word;
               position: relative;
               &__lavel {
-                vertical-align: middle;
                 cursor: pointer;
                 @include font ($size:14px);
               }
@@ -255,6 +186,89 @@
             text-align: center;
             cursor: pointer;
             @include font($size:14px,$color:#fff);
+          }
+        }
+      }
+    }
+  }
+  &__content{
+    float: right;
+    width: 700px;
+    margin-left: 20px;
+    &--box {
+      background-repeat: no-repeat;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      .search-result {
+        margin: 0 0 16px;
+        @include font($weight:600);
+      }
+      .back-search {
+        position: absolute;
+        right: 0;
+        top:0;
+        &__link {
+          @include font($size:16px,$color:#0099e8);
+        }
+      }
+      .search-count {
+        margin: 16px 0;
+        font-size: 12px;
+        color: #888;
+      }
+      .search-item {
+        width: auto;
+        margin: 0 auto;
+        &__box{
+          margin: 0 20px 20px 0;
+          width: 160px;
+          position: relative;
+          float: left;
+          background: #fff;
+          &--show {
+            height: 240px;
+            display: block;
+            text-decoration: none;
+            .item-photo {
+              width: 160px;
+              height: 160px;
+              overflow: hidden;
+              &__img {
+                width: 160px;
+                height: 100%;
+              }
+            }
+            .item-text {
+              height: 80px;
+              padding: 8px 12px;
+              &__name {
+                overflow: hidden;
+                position: relative;
+                height: 3em;
+                line-height: 1.5;
+                word-break: break-word;
+                white-space: normal;
+                @include font($size:14px);
+              }
+              &__num {
+                margin-top: 2px;
+                display: flex;
+                align-items: center;
+                &--price {
+                  @include font(#333,17px, 600);
+                }
+                &--icon {
+                  @include font ($size:16px);
+                  .far.fa-heart{
+                    display: inline-block;
+                    font-style: normal;
+                    line-height: 1;
+                    @include font ($color:#ccc,$size:16px);
+                  }
+                }
+              }
+            }
           }
         }
       }
