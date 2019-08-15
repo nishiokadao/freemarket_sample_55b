@@ -2,12 +2,12 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create, :prohibit, :search]
   before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
-  before_action :set_image, only: [:show, :buy, :pay]
+  before_action :set_image, only: [:buy, :pay]
   before_action :move_to_signin, except: [:index, :show]
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
-    # @products = Product.order("created_at DESC")
+    # モデル名なのかテーブル名なのかはっきりさせる
   end
 
   def show
@@ -100,12 +100,11 @@ class ProductsController < ApplicationController
 
   def set_image
     @images = Image.where(product_id:@product.id)
-    # binding.pry
   end
   
   def set_all_products
-    @images = @product.images.order(id: "DESC")
     @user = User.find(@product.seller_id)
+    @images = @product.images.order(id: "DESC")
   end
 
   def check_user
