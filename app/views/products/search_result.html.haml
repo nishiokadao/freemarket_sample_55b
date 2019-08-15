@@ -1,4 +1,7 @@
-= render 'index-header-list'
+-if user_signed_in?
+  = render 'users/indexheader'
+-else
+  = render 'products/index-header-list'
 .search-main.clearfix
   = render 'search'
   .search-main__content

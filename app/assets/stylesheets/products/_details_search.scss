@@ -256,9 +256,11 @@
                 display: flex;
                 align-items: center;
                 &--price {
+                  float: left;
                   @include font(#333,17px, 600);
                 }
                 &--icon {
+                  margin-left: 50px;
                   @include font ($size:16px);
                   .far.fa-heart{
                     display: inline-block;
