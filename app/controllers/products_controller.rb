@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, except: [:index, :new, :create, :prohibit, :search]
+  before_action :set_product, except: [:index, :new, :create, :prohibit, :search, :details_search, :search_result]
   before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
