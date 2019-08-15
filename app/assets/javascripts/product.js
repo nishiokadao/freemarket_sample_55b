@@ -38,7 +38,7 @@ $(document).on('turbolinks:load', function(){
         })
       })
       if(images.length == 9) {
-        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone2.find('p').replaceWith('<p>ここをクリック</p>')
       }
     } else {
         $('#preview').empty();
@@ -51,7 +51,7 @@ $(document).on('turbolinks:load', function(){
         })
       }
       if(images.length == 4) {
-        dropzone.find('p').replaceWith('<i class="fa fa-camera"></i>')
+        dropzone.find('p').replaceWith('<p>ここをクリック</p>')
       }
     if(images.length == 10) {
       dropzone2.css({
@@ -129,6 +129,22 @@ $(document).on('turbolinks:load', function(){
       dropzone.find('i').replaceWith('<p>ココをクリックしてください</p>')
     }
   })
+
+  var editDropzone = $('.edit__dropzone-area')
+  var editDropzone2 = $('.edit__dropzone-area2')
+  var editImg = $('.edit__img');
+  var editImages = []
+  editImages.push(editImg);
+  if(editImages.length <= 4 ){
+    editDropzone.css({
+      'width': `calc(100% - (116px * ${editImages.length}))`
+    })
+    console.log(editImg)
+  } else { 
+    editDropzone.css({
+      'width': `calc(100% - (116px * ${editImages.length}))`
+    })
+  }
 
   // function readURL(input) {
   //   if (input.files && input.files[0]) {

@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product= Product.find(params[:id])
+    @images = @product.images.order(id: "DESC")
   end
 
   def exhibit
