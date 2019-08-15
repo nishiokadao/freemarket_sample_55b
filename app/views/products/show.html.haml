@@ -15,7 +15,7 @@
         = @product.name
       .item-main-content
         .item-photo
-          = image_tag @image.image.url, class:"product-img"
+          = image_tag @images[-1].image_url, class:"product-img"
         %table.item-detail-table
           %tbody
             %tr

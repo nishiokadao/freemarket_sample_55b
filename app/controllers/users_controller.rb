@@ -34,7 +34,8 @@ class UsersController < ApplicationController
   end 
 
   def item_state
-    @products = Product.includes(:image).where(seller_id: current_user)
+    @products = Product.where(seller_id: current_user)
+    # binding.pry
   end
   
 end

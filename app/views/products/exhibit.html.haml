@@ -12,7 +12,7 @@
           = @product.name
         .item-main-content
           .item-photo
-            = image_tag @product.image.image.url, class:"product-img"
+            = image_tag @product.images[0].image_url, class:"product-img"
           %table.item-detail-table
             %tbody
               %tr
