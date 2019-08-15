@@ -6,7 +6,7 @@ class ProductsController < ApplicationController
   before_action :move_to_signin, except: [:index, :show]
 
   def index
-    @products = Product.order("created_at DESC")
+    @products = Product.includes(:images).order("created_at DESC")
     # @products = Product.order("created_at DESC")
   end
 
@@ -35,6 +35,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product= Product.find(params[:id])
+    @images = @product.images.order(id: "DESC")
   end
 
   def exhibit
@@ -103,7 +104,7 @@ class ProductsController < ApplicationController
   end
   
   def set_all_products
-    @images = @product.images
+    @images = @product.images.order(id: "DESC")
     @user = User.find(@product.seller_id)
   end
 
