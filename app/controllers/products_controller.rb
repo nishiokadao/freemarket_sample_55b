@@ -44,7 +44,8 @@ class ProductsController < ApplicationController
 
   def search
     @products = Product.search(params[:search])
-    @search_keyward = params[:search] 
+    @search_keyward = params[:search]
+    redirect_to action: "details_search" if @search_keyward.blank?
   end
 
   def details_search
