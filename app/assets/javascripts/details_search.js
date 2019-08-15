@@ -1,5 +1,5 @@
 $(document).on('turbolinks:load', function(){
-  // if (window.location.href.match("/details_search") || window.location.href.match("/search_result")) {
+  if (window.location.href.match("/details_search") || window.location.href.match("/search_result")) {
     const select = document.getElementById('select-price');
     select.onchange = function(){
       let min = "";
@@ -34,7 +34,7 @@ $(document).on('turbolinks:load', function(){
       document.getElementById("min-price").value = min;
       document.getElementById("max-price").value = max;
     }
-  // }
+  }
 });
 
 
