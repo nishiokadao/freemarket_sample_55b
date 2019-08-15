@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  skip_before_action :authenticate_user!, only:[:select_sign_up]
 
   def show
     @user = User.find(params[:id])
@@ -36,6 +37,11 @@ class UsersController < ApplicationController
   def item_state
     @products = Product.includes(:image).where(seller_id: current_user)
   end
+
+  def liked_index
+    @products = current_user.liked_products
+  end
+  
   
 end
 

@@ -1,5 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
+  // $('.js__modal-buy').css('display','none');
   // あとで使う
   // $('.sellbox-form__upload--drop--post').on('click', function(){
   //   $('#post_image').click();
@@ -14,17 +15,15 @@ $(document).on('turbolinks:load', function(){
     }
   }
 
-$('#post__image').change(function(){
-  $('.sellbox-form__upload--drop--box--image').removeAttr('style');
-  readURL(this);
-})
-
-
+  $('#post__image').change(function(){
+    $('.sellbox-form__upload--drop--box--image').removeAttr('style');
+    readURL(this);
+  });
 
   $('#product_price').on('keyup', function(){
     var input= $(this).val();
-    var commission = "¥" + input*0.1;
-    var profit = "¥" + input*0.9;
+    var commission = "¥" + Math.round(input*0.1);
+    var profit = "¥" + Math.round(input*0.9);
     $('.price-group__box--right').append(commission);
     $('.price-group__box--bold--right').append(profit);
   });
@@ -34,9 +33,28 @@ $('#post__image').change(function(){
     $('.price-group__box--bold--right').empty();
   });
 
-  // $('.btn-red').on('click', function(){
-  //   window.alert("出品が完了しました。");
-  // });
-
+  $('#new_product').on('submit', function(e){
+    e.preventDefault();
+    var product = new FormData(this);
+    var url = $(this).attr('action');
+    $.ajax({
+      url: url,
+      type: "POST",
+      data: product,
+      dataType: 'json',
+      processData: false,
+      contentType: false
+    })
+    .done(function(){
+      $('.js__modal-buy').show();
+      $('#js__modal-close').on('click', function(){
+        $('.js__modal-buy').fadeOut();
+      })
+    })
+    .fail(function(){
+      alert('入力されていない項目があります。');
+    })
+  });
 });
+
 

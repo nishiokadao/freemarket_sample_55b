@@ -93,3 +93,4 @@ gem 'omniauth-google-oauth2'
 gem 'payjp'
 gem 'active_hash'
 gem 'ransack'
+gem "gretel"
