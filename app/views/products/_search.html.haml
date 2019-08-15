@@ -1,0 +1,104 @@
+.search-main__side
+  = search_form_for @q,url:search_result_products_path,class:"search-main__side--form" do |f|
+    .search-sort
+      .search-sort__form
+        .search-sort__form--wrap
+          %i.fas.fa-angle-down.font-down
+          %select.search-sort__form--wrap--select#select-sort
+            %option 並び替え
+            %option 価格の安い順
+            %option 価格の高い順
+            %option 出品の古い順
+            %option 出品の新しい順
+            %option いいね!の多い順
+    .search-box
+      %h3.search-box__head
+        詳細検索
+      .form-group
+        %lavel.form-group__box
+          %i.fas.fa-plus.font-icon
+          %span.form-group__box--name
+            キーワードを追加する
+        = f.search_field:name_cont, placeholder:"商品名など", class:"form-group__keyword"
+      .form-group
+        %lavel.form-group__box
+          %i.fas.fa-list-ul.font-icon
+          %span.form-group__box--name
+            カテゴリーを選択する
+        .form-group__wrap
+          %i.fas.fa-angle-down
+          = f.fields_for :category do |category|
+            =category.collection_select :category_id_eq, Genre.all, :id, :name, prompt: "---"
+      .form-group
+        %lavel.form-group__box
+          %i.fas.fa-coins.font-icon
+          %span.form-group__box--name
+            価格
+        .form-group__wrap
+          %i.fas.fa-angle-down
+          %select.form-group__wrap--def#select-price
+            %option{value:"defo"}
+              選択してください
+            %option{value:"one"}
+              300 ~ 1000
+            %option{value:"two"}
+              1000 ~ 5000
+            %option{value:"three"}
+              5000 ~ 10000
+            %option{value:"four"}
+              10000 ~ 30000
+            %option{value:"five"}
+              30000 ~ 50000
+            %option{value:"six"}
+              50000 ~ 
+          = f.number_field:price_gteq, placeholder:"￥Min", class:"form-group__wrap--price", id:"min-price"
+          %span ~
+          = f.number_field:price_lteq, placeholder:"￥Max", class:"form-group__wrap--price", id:"max-price"
+      .form-group.clearfix
+        %lavel.form-group__box
+          %i.fas.fa-star.font-icon
+          %span.form-group__box--name
+            商品の状態
+        %div.form-group__check
+          .checkbox
+            .checkbox__lavel
+              =f.collection_check_boxes :condition_id_in, Condition.all, :id, :name do |b|
+                = b.label do
+                  .box
+                    =b.check_box
+                    =b.text
+      .form-group.clearfix
+        %lavel.form-group__box
+          %i.fas.fa-truck-moving.font-icon
+          %span.form-group__box--name
+            配送料の負担
+        %div.form-group__check
+          .checkbox
+            .checkbox__lavel
+              = f.fields_for :delivery do |delivery|
+                = delivery.collection_check_boxes :payment_id_in, Payment.all, :id, :name do |b|
+                  = b.label do
+                    .box
+                      =b.check_box
+                      =b.text
+      .form-group.clearfix
+        %lavel.form-group__box
+          %i.fas.fa-shopping-cart.font-icon
+          %span.form-group__box--name
+            販売状況
+        %div.form-group__check
+          .checkbox
+            = f.check_box:status, class:"checkbox__def", id:"checkbox__all"
+            %lavel.checkbox__lavel
+              すべて
+          .checkbox
+            = f.check_box:status, class:"checkbox__def", id:"checkbox__one"
+            %lavel.checkbox__lavel
+              販売中
+          .checkbox
+            = f.check_box:status, class:"checkbox__def", id:"checkbox__two"
+            %lavel.checkbox__lavel
+              売り切れ
+      .form-btn.clearfix
+        .form-btn__gray クリア
+        = f.submit "完了", class:"form-btn__red"
