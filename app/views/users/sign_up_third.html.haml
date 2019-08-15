@@ -14,20 +14,20 @@
             .input-group
               %label お名前カナ
               %span.red-box 必須
-              =f.text_field :familyname, placeholder: "例）メルカリ", class: "input-def"
-              =f.text_field :firstname, placeholder: "例）タロウ", class: "input-def"
+              =f.text_field :kanafamilyname, placeholder: "例）メルカリ", class: "input-def"
+              =f.text_field :kanafirstname, placeholder: "例）タロウ", class: "input-def"
             .input-group
               %label 郵便番号
               %span.red-box 必須
-              =f.text_field :adress, placeholder: "例）123-4567", class: "input-def"
+              =f.text_field :postal, placeholder: "例）123-4567", class: "input-def"
             .input-group
               %label 都道府県
               %span.red-box 必須
-              =f.text_field :adress, placeholder: "大阪府", class: "input-def"
+              =f.text_field :prefecture, placeholder: "大阪府", class: "input-def"
             .input-group
               %label 市区町村
               %span.red-box 必須
-              =f.text_field :adress, placeholder: "大阪市中央区難波", class: "input-def"
+              =f.text_field :city, placeholder: "大阪市中央区難波", class: "input-def"
             .input-group
               %label 番地
               %span.red-box 必須
@@ -35,11 +35,11 @@
             .input-group
               %label 建物名
               %span.gray-box 任意
-              =f.text_field :adress, placeholder: "なんばスカイオ15階", class: "input-def"
+              =f.text_field :building, placeholder: "なんばスカイオ15階", class: "input-def"
             .input-group
               %label 電話
               %span.gray-box 任意
-              =f.text_field :tell, placeholder: "000-111-2222", class: "input-def"
+              =f.text_field :phone, placeholder: "000-111-2222", class: "input-def"
         .reg-container__main--content-title--bottom
           .input-group
             =link_to "次へ進む", sign_up_forth_users_path, class: "link_button"

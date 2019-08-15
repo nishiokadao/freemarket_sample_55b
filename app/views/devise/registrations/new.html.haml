@@ -24,27 +24,36 @@
     .reg-container__main--content
       %h2.reg-container__main--content-title 会員情報入力
       =form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        .error_messages
-          = devise_error_messages!
         .reg-container__main--content-title--input
           .input-groups
             .input-group
               %label ニックネーム
               %span.red-box 必須
               =f.text_field :name, placeholder: "例）メルカリ太郎", class: "input-def"
+              .error_messages
+                - if @user.errors.messages[:name].any?
+                  = "ニックネーム#{@user.errors[:name][0]}"
             .input-group
               %label メールアドレス
               %span.red-box 必須
               =f.email_field :email, placeholder: "PC・携帯どちらでも可", class: "input-def"
-            - if @user.provider.blank?
+              .error_messages
+                - if @user.errors.messages[:email].any?
+                  = "メールアドレス#{@user.errors[:email][0]}"
               .input-group
                 %label パスワード
                 %span.red-box 必須
                 =f.password_field :password, placeholder: "6文字以上", class: "input-def"
+              .error_messages
+                - if @user.errors.messages[:password].any?
+                  = "パスワード#{@user.errors[:password][0]}"
               .input-group
                 %label パスワード(確認)
                 %span.red-box 必須
                 =f.password_field :password, placeholder: "6文字以上", class: "input-def"
+              .error_messages  
+                - if @user.errors.messages[:password].any?
+                  = "パスワード（確認）#{@user.errors[:password][0]}"
             .input-group
               %h3 本人確認
               %p 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。

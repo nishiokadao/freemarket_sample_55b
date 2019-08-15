@@ -1,45 +1,10 @@
 .index-container
-  .index-header
-    .index-header-inner
-      .index-header-top
-        %h1
-          = link_to root_path do
-            =image_tag "//www-mercari-jp.akamaized.net/assets/img/common/common/logo.svg?3135490372"
-        %form.index-header-form
-          %input.index-input-default{type: "search", name: "keyword", placeholder: "何かお探しですか？"}
-          %i.index-search-icon.fas.fa-search
-      .index-header-navigation-box.clearfix
-        %nav.index-left-content
-          %ul.header-navigation
-            %li
-              %h2
-                = link_to root_path, class: "header-navigation-list-parent" do
-                  %i.fas.fa-bars
-                  %span カテゴリーから探す
-            %li
-              %h2
-                = link_to root_path, class: "header-navigation-list-parent" do
-                  %i.fas.fa-tags
-                  %span ブランドから探す
-        .index-right-content
-          %ul.header-login-navigation
-            %li
-              = link_to '新規会員登録', new_user_path, class: "index-header-btn btn-red"
-            %li
-              = link_to 'ログイン', new_user_session_path, class: "index-header-btn header-login"
-%nav.user-navigation
+  = render 'users/indexheader'
+%nav.index__head-nav
   %ul
     %li
-      = link_to root_path, itemprop: "url" do
-        %span メルカリ
-      %i.fas.fa-angle-right
-    %li
-      = link_to user_path(current_user), itemprop: "url" do
-        %span マイページ
-      %i.fas.fa-angle-right
-    %li
-      = link_to "/", itemprop: "url" do
-        %span 本人情報の登録
+      - breadcrumb :detil
+      = breadcrumbs separator: " &rsaquo; "
 .user-edit-container
   .user-edit-container__right-content
     %section.mypage-identification
@@ -56,13 +21,13 @@
               %i.fas.fa-angle-right
         .edit-form-contents__form-group
           %label お名前
-          %p 小林泰宣
+          %p 
         .edit-form-contents__form-group
           %label お名前カナ
-          %p コバヤシ ヤスノリ
+          %p 
         .edit-form-contents__form-group
           %label{for: "birthday"} 生年月日
-          %p 1994/02/14
+          %p 
         .edit-form-contents__form-group
           %label{for: "zip-code"} 郵便番号
           %span.edit-form-contents__form-group--form-arbitrary 任意

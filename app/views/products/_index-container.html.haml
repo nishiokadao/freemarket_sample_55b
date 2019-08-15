@@ -5,6 +5,7 @@
     %h3.text-center
       = link_to"レディース新着アイテム",root_path 
     .items-box-content
+      -# - @products_ladies.first(4).each do |product|
       - @products.first(4).each do |product|
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
@@ -17,9 +18,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -27,6 +30,7 @@
     %h3.text-center
       = link_to"メンズ新着アイテム",root_path
     .items-box-content
+      -# - @products_mens.first(4).each do |product|
       - @products.first(4).each do |product|
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
@@ -39,9 +43,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -52,6 +58,7 @@
     %h3.text-center
       = link_to"シャネル新着アイテム",root_path
     .items-box-content
+      -# - @products_kids.first(4).each do |product|
       - @products.first(4).each do |product|
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
@@ -64,9 +71,11 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path
 
@@ -74,6 +83,7 @@
     %h3.text-center
       = link_to"アディダス新着アイテム",root_path
     .items-box-content
+      -# - @products_kids.first(4).each do |product|
       - @products.first(4).each do |product|
         %section.items-box
           =link_to product_path(product.id), class: "items__box__btn" do
@@ -86,8 +96,10 @@
                 .items-box-price
                   ￥
                   = product.price
-                .like
-                  %i.far.fa-heart
-                  = product.status
+                - unless product.likes_count == 0  
+                  .like
+                    %i.far.fa-heart
+                    %span
+                      = product.likes_count
     .view-all
       = link_to"すべての商品を見る",root_path

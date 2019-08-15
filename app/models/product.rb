@@ -8,6 +8,8 @@ class Product < ApplicationRecord
   has_one :image, dependent: :destroy
   has_one :delivery, dependent: :destroy 
   has_one :category, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :liked_users, through: :likes, source: :user
   accepts_nested_attributes_for :image ,update_only: true
   accepts_nested_attributes_for :delivery, update_only: true
   accepts_nested_attributes_for :category, update_only: true
@@ -21,5 +23,15 @@ class Product < ApplicationRecord
     Product.where(['name LIKE ?', "%#{search}%"])
   end
 
+  def like_user(user_id)
+    likes.find_by(user_id: user_id)
+  end
+
+  # scope :index_category,-> (num){
+  #     index_category = Category.where(name_id: num).order("created_at DESC")
+  #     index_category.map do |p|
+  #       p.product
+  #     end
+  # }
 
 end

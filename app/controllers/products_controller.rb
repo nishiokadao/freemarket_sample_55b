@@ -1,10 +1,15 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edit, :update]
+  before_action :set_product, except: [:index, :new, :create, :prohibit, :search]
+  before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
+  skip_before_action :authenticate_user!, only:[:show, :index]
 
   def index
     @products = Product.includes(:image).order("created_at DESC")
+    # @products_ladies = Product.index_category(1)
+    # @products_mens = Product.index_category(2)
+    # @products_kids = Product.index_category(3)
   end
 
   def show
@@ -20,10 +25,14 @@ class ProductsController < ApplicationController
 
   def create
     @product= Product.new(product_params)
-    if @product.save!
-      redirect_to root_path, notice: '出品が完了しました。'
+    if @product.save
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.json 
+      end
     else
-      redirect_to new_product_path
+      redirect_to new_product_path, notice: "****入力されていない項目があります。****"
+
     end
   end
 
@@ -32,6 +41,9 @@ class ProductsController < ApplicationController
   end
 
   def exhibit
+  end
+
+  def prohibit
   end
 
   def update
@@ -109,6 +121,10 @@ class ProductsController < ApplicationController
     @user = User.find(@product.seller_id)
   end
 
+  def check_user
+    redirect_to prohibit_products_path if @product.seller_id != current_user.id
+  end
+
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
   end
@@ -116,4 +132,10 @@ class ProductsController < ApplicationController
   def search_params
     params.require(:q).permit(:name_cont, :price_gteq, :price_lteq, condition_id_in:[], category:[:category_id_eq], delivery:[payment_id_in:[]])
   end
+
+  def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys:[:name]) 
+  end
+
+
 end

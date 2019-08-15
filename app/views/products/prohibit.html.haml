@@ -1,0 +1,15 @@
+= render 'users/indexheader'
+%nav.user-navigation
+  %ul
+    %li
+      = link_to root_path, itemprop: "url" do
+        %span メルカリ
+.prohibit-container
+  .prohibit-container__right-content
+    .prohibit-container__right-content--error-text
+      ただいまサーバが大変混み合っています。しばらく時間をおいてから、アクセスしてください。
+  .prohibit-container__left-content
+    .prohibit-container__left-content--sp-image
+      = link_to "https://itunes.apple.com/jp/app/id667861049?l=ja&mt=8", class: "side-banner" do
+        = image_tag "//www-mercari-jp.akamaized.net/assets/img/common/jp/side_banner.jpg?2508029365"
+= render 'index-footer'
