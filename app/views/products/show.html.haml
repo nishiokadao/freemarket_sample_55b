@@ -10,12 +10,33 @@
         %span
           レディース
   %section.item-box-container
-    .item-box-container__single-sontainer
+    .item-box-container__single-container
       %h1.item-name
         = @product.name
       .item-main-content
-        .item-photo
-          = image_tag @images[-1].image_url, class:"product-img"
+        .item-slider-content
+          .item-slider-content__slider 
+            = image_tag @images[0].image_url, class:"item-slider-content__slider--product-img" 
+            = image_tag @images[1].image_url, class:"item-slider-content__slider--product-img" unless @images[1].blank? 
+            = image_tag @images[2].image_url, class:"item-slider-content__slider--product-img" unless @images[2].blank? 
+            = image_tag @images[3].image_url, class:"item-slider-content__slider--product-img" unless @images[3].blank? 
+            = image_tag @images[4].image_url, class:"item-slider-content__slider--product-img" unless @images[4].blank? 
+            = image_tag @images[5].image_url, class:"item-slider-content__slider--product-img" unless @images[5].blank? 
+            = image_tag @images[6].image_url, class:"item-slider-content__slider--product-img" unless @images[6].blank? 
+            = image_tag @images[7].image_url, class:"item-slider-content__slider--product-img" unless @images[7].blank? 
+            = image_tag @images[8].image_url, class:"item-slider-content__slider--product-img" unless @images[8].blank? 
+            = image_tag @images[9].image_url, class:"item-slider-content__slider--product-img" unless @images[9].blank?
+          .item-slider-content__thumbnail 
+            = image_tag @images[0].image_url, class:"item-slider-content__thumbnail--product-img" 
+            = image_tag @images[1].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[1].blank? 
+            = image_tag @images[2].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[2].blank? 
+            = image_tag @images[3].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[3].blank? 
+            = image_tag @images[4].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[4].blank? 
+            = image_tag @images[5].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[5].blank? 
+            = image_tag @images[6].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[6].blank? 
+            = image_tag @images[7].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[7].blank? 
+            = image_tag @images[8].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[8].blank? 
+            = image_tag @images[9].image_url, class:"item-slider-content__thumbnail--product-img" unless @images[9].blank?
         %table.item-detail-table
           %tbody
             %tr
