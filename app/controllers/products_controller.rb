@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edi, :update]
+  before_action :set_product, only: [:show, :buy, :pay, :exhibit, :destroy, :edit, :update]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:show, :buy, :pay]
 
@@ -48,7 +48,14 @@ class ProductsController < ApplicationController
   end
 
   def details_search
-    
+    @products = Product.includes(:image).order("created_at DESC")
+    @q = Product.ransack(params[:q])
+    @search = @q.result(distinct: true)
+  end
+
+  def search_result
+    @q = Product.ransack(search_params)
+    @searchs = @q.result(distinct: true)
   end
   
   def destroy
@@ -103,5 +110,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
+  end
+
+  def search_params
+    params.require(:q).permit(:name_cont, :price_gteq, :price_lteq, condition_id_in:[], category:[:category_id_eq], delivery:[payment_id_in:[]])
   end
 end
