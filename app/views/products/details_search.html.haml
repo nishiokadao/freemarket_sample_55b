@@ -1,137 +1,30 @@
-= render 'index-header-list'
+-if user_signed_in?
+  = render 'users/indexheader'
+-else
+  = render 'products/index-header-list'
 .search-main.clearfix
+  = render 'search'
   .search-main__content
     %section.search-main__content--box
       %h2.search-result
-        検索商品
+        新着商品
       .search-count
-        3件
+        = "#{@products.count}件"
       .search-item
-        %section.search-item__box
-          = link_to "showページのパス", class:"search-item__box--show" do
-            %figure.item-photo
-              = image_tag "data:image/jpeg;base64,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", class:"item-photo__img"
-            .item-text
-              .item-text__name
-                にゃん
-              .item-text__num
-                .item-text__num--price
-                  ¥1000
-                .item-text__num--icon
-                  %i.far.fa-heart
-                  %span.good
-                    2
-  .search-main__side
-    = form_with url:details_search_products_path, class:"search-main__side--form" do |f|
-      .search-sort
-        .search-sort__form
-          .search-sort__form--wrap
-            %i.fas.fa-angle-down.font-down
-            %select.search-sort__form--wrap--select#select-sort
-              %option 並び替え
-      .search-box
-        %h3.search-box__head
-          詳細検索
-        .form-group
-          %lavel.form-group__box
-            %i.fas.fa-plus.font-icon
-            %span.form-group__box--name
-              キーワードを追加する
-          = f.text_field:name, placeholder:"例）値下げ", class:"form-group__keyword"
-        .form-group
-          %lavel.form-group__box
-            %i.fas.fa-list-ul.font-icon
-            %span.form-group__box--name
-              カテゴリーを選択する
-          .form-group__wrap
-            %i.fas.fa-angle-down
-            %select.form-group__wrap--def
-              %option
-                すべて
-        .form-group
-          %lavel.form-group__box
-            %i.fas.fa-coins.font-icon
-            %span.form-group__box--name
-              価格
-          .form-group__wrap
-            %i.fas.fa-angle-down
-            %select.form-group__wrap--def
-              %option
-                選択してください
-            = f.text_field:price, placeholder:"￥Min", class:"form-group__wrap--price"
-            %span ~
-            = f.text_field:price, placeholder:"￥Max", class:"form-group__wrap--price"
-        .form-group.clearfix
-          %lavel.form-group__box
-            %i.fas.fa-star.font-icon
-            %span.form-group__box--name
-              商品の状態
-          %div.form-group__check
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__all"
-              %lavel.checkbox__lavel
-                すべて
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__one"
-              %lavel.checkbox__lavel
-                新品、未使用
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__two"
-              %lavel.checkbox__lavel
-                未使用に近い
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__three"
-              %lavel.checkbox__lavel
-                目立った傷や汚れなし
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__four"
-              %lavel.checkbox__lavel
-                やや傷や汚れあり
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__five"
-              %lavel.checkbox__lavel
-                傷や汚れあり
-            .checkbox
-            = f.check_box:status, class:"checkbox__def", id:"checkbox__six"
-            %lavel.checkbox__lavel
-              全体的に状態が悪い
-        .form-group.clearfix
-          %lavel.form-group__box
-            %i.fas.fa-truck-moving.font-icon
-            %span.form-group__box--name
-              配送料の負担
-          %div.form-group__check
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__all"
-              %lavel.checkbox__lavel
-                すべて
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__one"
-              %lavel.checkbox__lavel
-                着払い(購入者負担)
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__two"
-              %lavel.checkbox__lavel
-                送料込み(出品者負担)
-        .form-group.clearfix
-          %lavel.form-group__box
-            %i.fas.fa-shopping-cart.font-icon
-            %span.form-group__box--name
-              販売状況
-          %div.form-group__check
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__all"
-              %lavel.checkbox__lavel
-                すべて
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__one"
-              %lavel.checkbox__lavel
-                販売中
-            .checkbox
-              = f.check_box:status, class:"checkbox__def", id:"checkbox__two"
-              %lavel.checkbox__lavel
-                売り切れ
-        .form-btn.clearfix
-          .form-btn__gray クリア
-          = f.submit "完了", class:"form-btn__red"
+        -@products.each do |product|
+          %section.search-item__box
+            = link_to product_path(product.id), class:"search-item__box--show" do
+              %figure.item-photo
+                = image_tag product.image.image.url, class:"item-photo__img"
+              .item-text
+                .item-text__name
+                  =product.name
+                .item-text__num
+                  .item-text__num--price
+                    ¥
+                    = product.price
+                  .item-text__num--icon
+                    %i.far.fa-heart
+                    %span.good
+                      = product.status
 = render "index-footer"

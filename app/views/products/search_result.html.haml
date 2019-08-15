@@ -1,0 +1,31 @@
+= render 'index-header-list'
+.search-main.clearfix
+  = render 'search'
+  .search-main__content
+    %section.search-main__content--box
+      %h2.search-result
+        検索商品
+      .back-search
+        = link_to details_search_products_path, class:"back-search__link" do
+          新着商品一覧に戻る
+      .search-count
+        = "#{@searchs.count}件"
+      .search-item
+        -@searchs.each do |search|
+          %section.search-item__box
+            %section.search-item__box
+              = link_to product_path(search.id), class:"search-item__box--show" do
+                %figure.item-photo
+                  = image_tag search.image.image.url, class:"item-photo__img"
+                .item-text
+                  .item-text__name
+                    =search.name
+                  .item-text__num
+                    .item-text__num--price
+                      ¥
+                      = search.price
+                    .item-text__num--icon
+                      %i.far.fa-heart
+                      %span.good
+                        = search.status
+= render "index-footer"
