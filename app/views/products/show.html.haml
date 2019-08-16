@@ -82,7 +82,7 @@
               %th
                 配送料の負担
               %td
-                送料込み（出品者負担）
+                = @product.delivery.payment.name
             %tr
               %th
                 配送の方法
@@ -97,7 +97,7 @@
               %th
                 発送日の目安
               %td
-                ２〜３日で発送          
+                ２〜３日で発送
       .item-price-box
         %span.item-price__bold
           ¥
