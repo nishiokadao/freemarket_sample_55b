@@ -12,7 +12,7 @@
         = link_to details_search_products_path, class:"back-search__link" do
           新着商品一覧に戻る
       .search-count
-        = "#{@searchs.count}件"
+        = "#{@searchs.size}件"
       .search-item
         -@searchs.each do |search|
           %section.search-item__box

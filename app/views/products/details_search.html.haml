@@ -9,7 +9,7 @@
       %h2.search-result
         新着商品
       .search-count
-        = "#{@products.count}件"
+        = "#{@products.size}件"
       .search-item
         -@products.each do |product|
           %section.search-item__box
