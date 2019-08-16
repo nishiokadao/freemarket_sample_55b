@@ -28,7 +28,7 @@
           - if user_signed_in? 
             %ul.user-nav
               %li.user-nav__like
-                =link_to "#", class:"user-nav__like--link" do
+                =link_to liked_index_users_path, class:"user-nav__like--link" do
                   %i.far.fa-heart
                   %span
                     いいね!一覧

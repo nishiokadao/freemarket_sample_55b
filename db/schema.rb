@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_07_064559) do
+ActiveRecord::Schema.define(version: 2019_08_14_035206) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "parent_id"
@@ -57,6 +57,15 @@ ActiveRecord::Schema.define(version: 2019_08_07_064559) do
     t.integer "product_id", null: false
   end
 
+  create_table "likes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_likes_on_product_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.string "status", null: false
@@ -67,6 +76,7 @@ ActiveRecord::Schema.define(version: 2019_08_07_064559) do
     t.datetime "updated_at", null: false
     t.integer "buyer_id"
     t.integer "seller_id", null: false
+    t.integer "likes_count", default: 0
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -91,4 +101,6 @@ ActiveRecord::Schema.define(version: 2019_08_07_064559) do
   add_foreign_key "category_products", "products"
   add_foreign_key "credits", "users"
   add_foreign_key "deliveries", "products"
+  add_foreign_key "likes", "products"
+  add_foreign_key "likes", "users"
 end

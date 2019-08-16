@@ -4,10 +4,12 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :omniauthable, omniauth_providers: %i[facebook google_oauth2]
-  # validates :name, presence: true
+  validates :name, presence: true
 
   has_many :products
   has_many :credits
+  has_many :likes, dependent: :destroy
+  has_many :liked_products, through: :likes, source: :product
 
   def self.from_omniauth(auth)  
     where(provider: auth.provider, uid: auth.uid).first
