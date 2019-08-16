@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
-    
+  end
+
   def show
     @user = User.find(@product.seller_id)
   end
@@ -133,6 +134,4 @@ class ProductsController < ApplicationController
   def configure_permitted_parameters
       devise_parameter_sanitizer.permit(:sign_up, keys:[:name]) 
   end
-
-
 end
