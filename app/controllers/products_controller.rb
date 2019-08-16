@@ -3,7 +3,6 @@ class ProductsController < ApplicationController
   before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:buy, :pay]
-  before_action :move_to_signin, except: [:index, :show]
   skip_before_action :authenticate_user!, only:[:show, :index]
 
   def index
