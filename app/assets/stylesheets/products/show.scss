@@ -59,6 +59,8 @@
               width: 270px;
               height: 300px;
               margin: 0 auto;
+              object-fit: contain;
+              // いるかどうか？
             }
           }
           &__thumbnail {
