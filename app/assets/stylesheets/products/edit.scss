@@ -3,9 +3,9 @@
 .sellbox-form__upload--drop--post {
   .dropzone-container{
     display: block;
-    #edit__preview{
+    #preview{
       display: inline-block;
-      .edit__img-view{
+      .update__img-view{
         height: 170px;
         width: 116px;
         display: inline-block;
@@ -27,7 +27,7 @@
           text-align: center;  
           color: #0099e8;
           }
-          .delete-btn{
+          .update__delete-btn{
             display: inline-block;
             line-height: 32px;
             width: 50%;
@@ -38,7 +38,7 @@
         }
       }
     }
-    .edit__dropzone-area{
+    .dropzone-area{
       float: right;
       box-sizing: border-box;
       width: 100%;
@@ -67,7 +67,7 @@
         }
       }
     }
-    .edit__dropzone-area2{
+    .dropzone-area2{
       display: none;
       float: right;
       box-sizing: border-box;

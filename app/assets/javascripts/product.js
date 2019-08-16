@@ -22,6 +22,8 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
+    console.log(images);
+    console.log(inputs)
 
     if(images.length >= 5) {
       dropzone2.css({
@@ -34,7 +36,7 @@ $(document).on('turbolinks:load', function(){
         image.attr('data-image', index);
         preview2.append(image);
         dropzone2.css({
-          'width': `calc(100% - (116px * ${images.length - 5}))`
+          'width': `calc(100% - (120px * ${images.length - 5}))`
         })
       })
       if(images.length == 9) {
@@ -47,7 +49,7 @@ $(document).on('turbolinks:load', function(){
           preview.append(image);
         })
         dropzone.css({
-          'width': `calc(100% - (116px * ${images.length}))`
+          'width': `calc(100% - (120px * ${images.length}))`
         })
       }
       if(images.length == 4) {
@@ -65,7 +67,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   // 削除
-  $(document).on('click', '.delete', function() {
+  $(document).on('click', '.delete-btn', function() {
     var target_image = $(this).parent().parent();
     $.each(inputs, function(index, input){
       if ($(this).data('image') == target_image.data('image')){
@@ -96,11 +98,12 @@ $(document).on('turbolinks:load', function(){
         'display': 'block'
       })
       $.each(images, function(index, image) {
+        debugger;
         image.attr('data-image', index);
         preview2.append(image);
       })
       dropzone2.css({
-        'width': `calc(100% - (116px * ${images.length - 5}))`
+        'width': `calc(100% - (120px * ${images.length - 5}))`
       })
       if(images.length == 9) {
         dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
@@ -117,7 +120,7 @@ $(document).on('turbolinks:load', function(){
         preview.append(image);
       })
       dropzone.css({
-        'width': `calc(100% - (116px * ${images.length}))`
+        'width': `calc(100% - (120px * ${images.length}))`
       })
     }
     if(images.length == 4) {
@@ -130,38 +133,90 @@ $(document).on('turbolinks:load', function(){
     }
   })
 
-  var editDropzone = $('.edit__dropzone-area')
-  var editDropzone2 = $('.edit__dropzone-area2')
+// 編集画面
+  var dropZone = $('.dropzone-area')
+  var dropZone2 = $('.dropzone-area2')
   var editImg = $('.edit__img');
   var editImages = []
   editImages.push(editImg);
   if(editImages.length <= 4 ){
-    editDropzone.css({
-      'width': `calc(100% - (116px * ${editImages.length}))`
+    dropZone.css({
+      'width': `calc(100% - (120px * ${editImg.length}))`
     })
-    console.log(editImg)
   } else { 
-    editDropzone.css({
-      'width': `calc(100% - (116px * ${editImages.length}))`
+    dropZone.css({
+      'width': `calc(100% - (120px * ${editImages.length}))`
     })
   }
-
-  // function readURL(input) {
-  //   if (input.files && input.files[0]) {
-  //     var reader = new FileReader();
-  //     reader.onload = function (e) {
-  //       $('.upload-image__prev--figure--src').attr('src', e.target.result);
-  //     }
-  //     reader.readAsDataURL(input.files[0]);
-  //   }
-  // }
-
-  // $('#post__image').change(function(){
-  //   $('.sellbox-form__upload--drop--box--image').show();
-  //   $('.sellbox-form__upload--drop--post').width('66%');
-  //   readURL(this);
-  // });
-
+// 編集画面の削除
+  $(document).on('click', '.update__delete-btn', function() {
+    var editImages = $('.update__img-view');
+    // var editImages = 
+    var target_image = $(this).parent().parent();
+    $.each(editImages, function(index, input){
+      if ($(this).data('image') == target_image.data('image')){
+        $(this).remove();
+        target_image.remove();
+        var num = $(this).data('image');
+        editImages.splice(num, 1);
+        $.each(editImages, function(index, editImage) {
+          editImage.attr('data-image', index);
+        })
+        if(inputs.length == 0) {
+          $('input[type= "file"].upload-image').attr({
+            'data-image': 0
+          })
+        }
+      }
+    })
+    $('input[type= "file"].upload-image:first').attr({
+      'data-image': inputs.length
+    })
+    $.each(inputs, function(index, input) {
+      var input = $(this)
+      input.attr({
+        'data-image': index
+      })
+      $('input[type= "file"].upload-image:first').after(input)
+    })
+    if (images.length >= 5) {
+      dropzone2.css({
+        'display': 'block'
+      })
+      $.each(editImages, function(index, editImage) {
+        editImage.attr('data-image', index);
+        preview2.append(image);
+      })
+      dropzone2.css({
+        'width': `calc(100% - (120px * ${images.length - 5}))`
+      })
+      if(images.length == 9) {
+        dropzone2.find('p').replaceWith('<i class="fa fa-camera"></i>')
+      }
+      if(images.length == 8) {
+        dropzone2.find('i').replaceWith('<p>ココをクリックしてください</p>')
+      }
+    } else {
+      dropzone.css({
+        'display': 'block'
+      })
+      $.each(images, function(index, image) {
+        image.attr('data-image', index);
+        preview.append(image);
+      })
+      dropzone.css({
+        'width': `calc(100% - (120px * ${images.length}))`
+      })
+    }
+    if(images.length == 4) {
+      dropzone2.css({
+        'display': 'none'
+      })
+    }
+    if(images.length == 3) {
+      dropzone.find('i').replaceWith('<p>ココをクリックしてください</p>')
+    }
+  })
 
   // 手数料・利益表示
   $('#product_price').on('keyup', function(){

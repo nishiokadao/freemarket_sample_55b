@@ -19,31 +19,27 @@
           .sellbox-form__upload--drop#click-btn
             .sellbox-form__upload--drop--post
               .dropzone-container
-                #edit__preview
-                  - @images.each do |image|
-                    .edit__img-view
+                #preview
+                  - @images.each_with_index do |image, i|
+                    .update__img-view{"data-image": i}
                       =image_tag(image.image_url, class: "edit__img")
                       .upload-image__prev--btn
                         .edit-btn 編集
-                        .delete-btn 削除
+                        .update__delete-btn 削除
                 = f.fields_for :image do |image|
-                  .edit__dropzone-area
+                  .dropzone-area
                     = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
                       .input_area
                         = image.file_field :image, id: "upload-image__btn", class: "upload-image", 'data-image': 0, type: "file", name: "product[images_attributes][0][image]"
-                        - image.hidden_field :id, value: @product.images[0].id 
-                        - image.hidden_field :id, value: @product.images[-1].id 
+                        -# - image.hidden_field :id, value: @images.id 
+                        -# - image.hidden_field :id, value: image.id 
                       %p
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをダウンロード
+                        クリックしてファイルを追加
                   #preview2
-                  .edit__dropzone-area2
+                  .dropzone-area2
                     = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
                       %p
-                        ドラッグアンドドロップ
-                        %br
-                        またはクリックしてファイルをダウンロード
+                        クリックしてファイルを追加
         .sellbox-form__post
           .sellbox-form__post--group
             %lavel.sellbox-form__post--group--head
