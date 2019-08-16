@@ -14,7 +14,7 @@
           %li
             = link_to product_path(product), class: "liked-product-link" do
               %figure
-                = image_tag product.image.image.url
+                = image_tag product.images[-1].image_url
               .liked-product-body
                 .liked-product-body__text
                   = product.name

@@ -28,7 +28,7 @@
             %li
               = link_to exhibit_products_path(product), class: "mypage-tab-container__content--item-list--link" do
                 %figure.item-list--figure
-                  = image_tag product.images[-1].image.url, class: "item-list--figure__image"
+                  = image_tag product.images[-1].image_url, class: "item-list--figure__image"
                 .item-list--body
                   .item-list--body__text
                     = product.name
