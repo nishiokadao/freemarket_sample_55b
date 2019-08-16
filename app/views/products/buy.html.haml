@@ -10,7 +10,7 @@
       %section.buy-content__main--box--item
         .item-inner
           .item-inner__image
-            = image_tag @image.image.url,class:"item-inner__image--photo"
+            = image_tag @images[-1].image.url,class:"item-inner__image--photo"
           %p.item-inner__name
             = @product.name
           = form_with url: pay_products_path(@product),class:"item-inner__form", method: :post do |f|

@@ -8,7 +8,7 @@
       発送をお待ちください
     .pay-content__main--info
       .photo
-        = image_tag @image.image.url,class:"photo__buy"
+        = image_tag @images[-1].image.url,class:"photo__buy"
       .inner
         .inner__name
           = @product.name
