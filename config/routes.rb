@@ -21,6 +21,7 @@ Rails.application.routes.draw do
       get 'profile'
       get 'credit'
       get 'item_state'
+      get 'liked_index'
     end
   end
   resources :products, only: [:index, :new, :show, :create, :edit, :update, :destroy] do
@@ -31,6 +32,7 @@ Rails.application.routes.draw do
       get 'pay/:id' => 'products#pay', as: 'pay'
       get 'exhibit/:id' => 'products#exhibit', as: 'exhibit'
     end
+    resources :likes, only: [:create, :destroy]
   end
   resources :credits, only: [:new, :create, :index, :destroy]
 end

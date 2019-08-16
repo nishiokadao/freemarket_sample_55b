@@ -51,7 +51,6 @@
               z-index: 1;
               width: 213px;
               height: 213px;
-
             }
           }
           .items-box-body{
@@ -71,16 +70,29 @@
               height: 3em;
             }
             .items-box-num{
+              display: flex;
+              align-items: center;
+              justify-content: space-between;
+              margin: 8px 0 0;
               .items-box-price{
                 font-weight: bold;
                 display: inline-block; 
                 font-size: 17px;
               }
               .like{
+                font-size: 16px;
+                font-weight: 400;
+                color: #333;
                 display: inline-block; 
-                float: right;
-                i.far.fa-heart{
+                .fa-heart{
                   color: #ccc;
+                  font-weight: 400;
+                  line-height: 1;
+                  display: inline-block;
+                }
+                span {
+                  font-weight: 400;
+                  color: #333;
                 }
               }
             }
@@ -99,12 +111,6 @@
     }
 }
 
-
 a{
   text-decoration: none;
 }
-
-
-// *{
-//   border: solid 1px;
-// }

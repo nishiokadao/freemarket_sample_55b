@@ -1,0 +1,84 @@
+.liked-index-container {
+  margin: 40px auto 0;
+  width: 1020px;
+  padding: 0 0 40px;
+  overflow: scroll;
+  &__right-content {
+    float: right;
+    width: 700px;
+    .liked-index-main-container:first-child {
+      margin: 0;
+    }
+    .liked-index-main-container {
+      background: #fff;
+      &__header {
+        font-size: 24px;
+        padding: 8px 24px;
+        border-bottom: 1px solid #f5f5f5;
+        text-align: center;
+        line-height: 1.4;
+        font-weight: bold;
+        letter-spacing: 3px;
+      }
+      &__product-list {
+        list-style: none;
+        border-bottom: 1px solid #eee;
+        .liked-index-main-container__list li:first-child {
+          border-bottom: 1px solid #eee;
+        }
+        li {
+          position: relative;
+          display: list-item;
+          text-align: -webkit-match-parent;
+          a {
+            display: block;
+            min-height: 48px;
+            padding: 16px;
+            color: #333;
+            text-decoration: none;
+            figure {
+              position: relative;
+              overflow: hidden;
+              float: left;
+              width: 48px;
+              height: 48px;
+              img {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                vertical-align: middle;
+              }
+            }
+            .liked-product-body {
+              margin: 0 40px 0 68px;
+              font-size: 14px;
+              &__text {
+                overflow: hidden;
+                display: -webkit-box;
+                max-height: 4.4em;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;
+                text-overflow: ellipsis;
+                line-height: 1.5;
+              }
+            }
+            .liked-index-icon {
+              position: absolute;
+              top: 50%;
+              right: 16px;
+              transform: translate(0, -50%);
+              display: inline-block;
+            }
+          }  
+        }
+      }
+    }
+    .liked-index__main-container--product-list:first-child {
+      border-bottom: 1px solid #eee;
+    }
+  }
+}

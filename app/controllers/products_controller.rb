@@ -4,12 +4,11 @@ class ProductsController < ApplicationController
   before_action :set_all_products, only: [:show, :exhibit]
   before_action :set_image, only: [:buy, :pay]
   before_action :move_to_signin, except: [:index, :show]
+  skip_before_action :authenticate_user!, only:[:show, :index]
 
   def index
     @products = Product.includes(:images).order("created_at DESC")
-    # モデル名なのかテーブル名なのかはっきりさせる
-  end
-
+    
   def show
     @user = User.find(@product.seller_id)
   end
@@ -115,8 +114,8 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode], images_attributes: [:product_id, :image]).merge(seller_id: current_user.id)
   end
 
-  def move_to_signin
-    redirect_to (new_user_session_path) unless user_signed_in?
+  def configure_permitted_parameters
+      devise_parameter_sanitizer.permit(:sign_up, keys:[:name]) 
   end
 
 end
