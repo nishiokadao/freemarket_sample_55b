@@ -1,0 +1,30 @@
+-if user_signed_in?
+  = render 'users/indexheader'
+-else
+  = render 'products/index-header-list'
+.search-main.clearfix
+  = render 'search'
+  .search-main__content
+    %section.search-main__content--box
+      %h2.search-result
+        新着商品
+      .search-count
+        = "#{@products.size}件"
+      .search-item
+        -@products.each do |product|
+          %section.search-item__box
+            = link_to product_path(product.id), class:"search-item__box--show" do
+              %figure.item-photo
+                = image_tag product.image.image.url, class:"item-photo__img"
+              .item-text
+                .item-text__name
+                  =product.name
+                .item-text__num
+                  .item-text__num--price
+                    ¥
+                    = product.price
+                  .item-text__num--icon
+                    %i.far.fa-heart
+                    %span.good
+                      = product.status
+= render "index-footer"

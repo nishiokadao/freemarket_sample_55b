@@ -28,6 +28,8 @@ Rails.application.routes.draw do
     collection do
       get 'prohibit'
       get 'search'
+      get 'details_search'
+      get 'search_result'
       get 'buy/:id' => 'products#buy', as: 'buy'
       get 'pay/:id' => 'products#pay', as: 'pay'
       get 'exhibit/:id' => 'products#exhibit', as: 'exhibit'
