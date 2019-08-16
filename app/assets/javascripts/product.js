@@ -22,9 +22,6 @@ $(document).on('turbolinks:load', function(){
     }
     reader.readAsDataURL(file);
     images.push(img);
-    console.log(images);
-    console.log(inputs)
-
     if(images.length >= 5) {
       dropzone2.css({
         'display': 'block'
