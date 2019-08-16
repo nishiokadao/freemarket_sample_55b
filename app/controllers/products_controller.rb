@@ -2,23 +2,20 @@ class ProductsController < ApplicationController
   before_action :set_product, except: [:index, :new, :create, :prohibit, :search, :details_search, :search_result]
   before_action :check_user, only: [:edit, :exhibit]
   before_action :set_all_products, only: [:show, :exhibit]
-  before_action :set_image, only: [:show, :buy, :pay]
+  before_action :set_image, only: [:buy, :pay]
+  before_action :move_to_signin, except: [:index, :show]
   skip_before_action :authenticate_user!, only:[:show, :index]
 
   def index
-    @products = Product.includes(:image).order("created_at DESC")
-    # @products_ladies = Product.index_category(1)
-    # @products_mens = Product.index_category(2)
-    # @products_kids = Product.index_category(3)
-  end
-
+    @products = Product.includes(:images).order("created_at DESC")
+    
   def show
     @user = User.find(@product.seller_id)
   end
   
   def new
     @product = Product.new
-    @product.build_image
+    @product.images.build
     @product.build_delivery
     @product.build_category
   end
@@ -27,17 +24,17 @@ class ProductsController < ApplicationController
     @product= Product.new(product_params)
     if @product.save
       respond_to do |format|
-        format.html { redirect_to root_path }
-        format.json 
-      end
+        format.html {redirect_to root_path, notice:'出品完了しました'}
+        format.json
+      end 
     else
       redirect_to new_product_path, notice: "****入力されていない項目があります。****"
-
     end
   end
 
   def edit
     @product= Product.find(params[:id])
+    @images = @product.images.order(id: "DESC")
   end
 
   def exhibit
@@ -113,12 +110,12 @@ class ProductsController < ApplicationController
   end
 
   def set_image
-    @image = Image.find_by(product_id:@product.id)
+    @images = Image.where(product_id:@product.id)
   end
   
   def set_all_products
-    @images = @product.image
     @user = User.find(@product.seller_id)
+    @images = @product.images.order(id: "DESC")
   end
 
   def check_user
@@ -126,7 +123,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], image_attributes: [:image, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode]).merge(seller_id: current_user.id)
+    params.require(:product).permit(:name, :description, :condition_id, :price, :status, category_attributes: [:name_id, :product_id], delivery_attributes: [:days_to_ship_id, :mode, :payment_id, :delivery_method, :prefecture_id, :mode], images_attributes: [:product_id, :image]).merge(seller_id: current_user.id)
   end
 
   def search_params

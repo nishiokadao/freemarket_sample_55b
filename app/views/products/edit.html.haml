@@ -16,24 +16,30 @@
               必須
           %p
             最大10枚までアップロードできます
-          .sellbox-form__upload--drop
-            .sellbox-form__upload--drop--box
-              .sellbox-form__upload--drop--box--image
-                %ul
-                  %li.upload-image__prev
-                    %figure.upload-image__prev--figure
-                      =image_tag(@product.image.image.url, class: "upload-image__prev--figure--src")
-                    %button.upload-image__prev--btn
-                      =link_to "編集"
-                      =link_to "削除"
-            .sellbox-form__upload--drop--post  
-              -# ファイルのフォーム
-              = f.fields_for :image do |image|
-                = image.file_field :image, class:"sellbox-form__upload--drop--post--image", id:"post__image"
-                = image.hidden_field :id, value: @product.image.id 
-                %pre.sellbox-form__upload--drop--post--text
-                  ドラッグアンドドロップ
-                  またはクリックしてファイルをダウンロード
+          .sellbox-form__upload--drop#click-btn
+            .sellbox-form__upload--drop--post
+              .dropzone-container
+                #preview
+                  - @images.each_with_index do |image, i|
+                    .update__img-view{"data-image": i}
+                      =image_tag(image.image_url, class: "edit__img")
+                      .upload-image__prev--btn
+                        .edit-btn 編集
+                        .update__delete-btn 削除
+                = f.fields_for :image do |image|
+                  .dropzone-area
+                    = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
+                      .input_area
+                        = image.file_field :image, id: "upload-image__btn", class: "upload-image", 'data-image': 0, type: "file", name: "product[images_attributes][0][image]"
+                        -# - image.hidden_field :id, value: @images.id 
+                        -# - image.hidden_field :id, value: image.id 
+                      %p
+                        クリックしてファイルを追加
+                  #preview2
+                  .dropzone-area2
+                    = image.label :image, class: "dropzone-box", for: "upload-image__btn" do
+                      %p
+                        クリックしてファイルを追加
         .sellbox-form__post
           .sellbox-form__post--group
             %lavel.sellbox-form__post--group--head

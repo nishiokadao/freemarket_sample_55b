@@ -35,14 +35,12 @@ class UsersController < ApplicationController
   end 
 
   def item_state
-    @products = Product.includes(:image).where(seller_id: current_user)
+    @products = Product.includes(:images).where(seller_id: current_user)
   end
 
   def liked_index
     @products = current_user.liked_products
   end
-  
-  
 end
 
 
