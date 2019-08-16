@@ -35,6 +35,7 @@
         &__upload {
           width: 620px;
           padding: 35px 40px 35px 40px;
+          display: inline-block;
           &--head {
             font-size: 16px;
             font-weight: bold;
@@ -63,6 +64,7 @@
                   .img_view{
                     height: 170px;
                     display: inline-block;
+                    margin: 2px;
                     img{
                       position: static;
                       height: 140px;
@@ -127,6 +129,7 @@
                   .img_view{
                     height: 170px;
                     display: inline-block;
+                    margin: 2px;
                     img{
                       position: static;
                       height: 140px;
