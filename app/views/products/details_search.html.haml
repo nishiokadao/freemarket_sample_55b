@@ -15,7 +15,7 @@
           %section.search-item__box
             = link_to product_path(product.id), class:"search-item__box--show" do
               %figure.item-photo
-                = image_tag product.image.image.url, class:"item-photo__img"
+                = image_tag product.images[-1].image.url, class:"item-photo__img"
               .item-text
                 .item-text__name
                   =product.name

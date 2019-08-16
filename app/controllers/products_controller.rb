@@ -58,7 +58,7 @@ class ProductsController < ApplicationController
   end
 
   def details_search
-    @products = Product.includes(:image).order("created_at DESC")
+    @products = Product.includes(:images).order("created_at DESC")
     @q = Product.ransack(params[:q])
     @search = @q.result(distinct: true)
   end
